@@ -26,7 +26,7 @@ Hi! I’m Tushar, a Data Science Master’s candidate at the University of Oklah
 - [View Project](#)  
 
 ### 🏥 Hospital Readmission Prediction  
-![Hospital Readmission](images/hospital-readmission.jpg)  
+![Hospital Readmission](Hospital_Readmission.png)  
 - **Description**: Created a machine learning model to predict hospital readmissions using patient medical data.  
 - **Tech Stack**: R, XGBoost, Caret  
 - [View Project](#)  
