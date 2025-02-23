@@ -14,7 +14,7 @@ Hi! I’m Tushar, a Data Science Master’s candidate at the University of Oklah
 ## Projects  
 
 ### 🕵️‍♂️ Fake Job Detection Portal  
-![Fake Job Detection](images/fake-job-detection.jpg)  
+![Fake Job Detection](fake_job_detection.jpeg)  
 - **Description**: Built a machine learning model to detect fraudulent job postings using NLP and classification algorithms like Logistic Regression, Random Forests, and XGBoost.  
 - **Tech Stack**: Python, Flask, Sci-kit Learn  
 - [View Project](#)  
