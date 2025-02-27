@@ -32,8 +32,11 @@
 
         /* When dark theme is toggled, we apply class "dark-theme" to <body> */
         body.dark-theme {
-            background-color: #121212;
-            color: #eee;
+            --primary-color: #66aaff;       /* Replacing your main accent color for dark mode */
+            --secondary-color: #333366; 
+            --text-color: #ddd;            /* Replacing the base text color variable */
+            background-color: #1c1c1c;
+            color: var(--text-color);
         }
 
         /* Adjusting the relevant colors in dark mode */
@@ -49,6 +52,12 @@
         body.dark-theme .certification-item {
             background-color: #2e2e2e;
         }
+        body.dark-theme .contact-form {
+          background-color: #2c2c2c; /* A consistent card background color */
+          color: #e2e2e2;
+          /* If needed, adjust the box-shadow to a subtler dark mode style or remove it. */
+          box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
         body.dark-theme .nav-links a {
             color: #eee;
         }
