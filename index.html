@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar Mhatre - Data Science Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #001f3f;
+            --accent-color: #4CAF50;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333;
+            --spacing: 1rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-content .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links li {
+            margin: 0 1rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light-color);
+            text-decoration: underline;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            max-width: 800px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .education-header, .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .institution, .company {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+        
+        .date {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .degree, .position {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .project-link {
+            align-self: flex-start;
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-top: auto;
+        }
+        
+        .project-link:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .skill-category {
+            flex: 1 1 300px;
+            max-width: 400px;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .certifications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .certification-item {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .certification-name {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content .title {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links li {
+                margin: 0 0.5rem;
+            }
+            
+            .education-header, .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container header-content">
+            <h1>Tushar Jayendra Mhatre</h1>
+            <div class="title">Data Scientist | Machine Learning Engineer</div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/TusharM24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. With a solid background in software engineering and current research in machine learning, I love finding the stories hidden in data. I'm passionate about creating intelligent systems that make a real impact, and I'm on a mission to work at the intersection of cutting-edge AI research and practical business solutions. When I'm not diving into datasets, you'll find me exploring new technologies and approaches to solve real-world challenges.</p>
+                    <div class="cta-buttons">
+                        <a href="Resume-TusharM.pdf" class="cta-button" target="_blank"><i class="fas fa-file-pdf"></i> View Resume</a>
+                        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="cta-button"><i class="fas fa-envelope"></i> Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution">University of Oklahoma</div>
+                    <div class="date">August 2023 - May 2025</div>
+                </div>
+                <div class="degree">Master's, Data Science</div>
+                <div class="gpa">GPA: 3.97</div>
+            </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution">Savitribai Phule Pune University</div>
+                    <div class="date">June 2016 - May 2020</div>
+                </div>
+                <div class="degree">Bachelor's, Electronics and Telecommunication Engineering</div>
+                <div class="gpa">GPA: 7.6</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company">University of Oklahoma</div>
+                    <div class="date">February 2024 - Present</div>
+                </div>
+                <div class="position">Graduate Research Assistant</div>
+                <ul>
+                    <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
+                    <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
+                    <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences between the different transient CAPs and also study both resting-state and stimulus-driven conditions.</li>
+                    <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="company">Tata Consultancy Services</div>
+                    <div class="date">February 2021 - July 2023</div>
+                </div>
+                <div class="position">Software Engineer</div>
+                <ul>
+                    <li>Designed intelligent RPA solutions using the Automation 360 tool, along with utilization of VBA scripts and SQL queries, to automate repetitive tasks across SAP, Winshuttle, and Mainframe systems.</li>
+                    <li>Developed and implemented automation workflows using machine learning techniques and data processing pipelines.</li>
+                    <li>Enaged Directly with clients in order to understand requirements and deliver scalable, data-driven solutions.</li>
+                    <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Fake Job Detection Portal</h3>
+                        <div class="project-description">
+                            <p>Built an NLP-powered tool that spots fraudulent job listings with 92% accuracy using advanced ML models. Created a user-friendly Flask application that scans job descriptions in real-time and flags suspicious content.</p>
+                        </div>
+                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Predicting Customer Revenue</h3>
+                        <div class="project-description">
+                            <p>Developed a revenue prediction system for an online retailer using advanced regression techniques in R. Achieved 83% prediction accuracy through statistical validation and feature optimization, enabling targeted marketing campaigns.</p>
+                        </div>
+                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Hospital Readmission Prediction</h3>
+                        <div class="project-description">
+                            <p>Created a model that predicts patient readmissions with 88% accuracy using XGBoost. The system analyzes patient medical histories to identify high-risk individuals, potentially saving hospitals millions in preventable care costs.</p>
+                        </div>
+                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Database Design for Patient Assistance Network</h3>
+                        <div class="project-description">
+                            <p>Designed and implemented a complete database system using Azure SQL and Java JDBC for a healthcare nonprofit. The solution includes optimized indexing and query structures that improved data retrieval speed by 40%.</p>
+                        </div>
+                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
+                        <div class="project-description">
+                            <p>Created an interactive Tableau dashboard that revealed key profit drivers for a retail chain. The visualization identified underperforming product categories and highlighted demographic segments with 15% growth potential.</p>
+                        </div>
+                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Exploratory Data Analysis</span>
+                        <span class="skill-tag">Model Evaluation</span>
+                        <span class="skill-tag">Feature Selection</span>
+                        <span class="skill-tag">Predictive Modelling</span>
+                        <span class="skill-tag">Time Series Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Python Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Seaborn</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>R Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">dplyr</span>
+                        <span class="skill-tag">tidyr</span>
+                        <span class="skill-tag">knitr</span>
+                        <span class="skill-tag">ggplot2</span>
+                        <span class="skill-tag">caret</span>
+                        <span class="skill-tag">h2o</span>
+                        <span class="skill-tag">readR</span>
+                        <span class="skill-tag">tibble</span>
+                        <span class="skill-tag">plotly</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Statistical Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Hypothesis Testing</span>
+                        <span class="skill-tag">Confidence Intervals</span>
+                        <span class="skill-tag">Correlation Matrices</span>
+                        <span class="skill-tag">Outlier Detection</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">ETL</span>
+                        <span class="skill-tag">Database Design</span>
+                        <span class="skill-tag">JDBC</span>
+                        <span class="skill-tag">Microsoft Azure</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">BigQuery</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Data Analysis Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">WEKA</span>
+                        <span class="skill-tag">Apache Spark</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>NLP & AI Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tokenization</span>
+                        <span class="skill-tag">NER</span>
+                        <span class="skill-tag">TF-IDF</span>
+                        <span class="skill-tag">Word Embeddings</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Ollama</span>
+                        <span class="skill-tag">RAG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="certifications-list">
+                <div class="certification-item">
+                    <div class="certification-name">Google Data Analytics Professional Certification</div>
+                </div>
+                <div class="certification-item">
+                    <div class="certification-name">Automation 360: Advanced Certification</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu">tushar.jayendra.mhatre-1@ou.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+14052238789">+1 (405) 223-8789</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank">linkedin.com/in/tushar-mhatre24/</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/TusharM24" target="_blank">github.com/TusharM24</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tushar Jayendra Mhatre. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
