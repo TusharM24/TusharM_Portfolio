@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tushar Mhatre - Data Science Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <style>
+        /*-----------------------------------
+          COLOR VARIABLES
+        -------------------------------------*/
         :root {
             --primary-color: #0066cc;
             --secondary-color: #001f3f;
@@ -15,26 +18,74 @@
             --text-color: #333;
             --spacing: 1rem;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
+        /* Light mode defaults */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--light-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
-        
+
+        /* When dark theme is toggled, we apply class "dark-theme" to <body> */
+        body.dark-theme {
+            background-color: #121212;
+            color: #eee;
+        }
+
+        /* Adjusting the relevant colors in dark mode */
+        body.dark-theme header,
+        body.dark-theme nav,
+        body.dark-theme footer {
+            background-color: #222;
+        }
+        body.dark-theme .education-item,
+        body.dark-theme .experience-item,
+        body.dark-theme .project-card,
+        body.dark-theme .skill-category,
+        body.dark-theme .certification-item {
+            background-color: #2e2e2e;
+        }
+        body.dark-theme .nav-links a {
+            color: #eee;
+        }
+        body.dark-theme .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        body.dark-theme .social-links a {
+            color: #eee;
+        }
+        body.dark-theme .social-links a:hover {
+            color: var(--accent-color);
+        }
+        body.dark-theme .cta-button {
+            background-color: var(--secondary-color);
+        }
+        body.dark-theme .cta-button:hover {
+            background-color: var(--accent-color);
+        }
+        body.dark-theme .project-link {
+            background-color: var(--secondary-color);
+        }
+        body.dark-theme .project-link:hover {
+            background-color: var(--accent-color);
+        }
+        body.dark-theme .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /*-----------------------------------
+          GENERAL LAYOUT
+        -------------------------------------*/
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--spacing);
         }
-        
+
         header {
             background-color: var(--secondary-color);
             color: white;
@@ -42,77 +93,140 @@
             position: relative;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+
         .header-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-        
+
         .header-content h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .header-content .title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--light-color);
         }
-        
+
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
-        
+
         .social-links a {
             color: white;
             font-size: 1.5rem;
             transition: color 0.3s;
             text-decoration: none;
         }
-        
+
         .social-links a:hover {
             color: var(--accent-color);
         }
-        
+
         nav {
             background-color: var(--primary-color);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
+
         .nav-links {
             display: flex;
             justify-content: center;
             list-style: none;
             flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
         }
-        
+
         .nav-links li {
             margin: 0 1rem;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--light-color);
             text-decoration: underline;
         }
-        
+
+        /* Dark mode toggle switch container */
+        .theme-toggle-container {
+            margin-left: auto;
+            margin-right: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle-label {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .theme-toggle {
+            position: relative;
+            width: 40px;
+            height: 20px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #ccc;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--accent-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
         section {
             padding: 3rem 0;
         }
-        
+
         section h2 {
             font-size: 2rem;
             color: var(--secondary-color);
@@ -121,18 +235,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--primary-color);
         }
-        
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .about-text {
-            max-width: 800px;
-        }
-        
+
         .cta-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -140,7 +243,7 @@
             justify-content: center;
             margin-top: 1.5rem;
         }
-        
+
         .cta-button {
             display: inline-block;
             padding: 0.75rem 1.5rem;
@@ -151,11 +254,22 @@
             transition: background-color 0.3s;
             font-weight: 500;
         }
-        
+
         .cta-button:hover {
             background-color: var(--secondary-color);
         }
-        
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-text {
+            max-width: 800px;
+        }
+
         .education-item, .experience-item {
             margin-bottom: 2rem;
             padding: 1.5rem;
@@ -163,36 +277,53 @@
             background-color: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+
         .education-header, .experience-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
             flex-wrap: wrap;
         }
-        
+
         .institution, .company {
             font-weight: bold;
             font-size: 1.2rem;
             color: var(--secondary-color);
         }
-        
+
         .date {
             color: var(--primary-color);
             font-weight: 500;
         }
-        
+
         .degree, .position {
             font-style: italic;
             margin-bottom: 0.5rem;
         }
-        
+
+        /* COLLAPSIBLE BODY FOR EXPERIENCE */
+        .collapsible-body {
+            display: none;
+            margin-top: 1rem;
+        }
+        /* We’ll toggle .active when user clicks Show/Hide */
+        .collapsible-body.active {
+            display: block;
+        }
+        .collapsible-toggle {
+            cursor: pointer;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: underline;
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .project-card {
             border-radius: 8px;
             overflow: hidden;
@@ -203,30 +334,30 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         .project-content {
             padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .project-title {
             font-size: 1.3rem;
             color: var(--secondary-color);
             margin-bottom: 1rem;
         }
-        
+
         .project-description {
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
-        
+
         .project-link {
             align-self: flex-start;
             padding: 0.5rem 1rem;
@@ -237,18 +368,18 @@
             transition: background-color 0.3s;
             margin-top: auto;
         }
-        
+
         .project-link:hover {
             background-color: var(--secondary-color);
         }
-        
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
         }
-        
+
         .skill-category {
             flex: 1 1 300px;
             max-width: 400px;
@@ -257,7 +388,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+
         .skill-category h3 {
             font-size: 1.2rem;
             color: var(--secondary-color);
@@ -265,13 +396,13 @@
             padding-bottom: 0.5rem;
             border-bottom: 1px solid var(--primary-color);
         }
-        
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
-        
+
         .skill-tag {
             background-color: var(--primary-color);
             color: white;
@@ -280,7 +411,7 @@
             font-size: 0.9rem;
             white-space: nowrap;
         }
-        
+
         .certifications-list {
             display: flex;
             flex-direction: column;
@@ -288,7 +419,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .certification-item {
             background-color: white;
             padding: 1.5rem;
@@ -300,12 +431,12 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
-        
+
         .certification-name {
             font-weight: 500;
             color: var(--secondary-color);
         }
-        
+
         .contact-container {
             max-width: 800px;
             margin: 0 auto;
@@ -313,7 +444,7 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -321,28 +452,65 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
-        
+
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .contact-item i {
             color: var(--primary-color);
             font-size: 1.2rem;
         }
-        
+
         .contact-item a {
             color: var(--text-color);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .contact-item a:hover {
             color: var(--primary-color);
         }
-        
+
+        /* CONTACT FORM STYLES */
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            margin-top: 1.5rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
         footer {
             background-color: var(--secondary-color);
             color: white;
@@ -350,29 +518,24 @@
             padding: 2rem 0;
             margin-top: 2rem;
         }
-        
+
         @media (max-width: 768px) {
             .header-content h1 {
                 font-size: 2rem;
             }
-            
             .header-content .title {
                 font-size: 1.2rem;
             }
-            
             .nav-links li {
                 margin: 0 0.5rem;
             }
-            
             .education-header, .experience-header {
                 flex-direction: column;
                 gap: 0.5rem;
             }
-            
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
             .contact-info {
                 flex-direction: column;
                 align-items: center;
@@ -382,6 +545,7 @@
     </style>
 </head>
 <body>
+    <!-- HEADER -->
     <header id="home">
         <div class="container header-content">
             <h1>Tushar Jayendra Mhatre</h1>
@@ -393,9 +557,10 @@
             </div>
         </div>
     </header>
-    
+
+    <!-- NAVIGATION WITH DARK MODE TOGGLE -->
     <nav>
-        <div class="container">
+        <div class="container" style="display: flex; align-items: center;">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -406,15 +571,24 @@
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Dark mode toggle -->
+            <div class="theme-toggle-container">
+                <span class="theme-toggle-label">Dark Mode</span>
+                <label class="theme-toggle">
+                    <input type="checkbox" id="theme-checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
     </nav>
-    
+
+    <!-- ABOUT SECTION -->
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. I’ve worked on numerous projects that showcase my skills as a proficient data science and machine learning engineer. I also assist in research at my university, where I leverage machine learning and statistical analysis as key tools to drive my work. I’m passionate about building intelligent systems that make a tangible impact, and I thrive at the intersection of innovative AI techniques and practical business solutions. When I’m not diving into datasets, you’ll find me exploring new technologies, reading novels,watching sci-fi movies or hiking to clear my mind and spark fresh ideas.</p>
+                    <p>Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. I’ve worked on numerous projects that showcase my skills as a proficient data science and machine learning engineer. I also assist in research at my university, where I leverage machine learning and statistical analysis as key tools to drive my work. I’m passionate about building intelligent systems that make a tangible impact, and I thrive at the intersection of innovative AI techniques and practical business solutions. When I’m not diving into datasets, you’ll find me exploring new technologies, reading novels, watching sci-fi movies or hiking to clear my mind and spark fresh ideas.</p>
                     <div class="cta-buttons">
                         <a href="Resume-TusharM.pdf" class="cta-button" target="_blank"><i class="fas fa-file-pdf"></i> View Resume</a>
                         <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="cta-button"><i class="fas fa-envelope"></i> Contact Me</a>
@@ -423,7 +597,8 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- EDUCATION SECTION -->
     <section id="education">
         <div class="container">
             <h2>Education</h2>
@@ -445,39 +620,59 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- EXPERIENCE SECTION WITH COLLAPSIBLE CONTENT -->
     <section id="experience">
         <div class="container">
             <h2>Professional Experience</h2>
+            
+            <!-- Experience item 1 -->
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="company">University of Oklahoma</div>
                     <div class="date">February 2024 - Present</div>
                 </div>
                 <div class="position">Graduate Research Assistant</div>
-                <ul>
-                    <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
-                    <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
-                    <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences between the different transient CAPs and also study both resting-state and stimulus-driven conditions.</li>
-                    <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
-                </ul>
+                
+                <!-- Collapsible toggle -->
+                <div class="collapsible-toggle" data-target="#exp1">Show more</div>
+                
+                <!-- Collapsible body -->
+                <div class="collapsible-body" id="exp1">
+                    <ul>
+                        <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
+                        <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
+                        <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences between the different transient CAPs and also study both resting-state and stimulus-driven conditions.</li>
+                        <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Experience item 2 -->
             <div class="experience-item">
                 <div class="experience-header">
                     <div class="company">Tata Consultancy Services</div>
                     <div class="date">February 2021 - July 2023</div>
                 </div>
                 <div class="position">Software Engineer</div>
-                <ul>
-                    <li>Designed intelligent RPA solutions using the Automation 360 tool, along with utilization of VBA scripts and SQL queries, to automate repetitive tasks across SAP, Winshuttle, and Mainframe systems.</li>
-                    <li>Developed and implemented automation workflows using machine learning techniques and data processing pipelines.</li>
-                    <li>Enaged Directly with clients in order to understand requirements and deliver scalable, data-driven solutions.</li>
-                    <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
-                </ul>
+                
+                <!-- Collapsible toggle -->
+                <div class="collapsible-toggle" data-target="#exp2">Show more</div>
+                
+                <!-- Collapsible body -->
+                <div class="collapsible-body" id="exp2">
+                    <ul>
+                        <li>Designed intelligent RPA solutions using the Automation 360 tool, along with utilization of VBA scripts and SQL queries, to automate repetitive tasks across SAP, Winshuttle, and Mainframe systems.</li>
+                        <li>Developed and implemented automation workflows using machine learning techniques and data processing pipelines.</li>
+                        <li>Engaged directly with clients to understand requirements and deliver scalable, data-driven solutions.</li>
+                        <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- PROJECTS SECTION -->
     <section id="projects">
         <div class="container">
             <h2>Projects</h2>
@@ -530,7 +725,8 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- SKILLS SECTION -->
     <section id="skills">
         <div class="container">
             <h2>Skills</h2>
@@ -546,7 +742,6 @@
                         <span class="skill-tag">MATLAB</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Data Science</h3>
                     <div class="skill-tags">
@@ -557,7 +752,6 @@
                         <span class="skill-tag">Time Series Analysis</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Python Libraries</h3>
                     <div class="skill-tags">
@@ -571,7 +765,6 @@
                         <span class="skill-tag">Seaborn</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>R Libraries</h3>
                     <div class="skill-tags">
@@ -586,7 +779,6 @@
                         <span class="skill-tag">plotly</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Statistical Analysis</h3>
                     <div class="skill-tags">
@@ -596,7 +788,6 @@
                         <span class="skill-tag">Outlier Detection</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Database</h3>
                     <div class="skill-tags">
@@ -609,7 +800,6 @@
                         <span class="skill-tag">BigQuery</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>Data Analysis Tools</h3>
                     <div class="skill-tags">
@@ -620,7 +810,6 @@
                         <span class="skill-tag">Apache Spark</span>
                     </div>
                 </div>
-                
                 <div class="skill-category">
                     <h3>NLP & AI Tools</h3>
                     <div class="skill-tags">
@@ -636,7 +825,8 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- CERTIFICATIONS SECTION -->
     <section id="certifications">
         <div class="container">
             <h2>Certifications</h2>
@@ -650,7 +840,8 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- CONTACT SECTION WITH CONTACT FORM -->
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
@@ -673,26 +864,75 @@
                         <a href="https://github.com/TusharM24" target="_blank">github.com/TusharM24</a>
                     </div>
                 </div>
+
+                <!-- The new contact form -->
+                <form class="contact-form" onsubmit="return false;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
-    
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Tushar Jayendra Mhatre. All rights reserved.</p>
         </div>
     </footer>
-    
+
+    <!-- SCRIPTS -->
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Dark mode toggle
+        const themeCheckbox = document.getElementById('theme-checkbox');
+        themeCheckbox.addEventListener('change', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+
+        // Collapsible experience sections
+        const collapsibleToggles = document.querySelectorAll('.collapsible-toggle');
+        collapsibleToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const targetSelector = toggle.getAttribute('data-target');
+                const content = document.querySelector(targetSelector);
+                if (content) {
+                    content.classList.toggle('active');
+                    // Update toggle text
+                    toggle.textContent = content.classList.contains('active') ? 'Show less' : 'Show more';
+                }
+            });
+        });
+
+        // (Optional) Contact form submission
+        // Here we prevent the default submission (return false; in onsubmit).
+        // You can add an AJAX call or fetch to handle submissions asynchronously.
+        document.querySelector('.contact-form').addEventListener('submit', (event) => {
+            // Example: console.log form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            console.log('Contact form submitted:', { name, email, message });
+
+            // Clear the form
+            event.target.reset();
+            alert('Message sent!');
         });
     </script>
 </body>
