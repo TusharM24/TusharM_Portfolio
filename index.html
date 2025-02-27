@@ -1,948 +1,829 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tushar Mhatre - Data Science Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <style>
-        /*-----------------------------------
-          COLOR VARIABLES
-        -------------------------------------*/
-        :root {
-            --primary-color: #0066cc;
-            --secondary-color: #001f3f;
-            --accent-color: #4CAF50;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --text-color: #333;
-            --spacing: 1rem;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tushar Mhatre - Data Science Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /*-----------------------------------
+      COLOR VARIABLES
+    -------------------------------------*/
+    :root {
+      --primary-color: #0066cc;
+      --secondary-color: #001f3f;
+      --accent-color: #4CAF50;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+      --text-color: #333;
+      --spacing: 1rem;
+    }
 
-        /* Light mode defaults */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    /*-----------------------------------
+      GENERAL LAYOUT & BASE STYLES
+    -------------------------------------*/
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-color);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        /* When dark theme is toggled, we apply class "dark-theme" to <body> */
-        body.dark-theme {
-            --primary-color: #66aaff;       /* Replacing your main accent color for dark mode */
-            --secondary-color: #333366; 
-            --text-color: #ddd;            /* Replacing the base text color variable */
-            background-color: #1c1c1c;
-            color: var(--text-color);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing);
+    }
 
-        /* Adjusting the relevant colors in dark mode */
-        body.dark-theme header,
-        body.dark-theme nav,
-        body.dark-theme footer {
-            background-color: #222;
-        }
-        body.dark-theme .education-item,
-        body.dark-theme .experience-item,
-        body.dark-theme .project-card,
-        body.dark-theme .skill-category,
-        body.dark-theme .certification-item {
-            background-color: #2e2e2e;
-        }
-        body.dark-theme .contact-form {
-          background-color: #2c2c2c; /* A consistent card background color */
-          color: #e2e2e2;
-          /* If needed, adjust the box-shadow to a subtler dark mode style or remove it. */
-          box-shadow: 0 2px 5px rgba(255,255,255,0.05);
-}
-        body.dark-theme .nav-links a {
-            color: #eee;
-        }
-        body.dark-theme .nav-links a:hover {
-            color: var(--accent-color);
-        }
-        body.dark-theme .social-links a {
-            color: #eee;
-        }
-        body.dark-theme .social-links a:hover {
-            color: var(--accent-color);
-        }
-        body.dark-theme .cta-button {
-            background-color: var(--secondary-color);
-        }
-        body.dark-theme .cta-button:hover {
-            background-color: var(--accent-color);
-        }
-        body.dark-theme .project-link {
-            background-color: var(--secondary-color);
-        }
-        body.dark-theme .project-link:hover {
-            background-color: var(--accent-color);
-        }
-        body.dark-theme .contact-item a:hover {
-            color: var(--accent-color);
-        }
+    header {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 2rem 0;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        /*-----------------------------------
-          GENERAL LAYOUT
-        -------------------------------------*/
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing);
-        }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-        header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 2rem 0;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .header-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+    .header-content .title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--light-color);
+    }
 
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-        .header-content .title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--light-color);
-        }
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+    .social-links a:hover {
+      color: var(--accent-color);
+    }
 
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-            text-decoration: none;
-        }
+    nav {
+      background-color: var(--primary-color);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
 
-        nav {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .nav-links li {
+      margin: 0 1rem;
+    }
 
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            margin: 0;
-            padding: 0;
-        }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        .nav-links li {
-            margin: 0 1rem;
-        }
+    .nav-links a:hover {
+      color: var(--light-color);
+      text-decoration: underline;
+    }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    section {
+      padding: 3rem 0;
+    }
 
-        .nav-links a:hover {
-            color: var(--light-color);
-            text-decoration: underline;
-        }
+    section h2 {
+      font-size: 2rem;
+      color: var(--secondary-color);
+      margin-bottom: 2rem;
+      text-align: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-color);
+    }
 
-        /* Dark mode toggle switch container */
-        .theme-toggle-container {
-            margin-left: auto;
-            margin-right: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
 
-        .theme-toggle-label {
-            color: #fff;
-            font-weight: 500;
-        }
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      font-weight: 500;
+    }
 
-        .theme-toggle {
-            position: relative;
-            width: 40px;
-            height: 20px;
-        }
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+    }
 
-        .theme-toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            background-color: #ccc;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            transition: .4s;
-            border-radius: 20px;
-        }
+    .about-text {
+      max-width: 800px;
+    }
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 14px;
-            width: 14px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
+    .education-item,
+    .experience-item {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        input:checked + .slider {
-            background-color: var(--accent-color);
-        }
+    .education-header,
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
 
-        input:checked + .slider:before {
-            transform: translateX(20px);
-        }
+    .institution,
+    .company {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+    }
 
-        section {
-            padding: 3rem 0;
-        }
+    .date {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
 
-        section h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            text-align: center;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-color);
-        }
+    .degree,
+    .position {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
 
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
+    /* COLLAPSIBLE BODY FOR EXPERIENCE */
+    .collapsible-body {
+      display: none;
+      margin-top: 1rem;
+    }
+    /* Toggled open with .active class */
+    .collapsible-body.active {
+      display: block;
+    }
+    .collapsible-toggle {
+      cursor: pointer;
+      color: var(--accent-color);
+      font-weight: bold;
+      margin-top: 1rem;
+      text-decoration: underline;
+    }
 
-        .cta-button {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            font-weight: 500;
-        }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
 
-        .cta-button:hover {
-            background-color: var(--secondary-color);
-        }
+    .project-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-        .about-text {
-            max-width: 800px;
-        }
+    .project-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .education-item, .experience-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .project-title {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
 
-        .education-header, .experience-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
+    .project-description {
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
 
-        .institution, .company {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-        }
+    .project-link {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      margin-top: auto;
+    }
 
-        .date {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
+    .project-link:hover {
+      background-color: var(--secondary-color);
+    }
 
-        .degree, .position {
-            font-style: italic;
-            margin-bottom: 0.5rem;
-        }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
 
-        /* COLLAPSIBLE BODY FOR EXPERIENCE */
-        .collapsible-body {
-            display: none;
-            margin-top: 1rem;
-        }
-        /* We’ll toggle .active when user clicks Show/Hide */
-        .collapsible-body.active {
-            display: block;
-        }
-        .collapsible-toggle {
-            cursor: pointer;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-top: 1rem;
-            text-decoration: underline;
-        }
+    .skill-category {
+      flex: 1 1 300px;
+      max-width: 400px;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .skill-category h3 {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--primary-color);
+    }
 
-        .project-card {
-            border-radius: 8px;
-            overflow: hidden;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+    .skill-tag {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
 
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+    .certifications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-        .project-title {
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
+    .certification-item {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-        .project-description {
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
+    .certification-name {
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
 
-        .project-link {
-            align-self: flex-start;
-            padding: 0.5rem 1rem;
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            margin-top: auto;
-        }
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .project-link:hover {
-            background-color: var(--secondary-color);
-        }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
 
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        .skill-category {
-            flex: 1 1 300px;
-            max-width: 400px;
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+    .contact-item i {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
 
-        .skill-category h3 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--primary-color);
-        }
+    .contact-item a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    .contact-item a:hover {
+      color: var(--primary-color);
+    }
 
-        .skill-tag {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
+    /* CONTACT FORM STYLES */
+    .contact-form {
+      width: 100%;
+      max-width: 600px;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .contact-form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 500;
+      color: var(--secondary-color);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      margin-top: 1.5rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .contact-form button:hover {
+      background-color: var(--secondary-color);
+    }
 
-        .certifications-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
 
-        .certification-item {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+    @media (max-width: 768px) {
+      .header-content h1 {
+        font-size: 2rem;
+      }
 
-        .certification-name {
-            font-weight: 500;
-            color: var(--secondary-color);
-        }
+      .header-content .title {
+        font-size: 1.2rem;
+      }
 
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      .nav-links li {
+        margin: 0 0.5rem;
+      }
 
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+      .education-header,
+      .experience-header {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
 
-        .contact-item i {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        .contact-item a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-
-        /* CONTACT FORM STYLES */
-        .contact-form {
-            width: 100%;
-            max-width: 600px;
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .contact-form label {
-            display: block;
-            margin-top: 1rem;
-            font-weight: 500;
-            color: var(--secondary-color);
-        }
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            margin-top: 0.5rem;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .contact-form button {
-            margin-top: 1.5rem;
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        .contact-form button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2rem;
-            }
-            .header-content .title {
-                font-size: 1.2rem;
-            }
-            .nav-links li {
-                margin: 0 0.5rem;
-            }
-            .education-header, .experience-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-        }
-    </style>
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header id="home">
-        <div class="container header-content">
-            <h1>Tushar Jayendra Mhatre</h1>
-            <div class="title">Data Scientist | Machine Learning Engineer</div>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/TusharM24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" title="Email"><i class="fas fa-envelope"></i></a>
-            </div>
+  <!-- HEADER -->
+  <header id="home">
+    <div class="container header-content">
+      <h1>Tushar Jayendra Mhatre</h1>
+      <div class="title">Data Scientist | Machine Learning Engineer</div>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/TusharM24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container" style="display: flex; align-items: center; justify-content: center;">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. I’ve worked on numerous projects that showcase my skills as a proficient data science and machine learning engineer. I also assist in research at my university, where I leverage machine learning and statistical analysis as key tools to drive my work. I’m passionate about building intelligent systems that make a tangible impact, and I thrive at the intersection of innovative AI techniques and practical business solutions. When I’m not diving into datasets, you’ll find me exploring new technologies, reading novels, watching sci-fi movies or hiking to clear my mind and spark fresh ideas.
+          </p>
+          <div class="cta-buttons">
+            <a href="Resume-TusharM.pdf" class="cta-button" target="_blank"><i class="fas fa-file-pdf"></i> View Resume</a>
+            <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="cta-button"><i class="fas fa-envelope"></i> Contact Me</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <!-- NAVIGATION WITH DARK MODE TOGGLE -->
-    <nav>
-        <div class="container" style="display: flex; align-items: center;">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <!-- Dark mode toggle -->
-            <div class="theme-toggle-container">
-                <span class="theme-toggle-label">Dark Mode</span>
-                <label class="theme-toggle">
-                    <input type="checkbox" id="theme-checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
+  <!-- EDUCATION SECTION -->
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="education-header">
+          <div class="institution">University of Oklahoma</div>
+          <div class="date">August 2023 - May 2025</div>
         </div>
-    </nav>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. I’ve worked on numerous projects that showcase my skills as a proficient data science and machine learning engineer. I also assist in research at my university, where I leverage machine learning and statistical analysis as key tools to drive my work. I’m passionate about building intelligent systems that make a tangible impact, and I thrive at the intersection of innovative AI techniques and practical business solutions. When I’m not diving into datasets, you’ll find me exploring new technologies, reading novels, watching sci-fi movies or hiking to clear my mind and spark fresh ideas.</p>
-                    <div class="cta-buttons">
-                        <a href="Resume-TusharM.pdf" class="cta-button" target="_blank"><i class="fas fa-file-pdf"></i> View Resume</a>
-                        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="cta-button"><i class="fas fa-envelope"></i> Contact Me</a>
-                    </div>
-                </div>
-            </div>
+        <div class="degree">Master's, Data Science</div>
+        <div class="gpa">GPA: 3.97</div>
+      </div>
+      <div class="education-item">
+        <div class="education-header">
+          <div class="institution">Savitribai Phule Pune University</div>
+          <div class="date">June 2016 - May 2020</div>
         </div>
-    </section>
+        <div class="degree">Bachelor's, Electronics and Telecommunication Engineering</div>
+        <div class="gpa">GPA: 7.6</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- EDUCATION SECTION -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="institution">University of Oklahoma</div>
-                    <div class="date">August 2023 - May 2025</div>
-                </div>
-                <div class="degree">Master's, Data Science</div>
-                <div class="gpa">GPA: 3.97</div>
-            </div>
-            <div class="education-item">
-                <div class="education-header">
-                    <div class="institution">Savitribai Phule Pune University</div>
-                    <div class="date">June 2016 - May 2020</div>
-                </div>
-                <div class="degree">Bachelor's, Electronics and Telecommunication Engineering</div>
-                <div class="gpa">GPA: 7.6</div>
-            </div>
+  <!-- EXPERIENCE SECTION WITH COLLAPSIBLE CONTENT -->
+  <section id="experience">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      
+      <!-- Experience item 1 -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="company">University of Oklahoma</div>
+          <div class="date">February 2024 - Present</div>
         </div>
-    </section>
-
-    <!-- EXPERIENCE SECTION WITH COLLAPSIBLE CONTENT -->
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            
-            <!-- Experience item 1 -->
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company">University of Oklahoma</div>
-                    <div class="date">February 2024 - Present</div>
-                </div>
-                <div class="position">Graduate Research Assistant</div>
-                
-                <!-- Collapsible toggle -->
-                <div class="collapsible-toggle" data-target="#exp1">Show more</div>
-                
-                <!-- Collapsible body -->
-                <div class="collapsible-body" id="exp1">
-                    <ul>
-                        <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
-                        <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
-                        <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences between the different transient CAPs and also study both resting-state and stimulus-driven conditions.</li>
-                        <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Experience item 2 -->
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div class="company">Tata Consultancy Services</div>
-                    <div class="date">February 2021 - July 2023</div>
-                </div>
-                <div class="position">Software Engineer</div>
-                
-                <!-- Collapsible toggle -->
-                <div class="collapsible-toggle" data-target="#exp2">Show more</div>
-                
-                <!-- Collapsible body -->
-                <div class="collapsible-body" id="exp2">
-                    <ul>
-                        <li>Designed intelligent RPA solutions using the Automation 360 tool, along with utilization of VBA scripts and SQL queries, to automate repetitive tasks across SAP, Winshuttle, and Mainframe systems.</li>
-                        <li>Developed and implemented automation workflows using machine learning techniques and data processing pipelines.</li>
-                        <li>Engaged directly with clients to understand requirements and deliver scalable, data-driven solutions.</li>
-                        <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="position">Graduate Research Assistant</div>
+        
+        <!-- Collapsible toggle -->
+        <div class="collapsible-toggle" data-target="#exp1">Show more</div>
+        
+        <!-- Collapsible body -->
+        <div class="collapsible-body" id="exp1">
+          <ul>
+            <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
+            <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
+            <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences between the different transient CAPs and also study both resting-state and stimulus-driven conditions.</li>
+            <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
+          </ul>
         </div>
-    </section>
+      </div>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Fake Job Detection Portal</h3>
-                        <div class="project-description">
-                            <p>Built an NLP-powered tool that spots fraudulent job listings with 92% accuracy using advanced ML models. Created a user-friendly Flask application that scans job descriptions in real-time and flags suspicious content.</p>
-                        </div>
-                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Predicting Customer Revenue</h3>
-                        <div class="project-description">
-                            <p>Developed a revenue prediction system for an online retailer using advanced regression techniques in R. Achieved 83% prediction accuracy through statistical validation and feature optimization, enabling targeted marketing campaigns.</p>
-                        </div>
-                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Hospital Readmission Prediction</h3>
-                        <div class="project-description">
-                            <p>Created a model that predicts patient readmissions with 88% accuracy using XGBoost. The system analyzes patient medical histories to identify high-risk individuals, potentially saving hospitals millions in preventable care costs.</p>
-                        </div>
-                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Database Design for Patient Assistance Network</h3>
-                        <div class="project-description">
-                            <p>Designed and implemented a complete database system using Azure SQL and Java JDBC for a healthcare nonprofit. The solution includes optimized indexing and query structures that improved data retrieval speed by 40%.</p>
-                        </div>
-                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
-                        <div class="project-description">
-                            <p>Created an interactive Tableau dashboard that revealed key profit drivers for a retail chain. The visualization identified underperforming product categories and highlighted demographic segments with 15% growth potential.</p>
-                        </div>
-                        <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
+      <!-- Experience item 2 -->
+      <div class="experience-item">
+        <div class="experience-header">
+          <div class="company">Tata Consultancy Services</div>
+          <div class="date">February 2021 - July 2023</div>
+        </div>
+        <div class="position">Software Engineer</div>
+        
+        <!-- Collapsible toggle -->
+        <div class="collapsible-toggle" data-target="#exp2">Show more</div>
+        
+        <!-- Collapsible body -->
+        <div class="collapsible-body" id="exp2">
+          <ul>
+            <li>Designed intelligent RPA solutions using the Automation 360 tool, along with utilization of VBA scripts and SQL queries, to automate repetitive tasks across SAP, Winshuttle, and Mainframe systems.</li>
+            <li>Developed and implemented automation workflows using machine learning techniques and data processing pipelines.</li>
+            <li>Engaged directly with clients to understand requirements and deliver scalable, data-driven solutions.</li>
+            <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">Fake Job Detection Portal</h3>
+            <div class="project-description">
+              <p>Built an NLP-powered tool that spots fraudulent job listings with 92% accuracy using advanced ML models. Created a user-friendly Flask application that scans job descriptions in real-time and flags suspicious content.</p>
             </div>
+            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+          </div>
         </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">C/C++</span>
-                        <span class="skill-tag">MATLAB</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Science</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Exploratory Data Analysis</span>
-                        <span class="skill-tag">Model Evaluation</span>
-                        <span class="skill-tag">Feature Selection</span>
-                        <span class="skill-tag">Predictive Modelling</span>
-                        <span class="skill-tag">Time Series Analysis</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Python Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Seaborn</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>R Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">dplyr</span>
-                        <span class="skill-tag">tidyr</span>
-                        <span class="skill-tag">knitr</span>
-                        <span class="skill-tag">ggplot2</span>
-                        <span class="skill-tag">caret</span>
-                        <span class="skill-tag">h2o</span>
-                        <span class="skill-tag">readR</span>
-                        <span class="skill-tag">tibble</span>
-                        <span class="skill-tag">plotly</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Statistical Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Hypothesis Testing</span>
-                        <span class="skill-tag">Confidence Intervals</span>
-                        <span class="skill-tag">Correlation Matrices</span>
-                        <span class="skill-tag">Outlier Detection</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Database</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">ETL</span>
-                        <span class="skill-tag">Database Design</span>
-                        <span class="skill-tag">JDBC</span>
-                        <span class="skill-tag">Microsoft Azure</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">BigQuery</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Analysis Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">WEKA</span>
-                        <span class="skill-tag">Apache Spark</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>NLP & AI Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Tokenization</span>
-                        <span class="skill-tag">NER</span>
-                        <span class="skill-tag">TF-IDF</span>
-                        <span class="skill-tag">Word Embeddings</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">RAG</span>
-                    </div>
-                </div>
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">Predicting Customer Revenue</h3>
+            <div class="project-description">
+              <p>Developed a revenue prediction system for an online retailer using advanced regression techniques in R. Achieved 83% prediction accuracy through statistical validation and feature optimization, enabling targeted marketing campaigns.</p>
             </div>
+            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+          </div>
         </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications">
-        <div class="container">
-            <h2>Certifications</h2>
-            <div class="certifications-list">
-                <div class="certification-item">
-                    <div class="certification-name">Google Data Analytics Professional Certification</div>
-                </div>
-                <div class="certification-item">
-                    <div class="certification-name">Automation 360: Advanced Certification</div>
-                </div>
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">Hospital Readmission Prediction</h3>
+            <div class="project-description">
+              <p>Created a model that predicts patient readmissions with 88% accuracy using XGBoost. The system analyzes patient medical histories to identify high-risk individuals, potentially saving hospitals millions in preventable care costs.</p>
             </div>
+            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+          </div>
         </div>
-    </section>
-
-    <!-- CONTACT SECTION WITH CONTACT FORM -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu">tushar.jayendra.mhatre-1@ou.edu</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+14052238789">+1 (405) 223-8789</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank">linkedin.com/in/tushar-mhatre24/</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/TusharM24" target="_blank">github.com/TusharM24</a>
-                    </div>
-                </div>
-
-                <!-- The new contact form -->
-                <form class="contact-form" onsubmit="return false;">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required />
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required />
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">Database Design for Patient Assistance Network</h3>
+            <div class="project-description">
+              <p>Designed and implemented a complete database system using Azure SQL and Java JDBC for a healthcare nonprofit. The solution includes optimized indexing and query structures that improved data retrieval speed by 40%.</p>
             </div>
+            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Tushar Jayendra Mhatre. All rights reserved.</p>
+        <div class="project-card">
+          <div class="project-content">
+            <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
+            <div class="project-description">
+              <p>Created an interactive Tableau dashboard that revealed key profit drivers for a retail chain. The visualization identified underperforming product categories and highlighted demographic segments with 15% growth potential.</p>
+            </div>
+            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- SCRIPTS -->
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">MATLAB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Data Science</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Exploratory Data Analysis</span>
+            <span class="skill-tag">Model Evaluation</span>
+            <span class="skill-tag">Feature Selection</span>
+            <span class="skill-tag">Predictive Modelling</span>
+            <span class="skill-tag">Time Series Analysis</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Python Libraries</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Seaborn</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>R Libraries</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">dplyr</span>
+            <span class="skill-tag">tidyr</span>
+            <span class="skill-tag">knitr</span>
+            <span class="skill-tag">ggplot2</span>
+            <span class="skill-tag">caret</span>
+            <span class="skill-tag">h2o</span>
+            <span class="skill-tag">readR</span>
+            <span class="skill-tag">tibble</span>
+            <span class="skill-tag">plotly</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Statistical Analysis</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Hypothesis Testing</span>
+            <span class="skill-tag">Confidence Intervals</span>
+            <span class="skill-tag">Correlation Matrices</span>
+            <span class="skill-tag">Outlier Detection</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Database</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">ETL</span>
+            <span class="skill-tag">Database Design</span>
+            <span class="skill-tag">JDBC</span>
+            <span class="skill-tag">Microsoft Azure</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">BigQuery</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Data Analysis Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">WEKA</span>
+            <span class="skill-tag">Apache Spark</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>NLP & AI Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Tokenization</span>
+            <span class="skill-tag">NER</span>
+            <span class="skill-tag">TF-IDF</span>
+            <span class="skill-tag">Word Embeddings</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">Ollama</span>
+            <span class="skill-tag">RAG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="certifications-list">
+        <div class="certification-item">
+          <div class="certification-name">Google Data Analytics Professional Certification</div>
+        </div>
+        <div class="certification-item">
+          <div class="certification-name">Automation 360: Advanced Certification</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION WITH CONTACT FORM -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:tushar.jayendra.mhatre-1@ou.edu">tushar.jayendra.mhatre-1@ou.edu</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+14052238789">+1 (405) 223-8789</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank">linkedin.com/in/tushar-mhatre24/</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/TusharM24" target="_blank">github.com/TusharM24</a>
+          </div>
+        </div>
+
+        <!-- The contact form -->
+        <form class="contact-form" onsubmit="return false;">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Tushar Jayendra Mhatre. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
+      });
+    });
 
-        // Dark mode toggle
-        const themeCheckbox = document.getElementById('theme-checkbox');
-        themeCheckbox.addEventListener('change', () => {
-            document.body.classList.toggle('dark-theme');
-        });
+    // Collapsible experience sections
+    const collapsibleToggles = document.querySelectorAll('.collapsible-toggle');
+    collapsibleToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const targetSelector = toggle.getAttribute('data-target');
+        const content = document.querySelector(targetSelector);
+        if (content) {
+          content.classList.toggle('active');
+          // Update toggle text
+          toggle.textContent = content.classList.contains('active') ? 'Show less' : 'Show more';
+        }
+      });
+    });
 
-        // Collapsible experience sections
-        const collapsibleToggles = document.querySelectorAll('.collapsible-toggle');
-        collapsibleToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const targetSelector = toggle.getAttribute('data-target');
-                const content = document.querySelector(targetSelector);
-                if (content) {
-                    content.classList.toggle('active');
-                    // Update toggle text
-                    toggle.textContent = content.classList.contains('active') ? 'Show less' : 'Show more';
-                }
-            });
-        });
+    // (Optional) Contact form submission
+    document.querySelector('.contact-form').addEventListener('submit', (event) => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
 
-        // (Optional) Contact form submission
-        // Here we prevent the default submission (return false; in onsubmit).
-        // You can add an AJAX call or fetch to handle submissions asynchronously.
-        document.querySelector('.contact-form').addEventListener('submit', (event) => {
-            // Example: console.log form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            console.log('Contact form submitted:', { name, email, message });
+      console.log('Contact form submitted:', { name, email, message });
+      alert('Message sent!');
 
-            // Clear the form
-            event.target.reset();
-            alert('Message sent!');
-        });
-    </script>
+      // Clear the form
+      event.target.reset();
+    });
+  </script>
 </body>
 </html>
