@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tushar Mhatre - Data Science Portfolio</title>
-  
-  <!-- Vanta & Three.js scripts must be loaded BEFORE you init VANTA.WAVES -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+
+  <!-- 1. Load Three.js & Vanta Waves before initializing them -->
+  <script src="three.r134.min.js"></script>
+  <script src="vanta.waves.min.js"></script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
@@ -26,7 +26,7 @@
     }
 
     /*-----------------------------------
-      GENERAL LAYOUT & BASE STYLES
+      BASE STYLES
     -------------------------------------*/
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,23 +48,22 @@
       HEADER WITH VANTA WAVES
     -------------------------------------*/
     header {
-      position: relative; /* So Vanta can size properly */
-      height: 100vh;      /* Full-screen hero effect */
-      background: none;   /* Remove any existing background image */
-      color: #fff;        /* Waves are usually dark, so white text stands out */
-      padding: 2rem 0;
+      position: relative;      /* Vanta needs this to size properly */
+      min-height: 50vh;        /* Enough space to show waves & content; adjust as needed */
+      background: none;        /* Remove any static background image */
+      color: #fff;             /* Waves are often dark, so white text stands out */
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;        /* Ensures the wave canvas doesn't exceed the header boundary */
     }
 
     .header-content {
-      position: relative; /* Ensures text is above the waves canvas */
+      position: relative;      /* So the content is above the wave canvas */
       z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      /* If you want to vertically center content in the full-screen header:
-         justify-content: center; min-height: 100%; */
+      padding: 2rem 0;         /* Padding to create space around your content */
     }
 
     .header-content h1 {
@@ -85,7 +84,7 @@
     }
 
     .social-links a {
-      color: white;
+      color: #fff;
       font-size: 1.5rem;
       transition: color 0.3s;
       text-decoration: none;
@@ -95,6 +94,19 @@
       color: var(--accent-color);
     }
 
+    /* Profile photo if you want it in the header */
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 1rem; /* Space below the photo */
+    }
+
+    /*-----------------------------------
+      NAVIGATION
+    -------------------------------------*/
     nav {
       background-color: var(--primary-color);
       padding: 1rem 0;
@@ -131,6 +143,9 @@
       text-decoration: underline;
     }
 
+    /*-----------------------------------
+      SECTIONS (ABOUT, EDUCATION, ETC.)
+    -------------------------------------*/
     section {
       padding: 3rem 0;
     }
@@ -144,6 +159,7 @@
       border-bottom: 2px solid var(--primary-color);
     }
 
+    /* CTA */
     .cta-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -167,6 +183,7 @@
       background-color: var(--secondary-color);
     }
 
+    /* About */
     .about-content {
       display: flex;
       flex-direction: column;
@@ -178,6 +195,7 @@
       max-width: 800px;
     }
 
+    /* Education & Experience Items */
     .education-item,
     .experience-item {
       margin-bottom: 2rem;
@@ -213,7 +231,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* COLLAPSIBLE BODY FOR EXPERIENCE */
+    /* Collapsible sections */
     .collapsible-body {
       display: none;
       margin-top: 1rem;
@@ -229,6 +247,7 @@
       text-decoration: underline;
     }
 
+    /* Projects Grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -258,16 +277,6 @@
       flex-direction: column;
     }
 
-    /* OPTIONAL: If you still want a profile photo somewhere else, define it here
-       But we've removed the <img> in the header for the Vanta effect. */
-    .profile-photo {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #fff;
-    }
-
     .project-title {
       font-size: 1.3rem;
       color: var(--secondary-color);
@@ -294,6 +303,7 @@
       background-color: var(--secondary-color);
     }
 
+    /* Skills Grid, etc. */
     .skills-container {
       display: flex;
       flex-wrap: wrap;
@@ -333,6 +343,7 @@
       white-space: nowrap;
     }
 
+    /* Certifications */
     .certifications-list {
       display: flex;
       flex-direction: column;
@@ -358,6 +369,7 @@
       color: var(--secondary-color);
     }
 
+    /* Contact Section */
     .contact-container {
       max-width: 800px;
       margin: 0 auto;
@@ -395,7 +407,6 @@
       color: var(--primary-color);
     }
 
-    /* CONTACT FORM STYLES */
     .contact-form {
       width: 100%;
       max-width: 700px;
@@ -432,6 +443,7 @@
       background-color: var(--secondary-color);
     }
 
+    /* Footer */
     footer {
       background-color: var(--secondary-color);
       color: white;
@@ -440,20 +452,15 @@
       margin-top: 2rem;
     }
 
+    /*-----------------------------------
+      RESPONSIVE DESIGN
+    -------------------------------------*/
     @media (max-width: 768px) {
       .header-content h1 {
         font-size: 2rem;
       }
-      .header-content .title {
-        font-size: 1.2rem;
-      }
       .nav-links li {
         margin: 0 0.5rem;
-      }
-      .education-header,
-      .experience-header {
-        flex-direction: column;
-        gap: 0.5rem;
       }
       .projects-grid {
         grid-template-columns: 1fr;
@@ -467,22 +474,18 @@
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- HEADER with Vanta -->
   <header id="home">
     <div class="container header-content">
-      <!-- Removed the <img> tag here, so we rely on Vanta Waves in background -->
+      <!-- Here is your photo if you want it. Otherwise comment out the <img>. -->
+      <img src="pic.jpeg" alt="Your Photo" class="profile-photo" />
       <h1>Tushar Jayendra Mhatre</h1>
-      <!--<div class="title">Data Scientist | Data Analyst | Machine Learning Engineer</div>-->
+      <!-- <div class="title">Data Scientist | Data Analyst | Machine Learning Engineer</div> -->
+
       <div class="social-links">
-        <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/TusharM24" target="_blank" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+        <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/TusharM24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" title="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </header>
@@ -510,12 +513,11 @@
       <div class="about-content">
         <div class="about-text">
           <p>
-            Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights. I’ve worked on numerous projects that showcase my skills as a proficient data science and machine learning engineer. I also assist in research at my university, where I leverage machine learning and statistical analysis as key tools to drive my work. I’m passionate about building intelligent systems that make a tangible impact, and I thrive at the intersection of innovative AI techniques and practical business solutions. When I’m not diving into datasets, you’ll find me exploring new technologies, reading novels, watching sci-fi movies or hiking to clear my mind and spark fresh ideas.
+            <!-- Your existing About Me text... -->
+            Hey there! I'm a data enthusiast with a knack for turning complex problems into actionable insights...
           </p>
           <div class="cta-buttons">
-            <a href="Resume-TusharM.pdf" class="cta-button" target="_blank">
-              <i class="fas fa-file-pdf"></i> View Resume
-            </a>
+            <a href="Resume-TusharM.pdf" class="cta-button" target="_blank"><i class="fas fa-file-pdf"></i> View Resume</a>
           </div>
         </div>
       </div>
@@ -523,215 +525,19 @@
   </section>
 
   <!-- EDUCATION SECTION -->
-  <section id="education">
-    <div class="container">
-      <h2>Education</h2>
-
-      <div class="education-item">
-        <div class="education-header">
-          <div class="institution">University of Oklahoma</div>
-          <div class="date">August 2023 - May 2025</div>
-        </div>
-        <div class="degree">Master's, Data Science</div>
-        <div class="gpa">GPA: 3.97</div>
-
-        <!-- Collapsible: Relevant Courses -->
-        <div class="collapsible-toggle" data-target="#ou-courses">Relevant Courses</div>
-        <div class="collapsible-body" id="ou-courses">
-          <ul>
-            <li>Machine Learning</li>
-            <li>Data Mining</li>
-            <li>Advanced Deep Learning</li>
-            <!-- ... -->
-          </ul>
-        </div>
-
-        <!-- Collapsible: Achievements -->
-        <div class="collapsible-toggle" data-target="#ou-achievements">Achievements</div>
-        <div class="collapsible-body" id="ou-achievements">
-          <ul>
-            <li>Dean's List 2024</li>
-            <li>Research Grant Award</li>
-            <!-- ... -->
-          </ul>
-        </div>
-      </div>
-
-      <div class="education-item">
-        <div class="education-header">
-          <div class="institution">Savitribai Phule Pune University</div>
-          <div class="date">June 2016 - May 2020</div>
-        </div>
-        <div class="degree">Bachelor's, Electronics and Telecommunication Engineering</div>
-        <div class="gpa">GPA: 7.6</div>
-
-        <!-- Collapsible: Relevant Courses -->
-        <div class="collapsible-toggle" data-target="#sppu-courses">Relevant Courses</div>
-        <div class="collapsible-body" id="sppu-courses">
-          <ul>
-            <li>Signals & Systems</li>
-            <li>Embedded Systems</li>
-            <li>Data Communication</li>
-            <!-- etc. -->
-          </ul>
-        </div>
-
-        <!-- Collapsible: Achievements -->
-        <div class="collapsible-toggle" data-target="#sppu-achievements">Achievements</div>
-        <div class="collapsible-body" id="sppu-achievements">
-          <ul>
-            <li>University Top 10% in E&TC</li>
-            <li>Project Expo Winner 2019</li>
-            <!-- etc. -->
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ...Same code as you had for education... -->
 
   <!-- EXPERIENCE SECTION -->
-  <section id="experience">
-    <div class="container">
-      <h2>Professional Experience</h2>
-      <!-- Experience item 1 -->
-      <div class="experience-item">
-        <div class="experience-header">
-          <div class="company">University of Oklahoma</div>
-          <div class="date">February 2024 - Present</div>
-        </div>
-        <div class="position">Graduate Research Assistant</div>
-
-        <div class="collapsible-toggle" data-target="#exp1">Responsibilities</div>
-        <div class="collapsible-body" id="exp1">
-          <ul>
-            <li>Analyzed and transformed complex EEG data using Python and Matlab to create B.I.D.S. compliant structures for research.</li>
-            <li>Researched on identifying different types of Cortical Activity patterns (CAPs) in the brain with the help of various unsupervised machine learning algorithms.</li>
-            <li>Using Annova, t-tests, Bonferroni correction, and other statistical methods to identify statistically significant differences...</li>
-            <li>Visualizing CAP transitions and their metrics using figures like bar plots, heat maps, and 3D cortical activity maps.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Experience item 2 -->
-      <div class="experience-item">
-        <div class="experience-header">
-          <div class="company">Tata Consultancy Services</div>
-          <div class="date">February 2021 - July 2023</div>
-        </div>
-        <div class="position">Software Engineer</div>
-
-        <div class="collapsible-toggle" data-target="#exp2">Responsibilities</div>
-        <div class="collapsible-body" id="exp2">
-          <ul>
-            <li>Designed intelligent RPA solutions using the Automation 360 tool...</li>
-            <li>Developed and implemented automation workflows using machine learning techniques...</li>
-            <li>Engaged directly with clients to understand requirements and deliver scalable, data-driven solutions.</li>
-            <li>Received the 'On the Spot' Award for consistently delivering projects ahead of schedule.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ...Same code as you had for experience... -->
 
   <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-
-      <!-- MACHINE LEARNING SUBCATEGORY -->
-      <h3>Machine Learning</h3>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Fake Job Detection Portal</h3>
-            <div class="project-description">
-              <p>Built an NLP-powered tool that spots fraudulent job listings with 92% accuracy...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Predicting Customer Revenue</h3>
-            <div class="project-description">
-              <p>Developed a revenue prediction system for an online retailer using advanced regression...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Hospital Readmission Prediction</h3>
-            <div class="project-description">
-              <p>Created a model that predicts patient readmissions with 88% accuracy...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-
-        <!-- NEW PROJECT: Predicting-Hospital-length-of-Stay -->
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Predicting Hospital Length of Stay</h3>
-            <div class="project-description">
-              <p>This project aims to analyze medical data to predict the length of stay (LOS) of patients...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- DATABASE SUBCATEGORY -->
-      <h3>Database</h3>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Database Design for Patient Assistance Network</h3>
-            <div class="project-description">
-              <p>Designed and implemented a complete database system using Azure SQL and Java JDBC...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- TABLEAU SUBCATEGORY -->
-      <h3>Tableau</h3>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-content">
-            <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
-            <div class="project-description">
-              <p>Created an interactive Tableau dashboard that revealed key profit drivers...</p>
-            </div>
-            <a href="https://github.com/TusharM24" class="project-link" target="_blank">View Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ...Your Machine Learning, Database, Tableau subcategories... -->
 
   <!-- SKILLS SECTION -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <!-- ... your skill categories and tags ... -->
-      </div>
-    </div>
-  </section>
+  <!-- ...Your skills content... -->
 
   <!-- CERTIFICATIONS SECTION -->
-  <section id="certifications">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="certifications-list">
-        <!-- ... your certification items ... -->
-      </div>
-    </div>
-  </section>
+  <!-- ...Your certifications content... -->
 
   <!-- CONTACT SECTION -->
   <section id="contact">
@@ -739,34 +545,15 @@
       <h2>Contact Me</h2>
       <div class="contact-container">
         <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:tushar.jayendra.mhatre-1@ou.edu">tushar.jayendra.mhatre-1@ou.edu</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+14052238789">+1 (405) 223-8789</a>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <a href="https://linkedin.com/in/tushar-mhatre24/" target="_blank">linkedin.com/in/tushar-mhatre24/</a>
-          </div>
-          <div class="contact-item">
-            <i class="fab fa-github"></i>
-            <a href="https://github.com/TusharM24" target="_blank">github.com/TusharM24</a>
-          </div>
+          <!-- ...Your contact items... -->
         </div>
-
         <form class="contact-form" onsubmit="return false;">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
-
           <label for="email">Email</label>
           <input type="email" id="email" name="email" required />
-
           <label for="message">Message</label>
           <textarea id="message" name="message" rows="5" required></textarea>
-
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -807,7 +594,7 @@
       });
     });
 
-    // Simple contact form submission (client-side only)
+    // Contact form submission (just logs data here)
     document.querySelector('.contact-form').addEventListener('submit', (event) => {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
@@ -815,12 +602,10 @@
 
       console.log('Contact form submitted:', { name, email, message });
       alert('Message sent!');
-
-      // Clear the form
       event.target.reset();
     });
 
-    // Initialize Vanta Waves on #home (the header)
+    // 2. Initialize Vanta Waves on the header
     VANTA.WAVES({
       el: "#home",
       mouseControls: true,
@@ -830,7 +615,7 @@
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x93ab1, // you can change this hex color
+      color: 0x93ab1,
       shininess: 26.00
     });
   </script>
