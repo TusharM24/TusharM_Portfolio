@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tushar Mhatre - Data Science Portfolio</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <script src="three.r134.min.js"></script>
+  <script src="vanta.waves.min.js"></script>
   <style>
     /*-----------------------------------
       COLOR VARIABLES
@@ -39,22 +42,22 @@
     }
 
     header {
-  /* Add a background image that fills the header */
-  background: url("bg1.png") center center / cover no-repeat;
-
-  color: #fff;
+  position: relative; /* So the Vanta script can size properly */
+  background: none;   /* Remove any existing background */
+  color: #fff;        /* Text color to contrast waves */
   padding: 2rem 0;
-  position: relative;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.header-content {
+  position: relative; /* Ensure content is above the waves */
+  z-index: 1;         /* So text, image, etc. appear on top of the wave effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
 
     .header-content h1 {
       font-size: 2.5rem;
@@ -916,6 +919,19 @@
       // Clear the form
       event.target.reset();
     });
+     // Initialize Vanta Waves on #home (the <header>):
+  VANTA.WAVES({
+    el: "#home",        // the ID of your header
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0x93ab1,     // hex color (in 0x format)
+    shininess: 26.00
+  })
   </script>
 </body>
 </html>
