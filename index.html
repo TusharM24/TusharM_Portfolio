@@ -325,6 +325,12 @@
       left: 0;
     }
 
+        /* Hides the detailed content initially */
+    .hidden {
+      display: none;
+    }
+
+    
     .timeline-item:nth-child(even) {
       left: 50%;
     }
@@ -1102,7 +1108,9 @@
             <div class="timeline-date">February 2024 - Present</div>
             <h3 class="timeline-title">Graduate Research Assistant</h3>
             <p>University of Oklahoma</p>
-            <div class="timeline-description">
+             <!-- Add this button -->
+            <button class="expand-btn">Show More</button>
+            <div class="timeline-description hidden">
               <ul>
                 <li>Analyzed complex EEG data with Python and MATLAB to produce B.I.D.S.-compliant structures.</li>
                 <li>Investigated Cortical Activity Patterns (CAPs) using unsupervised ML algorithms.</li>
@@ -1119,7 +1127,8 @@
             <div class="timeline-date">February 2021 - July 2023</div>
             <h3 class="timeline-title">Software Engineer</h3>
             <p>Tata Consultancy Services, Pune, India</p>
-            <div class="timeline-description">
+            <button class="expand-btn">Show More</button>
+            <div class="timeline-description hidden">
               <ul>
                 <li>Designed and deployed RPA solutions using Automation 360, VBA scripts, and SQL queries.</li>
                 <li>Developed and implemented automation workflows for SAP, Winshuttle, and Mainframe systems.</li>
@@ -1514,6 +1523,19 @@
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const expandButtons = document.querySelectorAll('.expand-btn');
+  expandButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const details = button.nextElementSibling; // the .timeline-description
+      details.classList.toggle('hidden');
+      button.textContent = details.classList.contains('hidden') 
+        ? 'Show More' 
+        : 'Show Less';
+    });
+  });
+});
   </script>
 </body>
 </html>
