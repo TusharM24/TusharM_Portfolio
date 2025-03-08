@@ -959,13 +959,20 @@
         flex-direction: column;
       }
     }
-    /* Container that holds the 3D perspective */
+/* Wrap flip cards in a flex container */
+.education-cards {
+  display: flex;
+  flex-wrap: wrap; /* so they wrap on smaller screens */
+  gap: 30px;       /* space between cards */
+  justify-content: center;
+}
+
+/* Keep each card from stretching 100% */
 .flip-card {
-  background-color: transparent;
+  max-width: 400px; /* or some suitable width */
   width: 100%;
-  max-width: 400px; /* Adjust as desired */
-  perspective: 1000px; /* Important for 3D flip */
-  margin: 0 auto 30px; /* Center each card, add spacing */
+  perspective: 1000px;
+  margin-bottom: 30px; /* optional spacing at bottom */
 }
 
 /* Inner wrapper to apply the rotation */
