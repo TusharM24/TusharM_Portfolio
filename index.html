@@ -962,10 +962,9 @@
 
 /* Keep each card from stretching 100% */
 .flip-card {
-  max-width: 400px; /* or some suitable width */
-  width: 100%;
+  width: 400px;       /* Fixed width for horizontal layout */
+  max-width: 100%;    /* Responsive fallback */
   perspective: 1000px;
-  margin-bottom: 30px; /* optional spacing at bottom */
 }
 
 /* Inner wrapper to apply the rotation */
