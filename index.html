@@ -971,7 +971,7 @@
   width: 400px;       /* Fixed width for horizontal layout */
   max-width: 100%;    /* Responsive fallback */
   perspective: 1000px;
-  min-height: 450px; 
+  min-height: 380px; 
 }
 
 /* Inner container of the flip card */
@@ -995,14 +995,36 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Back side rotates for flip effect */
 .flip-card-back {
-  background-color: var(--secondary-color);
+  background: linear-gradient(135deg, #2980b9, #6dd5fa);
   color: #fff;
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+.flip-card-back h4 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flip-card-back li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
 
 /* Card front uses your original .education-card styling */
 .flip-card-front {
