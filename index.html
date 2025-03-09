@@ -996,7 +996,7 @@
 }
 
 .flip-card-back {
-  background: linear-gradient(135deg, #2980b9, #6dd5fa);
+  background: linear-gradient(135deg, var(--primary-color), #5dade2);
   color: #fff;
   transform: rotateY(180deg);
   padding: 30px;
@@ -1005,7 +1005,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-back h4 {
@@ -1025,6 +1027,7 @@
   margin-bottom: 8px;
   font-size: 1rem;
 }
+
 
 /* Card front uses your original .education-card styling */
 .flip-card-front {
