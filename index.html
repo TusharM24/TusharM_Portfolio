@@ -260,33 +260,45 @@ section {
   background-color: var(--secondary-color);
 }
 
-/* ABOUT SECTION */
+/* ---- ABOUT SECTION ---- */
 .about-content {
   display: flex;
-  align-items: flex-start;
-  gap: 50px;
+  flex-wrap: wrap;      /* Allows stacking on smaller screens */
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .about-text {
-  flex: 1;
+  flex: 1 1 400px;      /* Ensure it shrinks/grows while maintaining min width */
 }
 
 .about-text p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.about-bullets {
+  list-style: disc inside;
+  margin-bottom: 1rem;
+}
+
+.about-bullets li {
+  margin-bottom: 0.5rem;
 }
 
 .about-stats {
-  flex: 1;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .stat-box {
   background-color: #fff;
   border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 20px;
+  padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .stat-box:hover {
@@ -295,14 +307,21 @@ section {
 }
 
 .stat-box h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--dark-color); /* or whichever color var you prefer */
 }
 
 .stat-box p {
-  font-size: 1rem;
-  color: #7f8c8d;
+  font-size: 0.95rem;
+  color: #7f8c8d;         /* a softer text color */
+}
+
+/* RESPONSIVE: Stack columns on narrower screens */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
 }
 
 /* EXPERIENCE SECTION */
@@ -1126,57 +1145,48 @@ footer {
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>
-            I am a passionate Data Scientist with a strong background in machine learning, 
-            statistical analysis, and software engineering. Currently pursuing a Master's degree 
-            in Data Science at the University of Oklahoma with a GPA of 3.97.
-          </p>
-          <p>
-            My experience ranges from developing intelligent automation solutions at Tata 
-            Consultancy Services to conducting advanced research in neural networks and brain 
-            imaging at the University of Oklahoma. I'm particularly interested in applying 
-            deep learning techniques to solve complex problems in healthcare, business, 
-            and research.
-          </p>
-          <p>
-            I believe in creating data-driven solutions that provide actionable insights 
-            and deliver real value. My technical expertise combined with strong analytical 
-            skills enables me to transform data into meaningful information and 
-            strategic recommendations.
-          </p>
-        </div>
-        <div class="about-stats">
-          <div class="stat-box">
-            <h3>Research</h3>
-            <p>
-              Working on applying unsupervised ML approaches to EEG data, 
-              investigating Cortical Activity Patterns (CAPs) for advanced 
-              functional connectivity analysis.
-            </p>
-          </div>
-          <div class="stat-box">
-            <h3>Current Project</h3>
-            <p>
-              Developing an intelligent research paper analysis system leveraging 
-              Large Language Models with Retrieval-Augmented Generation (RAG) architecture.
-            </p>
-          </div>
-          <div class="stat-box">
-            <h3>Recognition</h3>
-            <p>
-              Received the 'On the Spot' Award at TCS for consistently delivering 
-              projects ahead of schedule.
-            </p>
-          </div>
-        </div>
+  <section id="about" class="about container">
+  <h2 class="section-title">About Me</h2>
+  
+  <div class="about-content">
+    <!-- Left column: main intro & bullets -->
+    <div class="about-text">
+      <p>
+        I'm a Data Scientist with a passion for transforming raw data into actionable insights.
+        Leveraging expertise in machine learning, statistical analysis, and software engineering,
+        I enjoy crafting data-driven solutions that address real-world challenges.
+      </p>
+
+      <ul class="about-bullets">
+        <li>2+ years in data analysis & automation (Tata Consultancy Services).</li>
+        <li>Current research in neural networks & EEG data at the University of Oklahoma.</li>
+        <li>Recipient of 'On the Spot' award for timely project delivery.</li>
+      </ul>
+
+      <p>
+        My approach combines strong analytical skills with creative problem-solving, 
+        ensuring every project I undertake not only handles data effectively, 
+        but also delivers measurable value.
+      </p>
+    </div>
+
+    <!-- Right column: highlight boxes or mini-stats -->
+    <div class="about-stats">
+      <div class="stat-box">
+        <h3>Research Focus</h3>
+        <p>Unsupervised ML on EEG data; analyzing Cortical Activity Patterns to reveal novel insights.</p>
+      </div>
+      <div class="stat-box">
+        <h3>Current Projects</h3>
+        <p>Building an intelligent research-paper analysis system using large language models & RAG.</p>
+      </div>
+      <div class="stat-box">
+        <h3>Achievements</h3>
+        <p>'On the Spot' Award at TCS for consistently delivering ahead of schedule.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Experience Section -->
   <section id="experience" class="experience">
