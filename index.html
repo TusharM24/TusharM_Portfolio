@@ -7,16 +7,17 @@
   <!-- FontAwesome (for icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    :root {
-  --primary-color: #4ABDAC;   /* Teal */
-  --secondary-color: #FC4A7A; /* Pinkish-Red */
-  --accent-color: #F7B733;    /* Bright Gold/Yellow */
-  --light-color: #DFDCE3;     /* Pale Gray Background */
-  --dark-color: #2C3E50;      /* Dark Text Color */
+  :root {
+  /* Adjust these variables if you want to swap roles (header vs. footer vs. highlight, etc.) */
+  --primary-color: #4ABDAC;   /* teal */
+  --secondary-color: #FC4A7A; /* pinkish-red */
+  --accent-color: #F7B733;    /* bright gold */
+  --light-color: #DFDCE3;     /* pale gray background */
+  --dark-color: #2C3E50;      /* deep gray for text */
   --transition: all 0.3s ease;
-  --progress: 90deg;          /* Used for radial skill arcs */
 }
 
+/* UNIVERSALS */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +25,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body & Containers */
 body {
   background-color: var(--light-color);
   color: var(--dark-color);
@@ -38,9 +38,9 @@ body {
   padding: 0 20px;
 }
 
-/* Navigation */
+/* HEADER */
 header {
-  background-color: var(--dark-color);
+  background-color: var(--primary-color); /* Updated from old dark-color */
   padding: 15px 0;
   position: fixed;
   width: 100%;
@@ -56,7 +56,7 @@ nav {
 }
 
 .logo {
-  color: white;
+  color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
   letter-spacing: 1px;
@@ -72,67 +72,59 @@ nav {
 }
 
 .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition);
   position: relative;
 }
 
-.nav-links a:after {
+.nav-links a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   transition: var(--transition);
 }
 
-.nav-links a:hover:after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
 .hamburger {
   display: none;
   cursor: pointer;
-  color: white;
+  color: #fff;
   font-size: 1.5rem;
 }
 
-/* Hero Section */
+/* HERO SECTION */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px; /* so it sits below fixed header */
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: white;
+  padding-top: 80px; /* accommodate fixed header */
+  background-color: var(--primary-color); /* Removed the gradient */
+  color: #fff;
   position: relative;
   overflow: hidden;
 }
 
+/* Remove any hero:before overlay that had a gradient or image */
 .hero:before {
-  /* Subtle background overlay effect */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Example placeholder, or remove this if not needed */
-  background: url('/api/placeholder/800/600') center/cover no-repeat;
-  opacity: 0.1;
+  display: none;
 }
 
 .hero-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   position: relative;
   z-index: 1;
-  width: 100%;
 }
 
 .hero-text {
@@ -146,7 +138,7 @@ nav {
 }
 
 .hero h1 span {
-  color: var(--primary-color);
+  color: var(--secondary-color); /* or accent if you prefer */
 }
 
 .hero p {
@@ -184,22 +176,22 @@ nav {
   height: 40px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: #fff;
   font-size: 1.2rem;
   transition: var(--transition);
   text-decoration: none;
 }
 
 .social-icon:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   transform: translateY(-5px);
 }
 
 .btn {
   display: inline-block;
   padding: 12px 30px;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--secondary-color); /* or primary-color */
+  color: #fff;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
@@ -209,27 +201,26 @@ nav {
   margin-right: 15px;
 }
 
-/* Slightly darker teal on hover for .btn */
 .btn:hover {
-  background-color: #369E8E; /* A darker shade of #4ABDAC */
+  background-color: #f32c62; /* darker shade of #FC4A7A */
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary {
   background-color: transparent;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--secondary-color);
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--secondary-color);
+  color: #fff;
 }
 
 .expand-btn {
   display: inline-block;
   margin-top: 10px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -241,12 +232,12 @@ nav {
 }
 
 .expand-btn:hover {
-  background-color: #369E8E;
+  background-color: #f32c62;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Section base styles */
+/* SECTION BASE STYLES */
 section {
   padding: 100px 0;
 }
@@ -258,7 +249,7 @@ section {
   position: relative;
 }
 
-.section-title:after {
+.section-title::after {
   content: '';
   position: absolute;
   bottom: -15px;
@@ -266,10 +257,10 @@ section {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
-/* About Section */
+/* ABOUT SECTION */
 .about-content {
   display: flex;
   align-items: flex-start;
@@ -290,7 +281,7 @@ section {
 }
 
 .stat-box {
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   padding: 30px;
   margin-bottom: 20px;
@@ -314,9 +305,9 @@ section {
   color: #7f8c8d;
 }
 
-/* Experience Section */
+/* EXPERIENCE SECTION */
 .experience {
-  background-color: white;
+  background-color: #fff;
 }
 
 .timeline {
@@ -329,7 +320,7 @@ section {
   content: '';
   position: absolute;
   width: 4px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -346,13 +337,12 @@ section {
 .timeline-item:nth-child(odd) {
   left: 0;
 }
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
 
 .hidden {
   display: none;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
 }
 
 .timeline-item::after {
@@ -360,8 +350,8 @@ section {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: white;
-  border: 4px solid var(--primary-color);
+  background-color: #fff;
+  border: 4px solid var(--secondary-color);
   border-radius: 50%;
   top: 15px;
   z-index: 1;
@@ -370,14 +360,13 @@ section {
 .timeline-item:nth-child(odd)::after {
   right: -12px;
 }
-
 .timeline-item:nth-child(even)::after {
   left: -12px;
 }
 
 .timeline-content {
   padding: 20px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
@@ -390,7 +379,7 @@ section {
 
 .timeline-date {
   font-weight: bold;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
@@ -413,7 +402,7 @@ section {
   margin-bottom: 5px;
 }
 
-/* Skills Section */
+/* SKILLS SECTION */
 #skills {
   background-color: var(--light-color);
 }
@@ -426,7 +415,7 @@ section {
 }
 
 .skill-category {
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -449,7 +438,7 @@ section {
   position: relative;
 }
 
-.skill-category h3:after {
+.skill-category h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
@@ -457,7 +446,7 @@ section {
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .skill-tags {
@@ -469,8 +458,8 @@ section {
 .skill-tag {
   display: inline-block;
   padding: 8px 15px;
-  background-color: rgba(74, 189, 172, 0.1); /* Slightly tinted by primary color */
-  color: var(--primary-color);
+  background-color: rgba(252, 74, 122, 0.1);
+  color: var(--secondary-color);
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -478,12 +467,12 @@ section {
 }
 
 .skill-tag:hover {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--secondary-color);
+  color: #fff;
   transform: translateY(-3px);
 }
 
-/* Radial Skill Visualization */
+/* REMOVE GRADIENTS FROM RADIAL SKILLS, SIMPLIFY TO SOLID CIRCLE */
 .skill-radial-container {
   display: flex;
   flex-wrap: wrap;
@@ -507,16 +496,10 @@ section {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: conic-gradient(var(--primary-color) var(--progress), var(--light-color) 0deg);
-  transform: rotate(-90deg);
-}
-
-.skill-radial-progress::before {
-  content: '';
-  position: absolute;
-  inset: 10px;
-  border-radius: 50%;
-  background-color: white;
+  /* Instead of conic-gradient, use a simple solid fill. 
+     This won't show partial coverage, but meets "no gradient" requirement. */
+  background-color: var(--accent-color);
+  opacity: 0.8;
 }
 
 .skill-radial-content {
@@ -536,9 +519,9 @@ section {
   margin-top: 5px;
 }
 
-/* Education Section */
+/* EDUCATION SECTION */
 #education {
-  background-color: #ffffff;
+  background-color: #fff; 
   padding: 100px 0;
 }
 
@@ -575,8 +558,14 @@ section {
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
+.flip-card-front {
+  background-color: #fff;
+  z-index: 2;
+}
+
 .flip-card-back {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  /* Removed the gradient, apply secondary color only */
+  background-color: var(--secondary-color);
   color: #fff;
   transform: rotateY(180deg);
   padding: 30px;
@@ -585,9 +574,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .flip-card-back h4 {
@@ -608,18 +595,13 @@ section {
   font-size: 1rem;
 }
 
-.flip-card-front {
-  background-color: white;
-  z-index: 2;
-}
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
 .education-header {
   background-color: var(--dark-color);
-  color: white;
+  color: #fff;
   padding: 20px;
 }
 
@@ -633,7 +615,7 @@ section {
 }
 
 .education-field {
-  color: var(--primary-color);
+  color: var(--accent-color);
   font-size: 1rem;
   margin-bottom: 10px;
 }
@@ -660,7 +642,7 @@ section {
   margin: 15px 0;
 }
 
-/* Projects Section */
+/* PROJECTS SECTION */
 .projects {
   background-color: var(--light-color);
 }
@@ -672,7 +654,7 @@ section {
 }
 
 .project-card {
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -741,7 +723,7 @@ section {
   align-items: center;
   padding: 8px 15px;
   background-color: var(--dark-color);
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -756,9 +738,9 @@ section {
   margin-right: 5px;
 }
 
-/* Certifications Section */
+/* CERTIFICATIONS */
 .certifications {
-  background-color: white;
+  background-color: #fff;
 }
 
 .certification-cards {
@@ -769,7 +751,7 @@ section {
 }
 
 .certification-card {
-  background-color: white;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -788,13 +770,13 @@ section {
 .certification-logo {
   width: 60px;
   height: 60px;
-  background-color: rgba(74, 189, 172, 0.1);
+  background-color: rgba(252, 74, 122, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-size: 1.5rem;
 }
 
@@ -815,19 +797,19 @@ section {
 
 .certification-link {
   margin-left: 10px;
-  color: var(--secondary-color);
+  color: var(--accent-color);
   text-decoration: none;
   font-size: 1.2rem;
   transition: var(--transition);
 }
 
 .certification-link:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
-/* Contact Section */
+/* CONTACT SECTION */
 #contact {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .contact-content {
@@ -870,7 +852,7 @@ section {
 
 .contact-form {
   flex: 1;
-  background-color: white;
+  background-color: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -904,8 +886,8 @@ textarea.form-control {
   width: 100%;
   cursor: pointer;
   border: none;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--secondary-color);
+  color: #fff;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -915,15 +897,15 @@ textarea.form-control {
 }
 
 .btn-submit:hover {
-  background-color: #369E8E;
+  background-color: #f32c62;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
-  background-color: var(--dark-color);
-  color: white;
+  background-color: var(--primary-color); /* updated */
+  color: #fff;
   text-align: center;
   padding: 30px 0;
 }
@@ -945,13 +927,13 @@ footer {
 }
 
 .footer-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   transition: var(--transition);
 }
 
 .footer-links a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .footer-social {
@@ -963,7 +945,7 @@ footer {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Back to top button */
+/* BACK TO TOP BUTTON */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -971,8 +953,8 @@ footer {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--secondary-color);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -991,11 +973,11 @@ footer {
 }
 
 .back-to-top:hover {
-  background-color: var(--secondary-color);
+  background-color: #f32c62;
   transform: translateY(-5px);
 }
 
-/* Responsive */
+/* RESPONSIVE BREAKPOINTS */
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column;
@@ -1044,7 +1026,7 @@ footer {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: var(--dark-color);
+    background-color: var(--primary-color);
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
@@ -1080,6 +1062,7 @@ footer {
     height: 250px;
   }
 }
+
 
   </style>
 </head>
