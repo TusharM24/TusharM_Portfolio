@@ -103,11 +103,21 @@
 
     /* Hero Section */
     .hero {
+      background: 
+      linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
+      url('your-image-path.jpg'); /* Replace with your actual image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      
+      padding: 100px 20px; /* adjust as needed */
+      text-align: center;
       height: 100vh;
       display: flex;
       align-items: center;
       padding-top: 80px; /* so it sits below fixed header */
-      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--dark-color) 100%);
+      
       color: white;
       position: relative;
       overflow: hidden;
