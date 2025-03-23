@@ -923,6 +923,27 @@
   padding: 100px 0;
 }
 
+.flip-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flip-btn:hover {
+  background-color: #2980b9; /* a slightly darker shade */
+  transform: translateY(-3px);
+}
+
+
 /* Keep each card from stretching 100% */
 .flip-card {
   width: 400px;       /* Fixed width for horizontal layout */
