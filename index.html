@@ -225,25 +225,44 @@
     }
 
     .expand-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
+      display: inline-block;
+      margin-top: 10px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
 
-.expand-btn:hover {
-  background-color: #2980b9; /* slightly darker shade of the primary color */
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+    .expand-btn:hover {
+      background-color: #2980b9; /* slightly darker shade of the primary color */
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
 
+    /* Flip Button Styling for Education Cards */
+    .flip-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .flip-btn:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
 
     /* Section base styles */
     section {
@@ -267,8 +286,6 @@
       height: 4px;
       background-color: var(--primary-color);
     }
-
-    
 
     /* Experience Section */
     .experience {
@@ -303,12 +320,11 @@
       left: 0;
     }
 
-        /* Hides the detailed content initially */
+    /* Hides the detailed content initially */
     .hidden {
       display: none;
     }
 
-    
     .timeline-item:nth-child(even) {
       left: 50%;
     }
@@ -493,7 +509,7 @@
 
     /* Projects Section */
     .projects {
-      background-color: white);
+      background-color: white;
     }
 
     .projects-grid {
@@ -588,6 +604,11 @@
     }
 
     /* Education Section */
+    #education {
+      background-color: #ffffff;
+      padding: 100px 0;
+    }
+
     .education-cards {
       display: flex;
       flex-wrap: wrap;
@@ -595,133 +616,75 @@
       justify-content: center;
     }
 
-    .education-card {
-      background-color: white;
+    .flip-card {
+      width: 400px;
+      max-width: 100%;
+      perspective: 1000px;
+      min-height: 380px; 
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      min-height: 450px;
+      transition: var(--transition);
+      transform-style: preserve-3d;
+    }
+
+    /* Remove hover flip behavior and use click toggle instead */
+    /* .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    } */
+
+    .flip-card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      min-height: 450px;
+      backface-visibility: hidden;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      flex: 1;
-      min-width: 300px;
-      max-width: 400px;
-      transition: var(--transition);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
-    .education-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    .flip-card-back {
+      background: linear-gradient(135deg, var(--primary-color), #5dade2);
+      color: #fff;
+      transform: rotateY(180deg);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .education-header {
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 20px;
+    .flip-card-back h4 {
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .education-body {
-      padding: 20px;
+    .flip-card-back ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .education-degree {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .education-field {
-      color: var(--primary-color);
+    .flip-card-back li {
+      margin-bottom: 8px;
       font-size: 1rem;
-      margin-bottom: 10px;
     }
 
-    .education-date {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    .education-school {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-
-    .education-gpa {
-      font-size: 0.9rem;
-      color: #7f8c8d;
-    }
-
-    .divider {
-      height: 1px;
-      background-color: #e0e0e0;
-      margin: 15px 0;
-    }
-
-    /* Certifications Section */
-    .certifications {
-      background-color: var(--light-color);
-    }
-
-    .certification-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .certification-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      display: flex;
-      align-items: center;
-      width: 100%;
-      max-width: 500px;
-      transition: var(--transition);
-    }
-
-    .certification-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .certification-logo {
-      width: 60px;
-      height: 60px;
-      background-color: rgba(52, 152, 219, 0.1);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 20px;
-      color: var(--primary-color);
-      font-size: 1.5rem;
-    }
-
-    .certification-info {
-      flex: 1;
-    }
-
-    .certification-name {
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      color: var(--secondary-color);
-    }
-
-    .certification-issuer {
-      font-size: 0.9rem;
-      color: #7f8c8d;
-    }
-
-    .certification-link {
-      margin-left: 10px;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: var(--transition);
-    }
-
-    .certification-link:hover {
-      color: var(--secondary-color);
-    }
+    /* Projects Section (continued below) */
 
     /* Contact Section */
     .contact-content {
@@ -916,134 +879,6 @@
         flex-direction: column;
       }
     }
-
-/* Ensure the education section has a distinct background */
-#education {
-  background-color: #ffffff;  /* Set a contrasting background (white in this case) */
-  padding: 100px 0;
-}
-
-/* Keep each card from stretching 100% */
-.flip-card {
-  width: 400px;       /* Fixed width for horizontal layout */
-  max-width: 100%;    /* Responsive fallback */
-  perspective: 1000px;
-  min-height: 380px; 
-}
-
-/* Inner container of the flip card */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  min-height: 450px;  /* Make sure it can grow with content */
-  transition: var(--transition);
-  transform-style: preserve-3d;
-}
-
-/* Front and Back faces styling */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  min-height: 450px;  /* Maintain a consistent height for both sides */
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.flip-card-back {
-  background: linear-gradient(135deg, var(--primary-color), #5dade2);
-  color: #fff;
-  transform: rotateY(180deg);
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.flip-card-back h4 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.flip-card-back ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.flip-card-back li {
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-
-/* Card front uses your original .education-card styling */
-.flip-card-front {
-  background-color: white; /* or keep your existing background */
-  z-index: 2; /* Keep it on top until flipped */
-}
-
-
-
-/* Actual flipping behavior on hover */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: var(--secondary-color);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        margin: 10px 0;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .profile-image {
-        width: 250px;
-        height: 250px;
-      }
-    
-    }
   </style>
 </head>
 <body>
@@ -1063,7 +898,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        
         <div class="hamburger" id="hamburger">
           <i class="fas fa-bars"></i>
         </div>
@@ -1083,7 +917,8 @@
         </p>
         <div>
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="#projects" class="btn btn-secondary">View Projects</a>
+          <!-- Changed button text and link for Resume -->
+          <a href="resume.pdf" class="btn btn-secondary" target="_blank">View Resume</a>
         </div>
         <div class="social-icons">
           <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-icon" target="_blank">
@@ -1107,7 +942,7 @@
     </div>
   </section>
 
- <!-- Projects Section -->
+  <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
       <h2 class="section-title">Projects</h2>
@@ -1231,6 +1066,32 @@
           </div>
         </div>
 
+        <!-- New Project Card 6: Predicting Hospital Length of Stay -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="hospital_length_of_stay.jpeg" alt="Hospital Length of Stay Prediction">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Predicting Hospital Length of Stay</h3>
+            <p class="project-description">
+              This project analyzes medical data to predict the length of stay (LOS) of patients in a hospital. Various machine learning models are trained and evaluated based on demographic and medical information.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Seaborn</span>
+              <span class="project-tag">Matplotlib</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">XGBoost</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-Length-of-Stay" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1247,7 +1108,6 @@
             <div class="timeline-date">February 2024 - Present</div>
             <h3 class="timeline-title">Graduate Research Assistant</h3>
             <p>University of Oklahoma</p>
-             <!-- Add this button -->
             <button class="expand-btn">Responsibilities</button>
             <div class="timeline-description hidden">
               <ul>
@@ -1282,86 +1142,91 @@
     </div>
   </section>
 
-  
-
   <!-- Education Section -->
-<section id="education">
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-    <div class="education-cards">
-      <!-- Flip Card 1 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-          <div class="flip-card-front">
-            <div class="education-header">
-              <div class="education-degree">Master's</div>
-              <div class="education-date">August 2023 - May 2025</div>
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-cards">
+        <!-- Flip Card 1 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front side -->
+            <div class="flip-card-front">
+              <div class="education-header">
+                <div class="education-degree">Master's</div>
+                <div class="education-date">August 2023 - May 2025</div>
+              </div>
+              <div class="education-body">
+                <div class="education-school">University of Oklahoma</div>
+                <div class="education-field">Data Science</div>
+                <div class="education-gpa">GPA: 3.97</div>
+                <div class="divider"></div>
+                <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
+              </div>
+              <!-- Flip button added -->
+              <button class="flip-btn">Flip Card</button>
             </div>
-            <div class="education-body">
-              <div class="education-school">University of Oklahoma</div>
-              <div class="education-field">Data Science</div>
-              <div class="education-gpa">GPA: 3.97</div>
-              <div class="divider"></div>
-              <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
+            <!-- Back side -->
+            <div class="flip-card-back">
+              <h4>Relevant Courses</h4>
+              <ul>
+                <li>Advanced Machine Learning</li>
+                <li>Deep Learning & Neural Nets</li>
+                <li>Statistical Inference</li>
+              </ul>
+              <h4>Extracurriculars / Achievements</h4>
+              <ul>
+                <li>Data Science Club - President</li>
+                <li>Hackathon Winner, OU Datathon 2024</li>
+              </ul>
+              <!-- Flip button added -->
+              <button class="flip-btn">Flip Card</button>
             </div>
-          </div>
-          <!-- Back side -->
-          <div class="flip-card-back">
-            <h4>Relevant Courses</h4>
-            <ul>
-              <li>Advanced Machine Learning</li>
-              <li>Deep Learning & Neural Nets</li>
-              <li>Statistical Inference</li>
-            </ul>
-            <h4>Extracurriculars / Achievements</h4>
-            <ul>
-              <li>Data Science Club - President</li>
-              <li>Hackathon Winner, OU Datathon 2024</li>
-            </ul>
           </div>
         </div>
-      </div>
 
-      <!-- Flip Card 2 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-          <div class="flip-card-front">
-            <div class="education-header">
-              <div class="education-degree">Bachelor's</div>
-              <div class="education-date">June 2016 - May 2020</div>
+        <!-- Flip Card 2 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Front side -->
+            <div class="flip-card-front">
+              <div class="education-header">
+                <div class="education-degree">Bachelor's</div>
+                <div class="education-date">June 2016 - May 2020</div>
+              </div>
+              <div class="education-body">
+                <div class="education-school">Savitribai Phule Pune University</div>
+                <div class="education-field">Electronics & Telecommunication Engineering</div>
+                <div class="education-gpa">GPA: 7.6</div>
+                <div class="divider"></div>
+                <p>Gained a robust foundation in object oriented programming, data structures, mathematics and technical problem-solving.</p>
+              </div>
+              <!-- Flip button added -->
+              <button class="flip-btn">Flip Card</button>
             </div>
-            <div class="education-body">
-              <div class="education-school">Savitribai Phule Pune University</div>
-              <div class="education-field">Electronics & Telecommunication Engineering</div>
-              <div class="education-gpa">GPA: 7.6</div>
-              <div class="divider"></div>
-              <p>Gained a robust foundation in object oriented programming, data structures, mathematics and technical problem-solving.</p>
+            <!-- Back side -->
+            <div class="flip-card-back">
+              <h4>Relevant Courses</h4>
+              <ul>
+                <li>Digital Signal Processing</li>
+                <li>Communication Systems</li>
+                <li>Embedded Systems</li>
+              </ul>
+              <h4>Extracurriculars / Achievements</h4>
+              <ul>
+                <li>Robotics Club Member</li>
+                <li>Winner of College Tech Fest 2019</li>
+              </ul>
+              <!-- Flip button added -->
+              <button class="flip-btn">Flip Card</button>
             </div>
-          </div>
-          <!-- Back side -->
-          <div class="flip-card-back">
-            <h4>Relevant Courses</h4>
-            <ul>
-              <li>Digital Signal Processing</li>
-              <li>Communication Systems</li>
-              <li>Embedded Systems</li>
-            </ul>
-            <h4>Extracurriculars / Achievements</h4>
-            <ul>
-              <li>Robotics Club Member</li>
-              <li>Winner of College Tech Fest 2019</li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Skills Section -->
+  <!-- Skills Section -->
   <section id="skills">
     <div class="container">
       <h2 class="section-title">Skills</h2>
@@ -1432,7 +1297,6 @@
       </div>
     </div>
   </section>
-  
 
   <!-- Certifications Section -->
   <section id="certifications" class="certifications">
@@ -1577,18 +1441,29 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // DOMContentLoaded event for both expand and flip buttons
     document.addEventListener('DOMContentLoaded', () => {
-  const expandButtons = document.querySelectorAll('.expand-btn');
-  expandButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const details = button.nextElementSibling; // the .timeline-description
-      details.classList.toggle('hidden');
-      button.textContent = details.classList.contains('hidden') 
-        ? 'Show More' 
-        : 'Show Less';
+      // Expand buttons for timeline descriptions
+      const expandButtons = document.querySelectorAll('.expand-btn');
+      expandButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const details = button.nextElementSibling; // the .timeline-description
+          details.classList.toggle('hidden');
+          button.textContent = details.classList.contains('hidden') 
+            ? 'Show More' 
+            : 'Show Less';
+        });
+      });
+
+      // Flip buttons for education cards
+      const flipButtons = document.querySelectorAll('.flip-btn');
+      flipButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const flipCardInner = button.closest('.flip-card-inner');
+          flipCardInner.classList.toggle('flipped');
+        });
+      });
     });
-  });
-});
   </script>
 </body>
 </html>
