@@ -952,37 +952,39 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
+/* Updated flip card back design */
 .flip-card-back {
-  background: linear-gradient(135deg, var(--primary-color), #5dade2);
-  color: #fff;
+  background-color: #fff;
+  color: var(--dark-color);
   transform: rotateY(180deg);
-  padding: 30px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  gap: 15px;
 }
 
-.flip-card-back h4 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* New sections inside flip card back */
+.flip-card-back .back-section {
+  text-align: left;
 }
-
-.flip-card-back ul {
+.flip-card-back .back-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.flip-card-back .back-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 15px;
 }
-
-.flip-card-back li {
-  margin-bottom: 8px;
-  font-size: 1rem;
+.flip-card-back .back-list li {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
 }
 
 
@@ -1342,20 +1344,25 @@
           <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Flip Card</button>
         </div>
 
-          <!-- Back side -->
-          <div class="flip-card-back">
-            <h4>Relevant Courses</h4>
-            <ul>
+          <!-- Back side of Education Card (Master's) -->
+        <div class="flip-card-back">
+          <div class="back-section">
+            <h4 class="back-title">Relevant Courses</h4>
+            <ul class="back-list">
               <li>Advanced Machine Learning</li>
               <li>Deep Learning & Neural Nets</li>
               <li>Statistical Inference</li>
             </ul>
-            <h4>Extracurriculars / Achievements</h4>
-            <ul>
+          </div>
+          <div class="back-section">
+            <h4 class="back-title">Achievements</h4>
+            <ul class="back-list">
               <li>Data Science Club - President</li>
               <li>Hackathon Winner, OU Datathon 2024</li>
             </ul>
           </div>
+        </div>
+
         </div>
       </div>
 
@@ -1378,19 +1385,25 @@
             <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Flip Card</button>
           </div>
           <!-- Back side -->
-          <div class="flip-card-back">
-            <h4>Relevant Courses</h4>
-            <ul>
-              <li>Digital Signal Processing</li>
-              <li>Communication Systems</li>
-              <li>Embedded Systems</li>
-            </ul>
-            <h4>Extracurriculars / Achievements</h4>
-            <ul>
-              <li>Robotics Club Member</li>
-              <li>Winner of College Tech Fest 2019</li>
+          <!-- Back side of Education Card (Master's) -->
+        <div class="flip-card-back">
+          <div class="back-section">
+            <h4 class="back-title">Relevant Courses</h4>
+            <ul class="back-list">
+              <li>Advanced Machine Learning</li>
+              <li>Deep Learning & Neural Nets</li>
+              <li>Statistical Inference</li>
             </ul>
           </div>
+          <div class="back-section">
+            <h4 class="back-title">Achievements</h4>
+            <ul class="back-list">
+              <li>Data Science Club - President</li>
+              <li>Hackathon Winner, OU Datathon 2024</li>
+            </ul>
+          </div>
+        </div>
+
         </div>
       </div>
     </div>
@@ -1495,6 +1508,20 @@
             <div class="certification-issuer">Automation Anywhere</div>
           </div>
         </div>
+        <!-- Certification Card 3 -->
+        <div class="certification-card">
+          <div class="certification-logo">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="certification-info">
+            <div class="certification-name">Master C++ Programming From Beginner To Advance</div>
+            <div class="certification-issuer">Udemy</div>
+          </div>
+          <a class="certification-link" href="https://www.udemy.com/certificate/UC-d5104c03-2eff-4c0d-a793-c1386242508f/" target="_blank" rel="noopener noreferrer">
+            View Certificate
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
