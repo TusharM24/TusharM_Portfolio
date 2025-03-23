@@ -995,10 +995,10 @@
 
 
 /* Actual flipping behavior on hover */
-.flip-card:hover .flip-card-inner {
+
+.flip-card-inner.flipped {
   transform: rotateY(180deg);
 }
-
 
     @media (max-width: 768px) {
       .nav-links {
@@ -1083,7 +1083,7 @@
         </p>
         <div>
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="#projects" class="btn btn-secondary">View Projects</a>
+          <a href="your_resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
         </div>
         <div class="social-icons">
           <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-icon" target="_blank">
@@ -1126,7 +1126,11 @@
             <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">Flask</span>
-              <span class="project-tag">NLP</span>
+              <span class="project-tag">Natural Language Processing</span>
+              <span class="project-tag">HTML/CSS</span>
+              <span class="project-tag">Statistical Analysis</span>
+              <span class="project-tag">Smote</span>
+              
             </div>
             <div class="project-links">
               <a class="project-link" href="https://github.com/TusharM24/Fradulent-Job-Posting-Detection" target="_blank">
@@ -1151,6 +1155,7 @@
               <span class="project-tag">R</span>
               <span class="project-tag">Caret</span>
               <span class="project-tag">Regression</span>
+              <span class="project-tag">Statistical Analysis</span>
             </div>
             <div class="project-links">
               <a class="project-link" href="https://github.com/TusharM24/Customer-Revenue-Prediction" target="_blank">
@@ -1172,9 +1177,10 @@
               patient readmission likelihood based on medical histories.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">ML</span>
-              <span class="project-tag">XGBoost</span>
+              <span class="project-tag">R Programming</span>
+              <span class="project-tag">Caret</span>
+              <span class="project-tag">GGplot</span>
+              <span class="project-tag">Classification</span>
             </div>
             <div class="project-links">
               <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-Readmission" target="_blank">
@@ -1198,7 +1204,9 @@
             <div class="project-tags">
               <span class="project-tag">Java</span>
               <span class="project-tag">Azure SQL</span>
-              <span class="project-tag">DB Design</span>
+              <span class="project-tag">Database Design</span>
+              <span class="project-tag">JDBC</span>
+              <span class="project-tag">Azure Data Studio</span>
             </div>
             <div class="project-links">
               <a class="project-link" href="https://github.com/TusharM24/Database-Design-for-Patient-Assistance-Network-PAN-" target="_blank">
@@ -1226,6 +1234,32 @@
             <div class="project-links">
               <a class="project-link" href="https://us-west-2b.online.tableau.com/t/universityofoklahomadsa5051/views/SalesDataAnalysisofaSuperMarketChain/FinancialAnalysisofWearmartINC" target="_blank">
                 <i class="fas fa-chart-bar"></i> Tableau
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="hospital_los_project.jpg" alt="Predicting Hospital Length of Stay">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Predicting Hospital Length of Stay</h3>
+            <p class="project-description">
+              This project aims to analyze medical data to predict the length of stay (LOS) of patients in a hospital. Various machine learning models are trained and evaluated to predict the LOS based on demographic and medical information.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Seaborn</span>
+              <span class="project-tag">Matplotlib</span>
+              <span class="project-tag">Scikit-learn</span>
+              
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-length-of-Stay" target="_blank">
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </div>
@@ -1293,19 +1327,21 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <!-- Front side -->
-          <div class="flip-card-front">
-            <div class="education-header">
-              <div class="education-degree">Master's</div>
-              <div class="education-date">August 2023 - May 2025</div>
-            </div>
-            <div class="education-body">
-              <div class="education-school">University of Oklahoma</div>
-              <div class="education-field">Data Science</div>
-              <div class="education-gpa">GPA: 3.97</div>
-              <div class="divider"></div>
-              <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
-            </div>
+         <div class="flip-card-front">
+          <div class="education-header">
+            <div class="education-degree">Master's</div>
+            <div class="education-date">August 2023 - May 2025</div>
           </div>
+          <div class="education-body">
+            <div class="education-school">University of Oklahoma</div>
+            <div class="education-field">Data Science</div>
+            <div class="education-gpa">GPA: 3.97</div>
+            <div class="divider"></div>
+            <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
+          </div>
+          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Flip Card</button>
+        </div>
+
           <!-- Back side -->
           <div class="flip-card-back">
             <h4>Relevant Courses</h4>
@@ -1339,6 +1375,7 @@
               <div class="divider"></div>
               <p>Gained a robust foundation in object oriented programming, data structures, mathematics and technical problem-solving.</p>
             </div>
+            <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Flip Card</button>
           </div>
           <!-- Back side -->
           <div class="flip-card-back">
