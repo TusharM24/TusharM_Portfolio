@@ -125,15 +125,15 @@
     }
     
     .hero:before {
-      /* Background image layer */
-      background: url('/api/placeholder/800/600') center/cover no-repeat;
-      opacity: 0.9; /* ← adjust this to control image visibility */
+      /* Dark overlay layer - goes BELOW image */
+      background: var(--dark-color);
+      opacity: 0.85;
     }
     
     .hero:after {
-      /* Dark overlay layer */
-      background: var(--dark-color); /* or rgba(10, 25, 47, 0.85) */
-      opacity: 0.5;
+      /* Image layer - now on top of the overlay */
+      background: url('/api/placeholder/800/600') center/cover no-repeat;
+      opacity: 0.3; /* Adjust this to fade image in/out */
     }
 
     .hero-content {
