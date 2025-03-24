@@ -1037,6 +1037,70 @@
   z-index: 2; /* Keep it on top until flipped */
 }
 
+/* Wrapper that holds the slider track + buttons */
+.skills-slider-container {
+  position: relative;
+  overflow: hidden; 
+  margin: 40px 0; /* spacing around the slider */
+}
+
+/* The track that contains all skill-category slides */
+.skills-slider {
+  display: flex;
+  transition: transform 0.4s ease; /* smooth sliding effect */
+  /* By default, no transform offset */
+  transform: translateX(0);
+}
+
+/* Each skill-category card */
+.skill-category {
+  flex: 0 0 33.333%;  /* 3 cards per view (100% / 3 = 33.333%) */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Optional: style the Prev/Next buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+}
+
+#prevBtn {
+  left: 10px;
+}
+#nextBtn {
+  right: 10px;
+}
+
+/* Responsive tweaks if desired */
+@media (max-width: 992px) {
+  /* Maybe show 2 cards at a time on tablets? */
+  .skill-category {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Maybe show 1 card at a time on phones? */
+  .skill-category {
+    flex: 0 0 100%;
+  }
+}
 
 
 /* Actual flipping behavior on hover */
