@@ -1807,6 +1807,46 @@
         : 'Show Less';
     });
   });
+      
+});
+    document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('skillsSlider');
+  const skillCards = slider.querySelectorAll('.skill-category');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0;
+  let cardsPerView = 3; // On desktop, we show 3. Could adjust dynamically for responsive.
+
+  // In case of smaller screens, you can do a dynamic check:
+  // if (window.innerWidth < 600) cardsPerView = 1;
+  
+  // Moves the slider track by the correct amount
+  function updateSlider() {
+    // Each card is 100/cardsPerView percent wide in total. 
+    // So each "step" is 100% of the container.
+    const translateX = -(currentIndex * (100 / cardsPerView));
+    slider.style.transform = `translateX(${translateX}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    // The last valid index is totalCards - cardsPerView
+    const maxIndex = skillCards.length - cardsPerView;
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  // Initialize
+  updateSlider();
 });
   </script>
 </body>
