@@ -1463,13 +1463,18 @@
 
 
 <!-- Skills Section -->
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <!-- Skill Categories -->
-      <div class="skills-container">
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    
+    <!-- Slider Container -->
+    <div class="skills-slider-container">
+      <!-- Slide Track: holds all the skill categories -->
+      <div class="skills-slider" id="skillsSlider">
+        
+        <!-- 1) Programming Languages -->
         <div class="skill-category">
-          <h3>Programming</h3>
+          <h3>Programming Languages</h3>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">R</span>
@@ -1481,72 +1486,99 @@
           </div>
         </div>
 
+        <!-- 2) Tools & Technologies -->
         <div class="skill-category">
-          <h3>Data Science Frameworks</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Numpy</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">nltk</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Seaborn</span>
-            <span class="skill-tag">Caret</span>
-            <span class="skill-tag">ggplot2</span>
-            <span class="skill-tag">dplyr</span>
-            <span class="skill-tag">tidyr</span>
-            <span class="skill-tag">H2O</span>
-            <span class="skill-tag">plotly</span>
-            
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <h3>Tools & Technologies</h3>
+          <h3>Tools &amp; Technologies</h3>
           <div class="skill-tags">
             <span class="skill-tag">Tableau</span>
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">LangChain</span>
             <span class="skill-tag">Ollama</span>
-            <span class="skill-tag">Microsoft Azure Database</span>
-            <span class="skill-tag">MongoDB</span>
             <span class="skill-tag">Chromadb</span>
-            <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">Microsoft Azure</span>
             <span class="skill-tag">Git/Github</span>
+            <span class="skill-tag">Docker</span>
           </div>
         </div>
+        
+        <!-- 3) Python Libraries -->
+        <div class="skill-category">
+          <h3>Python Libraries</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">nltk</span>
+            <span class="skill-tag">Plotly</span>
+          </div>
+        </div>
+        
+        <!-- 4) R Packages -->
+        <div class="skill-category">
+          <h3>R Packages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">caret</span>
+            <span class="skill-tag">ggplot2</span>
+            <span class="skill-tag">dplyr</span>
+            <span class="skill-tag">tidyr</span>
+            <span class="skill-tag">H2O</span>
+            <span class="skill-tag">Shiny</span>
+          </div>
+        </div>
+
+        <!-- 5) Databases -->
+        <div class="skill-category">
+          <h3>Databases</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">Oracle</span>
+          </div>
+        </div>
+        
       </div>
 
-      <!-- Optional: Radial Skill Visualization -->
-      <div class="skill-radial-container">
-        <!-- Example radial skill 1 -->
-        <div class="skill-radial" style="--progress: 85deg;">
-          <div class="skill-radial-progress"></div>
-          <div class="skill-radial-content">
-            <div class="skill-radial-percentage">85%</div>
-            <div class="skill-radial-name">Python</div>
-          </div>
+      <!-- Slider Controls -->
+      <button class="slider-btn" id="prevBtn">Prev</button>
+      <button class="slider-btn" id="nextBtn">Next</button>
+    </div> <!-- end skills-slider-container -->
+
+    <!-- Optional: Radial Skill Visualization -->
+    <div class="skill-radial-container">
+      <!-- Example radial skill 1 -->
+      <div class="skill-radial" style="--progress: 85deg;">
+        <div class="skill-radial-progress"></div>
+        <div class="skill-radial-content">
+          <div class="skill-radial-percentage">85%</div>
+          <div class="skill-radial-name">Python</div>
         </div>
-        <!-- Example radial skill 2 -->
-        <div class="skill-radial" style="--progress: 80deg;">
-          <div class="skill-radial-progress"></div>
-          <div class="skill-radial-content">
-            <div class="skill-radial-percentage">80%</div>
-            <div class="skill-radial-name">R</div>
-          </div>
+      </div>
+      <!-- Example radial skill 2 -->
+      <div class="skill-radial" style="--progress: 80deg;">
+        <div class="skill-radial-progress"></div>
+        <div class="skill-radial-content">
+          <div class="skill-radial-percentage">80%</div>
+          <div class="skill-radial-name">R</div>
         </div>
-        <!-- Example radial skill 3 -->
-        <div class="skill-radial" style="--progress: 75deg;">
-          <div class="skill-radial-progress"></div>
-          <div class="skill-radial-content">
-            <div class="skill-radial-percentage">75%</div>
-            <div class="skill-radial-name">SQL</div>
-          </div>
+      </div>
+      <!-- Example radial skill 3 -->
+      <div class="skill-radial" style="--progress: 75deg;">
+        <div class="skill-radial-progress"></div>
+        <div class="skill-radial-content">
+          <div class="skill-radial-percentage">75%</div>
+          <div class="skill-radial-name">SQL</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   
 
   <!-- Certifications Section -->
