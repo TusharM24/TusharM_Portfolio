@@ -1037,29 +1037,37 @@
   z-index: 2; /* Keep it on top until flipped */
 }
 
-/* Wrapper that holds the slider track + buttons */
+/* 1) A wrapper that hides the overflow so we don't see partial cards. */
 .skills-slider-container {
   position: relative;
   overflow: hidden; 
-  margin: 40px 0; /* spacing around the slider */
+  margin: 40px 0;  /* space above/below slider */
+  /* Optional: padding so your Prev/Next buttons sit outside the cards */
+  padding: 0 60px; 
 }
 
-/* The track that contains all skill-category slides */
+/* 2) The slider (track) that holds all skill cards horizontally. */
 .skills-slider {
   display: flex;
-  transition: transform 0.4s ease; /* smooth sliding effect */
-  /* By default, no transform offset */
+  gap: 20px;             /* spacing between cards */
+  transition: transform 0.4s ease;
   transform: translateX(0);
 }
 
-/* Each skill-category card */
+/* 3) Each skill card. 
+   Using 30% so three cards fit side-by-side 
+   (with some gap leftover). Tweak as needed. */
 .skill-category {
-  flex: 0 0 33.333%;  /* 3 cards per view (100% / 3 = 33.333%) */
+  flex: 0 0 30%;
   box-sizing: border-box;
+  background-color: #fff;
   padding: 20px;
+  border-radius: 8px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Optional: style the Prev/Next buttons */
+/* Prev/Next buttons outside the cards. 
+   The container padding (60px) ensures they don't overlap. */
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -1081,26 +1089,25 @@
 }
 
 #prevBtn {
-  left: 10px;
+  left: 10px; /* or 0, if you prefer */
 }
 #nextBtn {
-  right: 10px;
+  right: 10px; /* or 0, if you prefer */
 }
 
-/* Responsive tweaks if desired */
+/* Responsive tweak: on narrower screens, 
+   you might only want 2 or 1 card visible at once. */
 @media (max-width: 992px) {
-  /* Maybe show 2 cards at a time on tablets? */
   .skill-category {
-    flex: 0 0 50%;
+    flex: 0 0 45%; /* about 2 cards per view */
+  }
+}
+@media (max-width: 600px) {
+  .skill-category {
+    flex: 0 0 90%; /* show 1 card at a time on mobile */
   }
 }
 
-@media (max-width: 600px) {
-  /* Maybe show 1 card at a time on phones? */
-  .skill-category {
-    flex: 0 0 100%;
-  }
-}
 
 
 /* Actual flipping behavior on hover */
@@ -1530,12 +1537,10 @@
 <section id="skills">
   <div class="container">
     <h2 class="section-title">Skills</h2>
-    
+
     <!-- Slider Container -->
     <div class="skills-slider-container">
-      <!-- Slide Track: holds all the skill categories -->
       <div class="skills-slider" id="skillsSlider">
-        
         <!-- 1) Programming Languages -->
         <div class="skill-category">
           <h3>Programming Languages</h3>
@@ -1558,13 +1563,14 @@
             <span class="skill-tag">Power BI</span>
             <span class="skill-tag">LangChain</span>
             <span class="skill-tag">Ollama</span>
+            <span class="skill-tag">Microsoft Azure Database</span>
+            <span class="skill-tag">MongoDB</span>
             <span class="skill-tag">Chromadb</span>
-            <span class="skill-tag">Microsoft Azure</span>
+            <span class="skill-tag">BigQuery</span>
             <span class="skill-tag">Git/Github</span>
-            <span class="skill-tag">Docker</span>
           </div>
         </div>
-        
+
         <!-- 3) Python Libraries -->
         <div class="skill-category">
           <h3>Python Libraries</h3>
@@ -1580,12 +1586,12 @@
             <span class="skill-tag">Plotly</span>
           </div>
         </div>
-        
+
         <!-- 4) R Packages -->
         <div class="skill-category">
           <h3>R Packages</h3>
           <div class="skill-tags">
-            <span class="skill-tag">caret</span>
+            <span class="skill-tag">Caret</span>
             <span class="skill-tag">ggplot2</span>
             <span class="skill-tag">dplyr</span>
             <span class="skill-tag">tidyr</span>
@@ -1605,15 +1611,14 @@
             <span class="skill-tag">Oracle</span>
           </div>
         </div>
-        
       </div>
 
-      <!-- Slider Controls -->
+      <!-- Slider Controls: Prev/Next -->
       <button class="slider-btn" id="prevBtn">Prev</button>
       <button class="slider-btn" id="nextBtn">Next</button>
-    </div> <!-- end skills-slider-container -->
+    </div>
 
-    <!-- Optional: Radial Skill Visualization -->
+    <!-- (Optional) Radial Skill Visualization Below -->
     <div class="skill-radial-container">
       <!-- Example radial skill 1 -->
       <div class="skill-radial" style="--progress: 85deg;">
@@ -1809,45 +1814,55 @@
   });
       
 });
-    document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.getElementById('skillsSlider');
-  const skillCards = slider.querySelectorAll('.skill-category');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+    
+        document.addEventListener('DOMContentLoaded', () => {
+          const slider = document.getElementById('skillsSlider');
+          const skillCards = slider.querySelectorAll('.skill-category');
+          const prevBtn = document.getElementById('prevBtn');
+          const nextBtn = document.getElementById('nextBtn');
+        
+          let currentIndex = 0;
+          const totalCards = skillCards.length;  // e.g. 5
+          const cardsPerView = 3;               // we want 3 visible at once on desktop
+          
+          // Max index is how many times we can shift before running out of cards
+          // e.g. if we have 5 cards and 3 per view, last index is 5 - 3 = 2
+          const maxIndex = totalCards - cardsPerView; // 2
+        
+          // We'll measure actual card width (including gap) to get precise slides:
+          function getCardWidth() {
+            // Because we have a gap of 20px in the CSS, add it.
+            // offsetWidth is the actual card width including padding/border.
+            const cardWidth = skillCards[0].offsetWidth + 20;
+            return cardWidth;
+          }
+        
+          function updateSlider() {
+            const cardWidth = getCardWidth();
+            // Slide track by currentIndex * cardWidth
+            const translateX = -(currentIndex * cardWidth);
+            slider.style.transform = `translateX(${translateX}px)`;
+          }
+        
+          prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateSlider();
+            }
+          });
+        
+          nextBtn.addEventListener('click', () => {
+            if (currentIndex < maxIndex) {
+              currentIndex++;
+              updateSlider();
+            }
+          });
+        
+          // Initialize
+          updateSlider();
+        });
+        
 
-  let currentIndex = 0;
-  let cardsPerView = 3; // On desktop, we show 3. Could adjust dynamically for responsive.
-
-  // In case of smaller screens, you can do a dynamic check:
-  // if (window.innerWidth < 600) cardsPerView = 1;
-  
-  // Moves the slider track by the correct amount
-  function updateSlider() {
-    // Each card is 100/cardsPerView percent wide in total. 
-    // So each "step" is 100% of the container.
-    const translateX = -(currentIndex * (100 / cardsPerView));
-    slider.style.transform = `translateX(${translateX}%)`;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlider();
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    // The last valid index is totalCards - cardsPerView
-    const maxIndex = skillCards.length - cardsPerView;
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateSlider();
-    }
-  });
-
-  // Initialize
-  updateSlider();
-});
   </script>
 </body>
 </html>
