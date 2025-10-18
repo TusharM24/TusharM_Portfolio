@@ -9,6 +9,15 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
   <!-- Header -->
@@ -721,6 +730,26 @@
           <i class="fab fa-linkedin-in"></i>
         </a>
       </div>
+      
+      <!-- Portfolio Analytics Counter -->
+      <div class="analytics-counter">
+        <div class="counter-item">
+          <i class="fas fa-eye"></i>
+          <span class="counter-number" id="totalViews">1,247</span>
+          <span class="counter-label">Total Views</span>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-fire"></i>
+          <span class="counter-number" id="todayViews">23</span>
+          <span class="counter-label">Today</span>
+        </div>
+        <div class="counter-item">
+          <i class="fas fa-mouse-pointer"></i>
+          <span class="counter-number" id="totalClicks">156</span>
+          <span class="counter-label">Clicks</span>
+        </div>
+      </div>
+      
       <div class="copyright">
         &copy; 2025 - Tushar Mhatre. All rights reserved.
       </div>

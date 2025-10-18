@@ -81,3 +81,152 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize
     updateSlider();
   });
+
+// Analytics Counter Functionality
+class PortfolioAnalytics {
+  constructor() {
+    this.totalViews = this.getStoredValue('totalViews', 1247);
+    this.todayViews = this.getStoredValue('todayViews', 23);
+    this.totalClicks = this.getStoredValue('totalClicks', 156);
+    this.lastVisitDate = this.getStoredValue('lastVisitDate', '');
+    
+    this.init();
+  }
+  
+  init() {
+    this.updateCounters();
+    this.trackPageView();
+    this.setupEventTracking();
+    this.animateCounters();
+  }
+  
+  getStoredValue(key, defaultValue) {
+    try {
+      const stored = localStorage.getItem(key);
+      return stored ? parseInt(stored) : defaultValue;
+    } catch (e) {
+      return defaultValue;
+    }
+  }
+  
+  setStoredValue(key, value) {
+    try {
+      localStorage.setItem(key, value.toString());
+    } catch (e) {
+      console.log('LocalStorage not available');
+    }
+  }
+  
+  updateCounters() {
+    const today = new Date().toDateString();
+    
+    // Check if this is a new day
+    if (this.lastVisitDate !== today) {
+      this.todayViews = 1;
+      this.lastVisitDate = today;
+    } else {
+      this.todayViews++;
+    }
+    
+    this.totalViews++;
+    
+    // Store updated values
+    this.setStoredValue('totalViews', this.totalViews);
+    this.setStoredValue('todayViews', this.todayViews);
+    this.setStoredValue('lastVisitDate', this.lastVisitDate);
+  }
+  
+  trackPageView() {
+    // Track page view with Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
+  }
+  
+  trackClick(element, action) {
+    this.totalClicks++;
+    this.setStoredValue('totalClicks', this.totalClicks);
+    
+    // Update counter display
+    this.animateCounter('totalClicks', this.totalClicks);
+    
+    // Track with Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'click', {
+        event_category: 'engagement',
+        event_label: action,
+        value: this.totalClicks
+      });
+    }
+  }
+  
+  setupEventTracking() {
+    // Track project card clicks
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', () => {
+        this.trackClick(card, 'project_view');
+      });
+    });
+    
+    // Track button clicks
+    document.querySelectorAll('.btn, .expand-btn, .flip-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.trackClick(btn, 'button_click');
+      });
+    });
+    
+    // Track social media clicks
+    document.querySelectorAll('.footer-social a').forEach(link => {
+      link.addEventListener('click', () => {
+        this.trackClick(link, 'social_click');
+      });
+    });
+    
+    // Track navigation clicks
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        this.trackClick(link, 'navigation_click');
+      });
+    });
+  }
+  
+  animateCounters() {
+    this.animateCounter('totalViews', this.totalViews);
+    this.animateCounter('todayViews', this.todayViews);
+    this.animateCounter('totalClicks', this.totalClicks);
+  }
+  
+  animateCounter(elementId, targetValue) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const startValue = parseInt(element.textContent.replace(/,/g, '')) || 0;
+    const duration = 1000; // 1 second
+    const startTime = performance.now();
+    
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentValue = Math.floor(startValue + (targetValue - startValue) * easeOutQuart);
+      
+      element.textContent = currentValue.toLocaleString();
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }
+}
+
+// Initialize analytics when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new PortfolioAnalytics();
+});

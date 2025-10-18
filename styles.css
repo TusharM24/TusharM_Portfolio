@@ -953,6 +953,52 @@ footer {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Analytics Counter */
+.analytics-counter {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+}
+
+.counter-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.counter-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.counter-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.counter-number:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
 /* Back to top button */
 .back-to-top {
   position: fixed;
@@ -1650,6 +1696,40 @@ footer {
     .profile-image {
       width: 250px;
       height: 250px;
+    }
+    
+    /* Mobile Analytics Counter */
+    .analytics-counter {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    
+    .counter-item {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-width: auto;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+    
+    .counter-item i {
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    
+    .counter-number {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+    
+    .counter-label {
+      font-size: 0.7rem;
+      margin-left: auto;
     }
   
   }
