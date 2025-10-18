@@ -38,7 +38,21 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  opacity:0.8
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+/* Improve header on mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 12px 0; /* Slightly reduce header padding on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 0; /* Further reduce header padding on small screens */
+  }
 }
 
 nav {
@@ -103,6 +117,21 @@ nav {
   color: white;
   position: relative;
   overflow: hidden;
+}
+
+/* Improve hero section on mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 70px; /* Reduce top padding on mobile */
+    min-height: 100vh; /* Ensure full height */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 60px; /* Further reduce top padding on small screens */
+    padding-bottom: 40px; /* Add bottom padding for small screens */
+  }
 }
 
 .hero:before,
@@ -190,6 +219,25 @@ nav {
   font-size: 1.2rem;
   transition: var(--transition);
   text-decoration: none;
+  min-height: 44px; /* Minimum touch target */
+  min-width: 44px; /* Minimum touch target */
+}
+
+/* Social icon mobile optimization */
+@media (max-width: 576px) {
+  .social-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
 }
 
 .social-icon:hover {
@@ -209,6 +257,40 @@ nav {
   letter-spacing: 1px;
   transition: var(--transition);
   margin-right: 15px;
+  min-height: 44px; /* Minimum touch target size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Button optimization for mobile */
+@media (max-width: 768px) {
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    min-height: 40px;
+  }
 }
 
 .btn:hover {
@@ -239,6 +321,26 @@ cursor: pointer;
 transition: var(--transition);
 font-size: 0.9rem;
 font-weight: 500;
+min-height: 36px; /* Minimum touch target */
+min-width: 100px; /* Minimum width for touch */
+}
+
+/* Expand button mobile optimization */
+@media (max-width: 768px) {
+  .expand-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    min-height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expand-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    min-height: 32px;
+    min-width: 90px;
+  }
 }
 
 .expand-btn:hover {
@@ -904,27 +1006,407 @@ footer {
   }
 
   .timeline::after {
-    left: 31px;
+    left: 20px; /* Move timeline line to left side for mobile */
   }
 
   .timeline-item {
-      padding: 10px 40px;
-      position: relative;
-      width: 50%;
-      box-sizing: border-box;
-    }
-
+    padding: 10px 20px 10px 60px; /* Add left padding for timeline dot space */
+    position: relative;
+    width: 100% !important; /* Force full width on mobile */
+    left: 0 !important; /* Override any left positioning */
+    box-sizing: border-box;
+  }
 
   .timeline-item:nth-child(even) {
-    left: 0;
+    left: 0 !important; /* Force all items to left side */
   }
 
   .timeline-item::after {
-    left: 21px;
+    left: 10px !important; /* Consistent dot positioning on left */
+  }
+
+  /* Mobile timeline content improvements */
+  .timeline-content {
+    padding: 15px; /* Reduce padding for mobile */
+    margin-bottom: 20px; /* Add spacing between timeline items */
+  }
+
+  .timeline-title {
+    font-size: 1.1rem; /* Slightly smaller title for mobile */
+  }
+
+  .timeline-description {
+    font-size: 0.9rem; /* Smaller text for better mobile readability */
+  }
+
+  .timeline-description ul {
+    margin-left: 15px; /* Reduce left margin for mobile */
+  }
+
+  .expand-btn {
+    font-size: 0.8rem; /* Smaller button text for mobile */
+    padding: 6px 12px; /* Smaller button padding */
+  }
+
+  /* Mobile spacing improvements */
+  section {
+    padding: 60px 0; /* Reduce section padding for mobile */
+  }
+
+  .container {
+    padding: 0 15px; /* Reduce container padding for mobile */
   }
 
   .contact-content {
     flex-direction: column;
+  }
+
+  /* Navigation improvements for mobile */
+  .logo {
+    font-size: 1.4rem; /* Slightly smaller logo for mobile */
+  }
+
+  .hamburger {
+    font-size: 1.4rem; /* Slightly smaller hamburger for mobile */
+    padding: 8px; /* Add padding for better touch target */
+  }
+
+  .nav-links {
+    padding: 20px 0; /* Adequate mobile menu padding */
+  }
+
+  .nav-links a {
+    font-size: 1rem; /* Maintain readable nav text */
+    padding: 12px 0; /* Touch-friendly padding */
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+    border-radius: 5px;
+  }
+}
+
+/* Large phones and small tablets (576px and below) */
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2.2rem; /* Further reduce hero title */
+  }
+
+  .hero p {
+    font-size: 0.95rem; /* Smaller hero description */
+  }
+
+  .section-title {
+    font-size: 1.8rem; /* Smaller section titles */
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px; /* Slightly smaller profile image */
+  }
+
+  .timeline-content {
+    padding: 12px; /* Further reduce timeline padding */
+  }
+
+  .timeline-title {
+    font-size: 1rem; /* Smaller timeline titles */
+  }
+
+  .timeline-description {
+    font-size: 0.85rem; /* Smaller timeline text */
+  }
+
+  .project-card {
+    margin-bottom: 15px; /* Reduce project card spacing */
+  }
+
+  .project-title {
+    font-size: 1.1rem; /* Smaller project titles */
+  }
+
+  .project-description {
+    font-size: 0.9rem; /* Smaller project descriptions */
+  }
+
+  .skill-category {
+    padding: 25px 15px; /* Reduce skill category padding */
+  }
+
+  .skill-category h3 {
+    font-size: 1.1rem; /* Smaller skill category titles */
+  }
+
+  .skill-tag {
+    font-size: 0.8rem; /* Smaller skill tags */
+    padding: 6px 12px;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 100%; /* Full width flip cards */
+  }
+
+  .education-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Reduce gap between education cards */
+  }
+
+  .certification-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .certification-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .contact-form {
+    padding: 20px; /* Reduce contact form padding */
+  }
+
+  .form-control {
+    padding: 12px; /* Reduce form input padding */
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 25px; /* Smaller buttons */
+    font-size: 0.9rem;
+  }
+
+  /* Navigation improvements for medium mobile screens */
+  .logo {
+    font-size: 1.4rem; /* Slightly smaller logo */
+  }
+
+  .hamburger {
+    font-size: 1.4rem; /* Slightly smaller hamburger */
+  }
+
+  .nav-links a {
+    font-size: 0.95rem; /* Slightly smaller nav text */
+    padding: 10px 0; /* Touch-friendly padding */
+  }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px; /* Further reduce container padding */
+  }
+
+  section {
+    padding: 40px 0; /* Further reduce section padding */
+  }
+
+  .hero h1 {
+    font-size: 1.8rem; /* Much smaller hero title for very small screens */
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 1.6rem; /* Smaller section titles */
+    margin-bottom: 30px;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px; /* Much smaller profile image */
+    margin: 20px auto 0;
+  }
+
+  .social-icons {
+    gap: 10px; /* Reduce social icon spacing */
+  }
+
+  .social-icon {
+    width: 35px;
+    height: 35px; /* Smaller social icons */
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    padding: 8px 15px 8px 50px; /* Further reduce timeline padding */
+  }
+
+  .timeline::after {
+    left: 15px; /* Adjust timeline line position */
+  }
+
+  .timeline-item::after {
+    left: 5px; /* Adjust timeline dot position */
+    width: 15px;
+    height: 15px; /* Smaller timeline dots */
+  }
+
+  .timeline-content {
+    padding: 10px; /* Minimal timeline content padding */
+  }
+
+  .timeline-title {
+    font-size: 0.95rem; /* Very small timeline titles */
+  }
+
+  .timeline-description {
+    font-size: 0.8rem; /* Very small timeline text */
+  }
+
+  .expand-btn {
+    font-size: 0.75rem;
+    padding: 5px 10px; /* Very small expand buttons */
+  }
+
+  .project-card {
+    margin-bottom: 10px;
+  }
+
+  .project-img {
+    height: 150px; /* Smaller project images */
+  }
+
+  .project-title {
+    font-size: 1rem; /* Smaller project titles */
+  }
+
+  .project-description {
+    font-size: 0.85rem; /* Smaller project descriptions */
+  }
+
+  .project-tag {
+    font-size: 0.7rem; /* Smaller project tags */
+    padding: 3px 8px;
+  }
+
+  .skill-category {
+    padding: 20px 10px; /* Minimal skill category padding */
+  }
+
+  .skill-category h3 {
+    font-size: 1rem; /* Smaller skill category titles */
+  }
+
+  .skill-tag {
+    font-size: 0.75rem; /* Very small skill tags */
+    padding: 5px 10px;
+  }
+
+  .flip-card {
+    min-height: 320px; /* Reduce flip card height */
+  }
+
+  .flip-card-inner {
+    min-height: 320px; /* Reduce flip card inner height */
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    min-height: 320px; /* Reduce flip card face height */
+  }
+
+  .education-header {
+    padding: 15px; /* Reduce education header padding */
+  }
+
+  .education-body {
+    padding: 15px; /* Reduce education body padding */
+  }
+
+  .education-degree {
+    font-size: 1.1rem; /* Smaller education degree text */
+  }
+
+  .education-field {
+    font-size: 0.9rem; /* Smaller education field text */
+  }
+
+  .certification-card {
+    padding: 12px; /* Minimal certification card padding */
+  }
+
+  .certification-name {
+    font-size: 1rem; /* Smaller certification names */
+  }
+
+  .certification-issuer {
+    font-size: 0.8rem; /* Smaller certification issuer text */
+  }
+
+  .contact-info h3 {
+    font-size: 1.3rem; /* Smaller contact info title */
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Smaller contact info text */
+  }
+
+  .contact-detail {
+    margin-bottom: 15px; /* Reduce contact detail spacing */
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px; /* Smaller contact icons */
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    padding: 15px; /* Minimal contact form padding */
+  }
+
+  .form-control {
+    padding: 10px; /* Minimal form input padding */
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 8px 20px; /* Very small buttons */
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap; /* Allow footer links to wrap */
+    gap: 10px;
+  }
+
+  .footer-links li {
+    margin: 5px; /* Reduce footer link margins */
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px; /* Smaller back to top button */
+    font-size: 1rem;
+  }
+
+  /* Navigation improvements for small screens */
+  .logo {
+    font-size: 1.3rem; /* Smaller logo on very small screens */
+  }
+
+  .hamburger {
+    font-size: 1.3rem; /* Smaller hamburger icon */
+  }
+
+  .nav-links {
+    padding: 15px 0; /* Reduce mobile menu padding */
+  }
+
+  .nav-links a {
+    font-size: 0.9rem; /* Smaller navigation text */
+    padding: 8px 0; /* Add touch-friendly padding */
   }
 }
 
@@ -948,6 +1430,27 @@ footer {
   margin-left: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  min-height: 40px; /* Minimum touch target */
+  min-width: 80px; /* Minimum width for touch */
+}
+
+/* Flip button mobile optimization */
+@media (max-width: 768px) {
+  .flip-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    min-height: 32px;
+    min-width: 70px;
+    margin-left: 5px;
+  }
 }
 
 .flip-btn:hover {
