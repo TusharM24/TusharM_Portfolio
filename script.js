@@ -226,7 +226,32 @@ class PortfolioAnalytics {
   }
 }
 
+// Flag to prevent double initialization
+let analyticsInitialized = false;
+
+// Wait for Google Analytics to load before initializing custom analytics
+function waitForGoogleAnalytics() {
+  if (typeof gtag !== 'undefined' && !analyticsInitialized) {
+    // Google Analytics is ready, initialize our custom analytics
+    window.portfolioAnalytics = new PortfolioAnalytics();
+    analyticsInitialized = true;
+  } else if (!analyticsInitialized) {
+    // Google Analytics not ready yet, wait a bit more
+    setTimeout(waitForGoogleAnalytics, 100);
+  }
+}
+
+// Fallback: Initialize analytics after 3 seconds even if Google Analytics isn't ready
+setTimeout(() => {
+  if (!analyticsInitialized) {
+    // Google Analytics still not ready, initialize anyway
+    window.portfolioAnalytics = new PortfolioAnalytics();
+    analyticsInitialized = true;
+  }
+}, 3000);
+
 // Initialize analytics when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new PortfolioAnalytics();
+  // Start checking for Google Analytics availability
+  waitForGoogleAnalytics();
 });
