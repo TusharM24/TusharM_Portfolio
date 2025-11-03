@@ -254,4 +254,101 @@ setTimeout(() => {
 document.addEventListener('DOMContentLoaded', () => {
   // Start checking for Google Analytics availability
   waitForGoogleAnalytics();
+  
+  // Initialize Web3Forms contact form handler
+  initWeb3Forms();
 });
+
+// Web3Forms Integration
+function initWeb3Forms() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+  const formMessage = document.getElementById('formMessage');
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Hide any previous messages
+    formMessage.style.display = 'none';
+    formMessage.className = 'form-message';
+    
+    // Show loading state
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'flex';
+    submitBtn.disabled = true;
+    
+    // Get form data
+    const formData = new FormData(form);
+    
+    // Add honeypot value (should be empty for real users)
+    const honeypot = formData.get('botcheck');
+    if (honeypot) {
+      // Bot detected
+      showMessage(formMessage, 'Spam detected. Please try again.', 'error');
+      resetButton(btnText, btnLoading, submitBtn);
+      return;
+    }
+    
+    try {
+      // Submit to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        // Success!
+        showMessage(formMessage, 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
+        
+        // Reset form
+        form.reset();
+        
+        // Track successful submission with Google Analytics
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'form_submission', {
+            event_category: 'contact',
+            event_label: 'contact_form',
+            value: 1
+          });
+        }
+      } else {
+        // Error from Web3Forms
+        showMessage(formMessage, data.message || 'Sorry, there was an error sending your message. Please try again later.', 'error');
+      }
+    } catch (error) {
+      // Network or other error
+      console.error('Form submission error:', error);
+      showMessage(formMessage, 'Network error. Please check your connection and try again.', 'error');
+    } finally {
+      resetButton(btnText, btnLoading, submitBtn);
+    }
+  });
+}
+
+function showMessage(messageElement, text, type) {
+  messageElement.textContent = text;
+  messageElement.className = `form-message ${type}`;
+  messageElement.style.display = 'block';
+  
+  // Scroll to message
+  messageElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  
+  // Auto-hide success messages after 5 seconds
+  if (type === 'success') {
+    setTimeout(() => {
+      messageElement.style.display = 'none';
+    }, 5000);
+  }
+}
+
+function resetButton(btnText, btnLoading, submitBtn) {
+  btnText.style.display = 'inline';
+  btnLoading.style.display = 'none';
+  submitBtn.disabled = false;
+}

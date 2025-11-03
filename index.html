@@ -695,18 +695,32 @@
           </div>
         </div>
 
-        <!-- Simple contact form (no backend) -->
-        <form class="contact-form">
+        <!-- Contact form with Web3Forms integration -->
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms hidden fields -->
+          <input type="hidden" name="access_key" value="a8f18135-e73c-4573-a135-477e5412a65e">
+          <input type="hidden" name="subject" value="New Contact from Tushar Mhatre Portfolio">
+          <input type="hidden" name="from_name" value="Tushar Mhatre Portfolio">
+          
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Name" required>
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Your Email" required>
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" placeholder="Your Message" required></textarea>
+            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
           </div>
-          <button type="submit" class="btn btn-submit">Send Message</button>
+          <button type="submit" class="btn btn-submit" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">
+              <i class="fas fa-spinner fa-spin"></i> Sending...
+            </span>
+          </button>
+          <div class="form-message" id="formMessage" style="display: none;"></div>
         </form>
       </div>
     </div>
