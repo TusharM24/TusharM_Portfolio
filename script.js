@@ -40,7 +40,7 @@ hamburger.addEventListener('click', () => mobileOverlay.classList.contains('acti
 mobileOverlay.addEventListener('click', e => { if (e.target === mobileOverlay) closeMenu(); });
 
 // TYPEWRITER
-const roles = ['AI Engineer', 'Data Scientist', 'ML Engineer', 'Software Engineer'];
+const roles = ['AI Engineer', 'ML Engineer'];
 const tw = document.getElementById('typewriter');
 let ri = 0, ci = 0, deleting = false;
 
