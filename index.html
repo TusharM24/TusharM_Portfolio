@@ -57,7 +57,7 @@
         </p>
         <div>
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="Main Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a href="Resume SDE1.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
         </div>
         <div class="social-icons">
           <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-icon" target="_blank">
@@ -88,6 +88,34 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
+        <!-- Project Card - Flappy Kiro Cloud Platform -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="ML Wallpaper1.webp" alt="Flappy Kiro Cloud Gaming Platform">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Flappy Kiro: Cloud Gaming Platform</h3>
+            <p class="project-description">
+              An enterprise-grade cloud gaming platform demonstrating modern DevOps, Kubernetes orchestration, and comprehensive observability on AWS. Features 24+ pods across microservices, sub-100ms response times, 99.9% uptime, and a full monitoring stack with distributed tracing and real-time alerting.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Kubernetes</span>
+              <span class="project-tag">AWS (EKS, ECR, ALB)</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">Python Flask</span>
+              <span class="project-tag">Nginx</span>
+              <span class="project-tag">OpenTelemetry</span>
+              <span class="project-tag">Infrastructure as Code</span>
+              <span class="project-tag">DevOps</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/TusharM24/flappy-kiro-cloud-platform" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Project Card 1 - EDA Agent -->
         <div class="project-card">
           <div class="project-img">
@@ -343,12 +371,14 @@
           <div class="timeline-content">
             <div class="timeline-date">September 2025 - Present</div>
             <h3 class="timeline-title">AI Engineering Intern</h3>
-            <p>Optimal Living Systems, Remote</p>
+            <p>The Aether Loop, Remote</p>
             <button class="expand-btn">Responsibilities</button>
             <div class="timeline-description hidden">
               <ul>
-                <li>Building multi-Agent AI system with Crew AI to build a supplement recommendation system based on blood biomarkers.</li>
-                <li>Using Langchain to combine agents with RAG based retrieval system for ingredient search and recommendation.</li>
+                <li>Architected and built an Agentic AI recommendation engine by leveraging CrewAI, LangChain, and structured clinical insight extraction with SMEs, achieving NDCG of 0.91.</li>
+                <li>Improved model performance from NDCG 0.60 to 0.91 through continuous feedback and human-in-the-loop validation, reducing SME review time from 4 to 1 hour weekly, leading to faster iteration cycles.</li>
+                <li>Engineered and maintained a containerized FastAPI backend for deployment cycles, sustaining 99% uptime with reliable monitoring and continuous model improvements, by deploying with Docker on GCP Cloud Run and automated CI/CD pipelines.</li>
+                <li>Researched and integrated open source tools and third-party APIs, eliminating the need to build several modules from scratch and reducing development time of our mobile app and platform services by ~40–50%.</li>
               </ul>
             </div>
           </div>
@@ -363,10 +393,8 @@
             <button class="expand-btn">Responsibilities</button>
             <div class="timeline-description hidden">
               <ul>
-                <li>Developed and orchestrated ETL pipelines in Airflow that processed thousands of research PDFs into structured synthetic datasets through OCR(Docling) and open-source LLMs (llama 3.2) to generate data for LLM fine-tuning.</li>
-                <li>Optimized data storage in GCP BigQuery with schema-structured collections, cutting data prep from 5hrs to 2hrs per batch.</li>
-                <li>Contributed to user research by scraping data from suggested websites which were leveraged further for LLM-finetuning.</li>
-                <li>Supported Employee Infrastructure setup by creating and maintaining Kanban boards on nextcloud to streamline tasks.</li>
+                <li>Designed and deployed the data ingestion and ETL pipelines in Airflow, OCR (Docling) and OpenAI API, to transform 1,000+ research PDFs into structured QnA datasets to kick off the organization's first LLM fine-tuning pilot.</li>
+                <li>Built reusable Python (BeautifulSoup, Requests) scraping scripts for the research team, reducing their manual sourcing by 3-4 hours daily, leading to completion of data targets two weeks ahead of deadline.</li>
               </ul>
             </div>
           </div>
@@ -375,21 +403,15 @@
         <!-- Timeline Item 3 -->
         <div class="timeline-item">
           <div class="timeline-content">
-            <div class="timeline-date">February 2024 - Present</div>
+            <div class="timeline-date">February 2024 - May 2025</div>
             <h3 class="timeline-title">Graduate Research Assistant</h3>
             <p>University of Oklahoma</p>
-             <!-- Add this button -->
             <button class="expand-btn">Responsibilities</button>
             <div class="timeline-description hidden">
               <ul>
-                <li>Developed automated pipelines for transforming EEG and MRI data into BIDS-compliant structures in Python and MATLAB, cutting the manual conversion time by 40% and streamlining lab-wide data workflows.</li>
-                <li>Maintained and updated large-scale neuroimaging datasets, ensuring seamless accessibility for a lab with 15 researchers.</li>
-                <li>Applied various clustering algorithms to identify Cortical Activity Patterns (CAPs) in brain EEG data across multiple studies.</li>
-                <li>Conducted statistical analysis (hypothesis testing, causal inference) on neuroimaging data to validate numerous research findings.</li>
-                <li>Created visualizations (heatmaps, 3D cortical maps) for research papers and presentations, translating complex findings for non-technical audiences.</li>
-                <li>Documented data workflows to ensure reproducibility and compliance with research standards and maintained detailed logs.</li>
-                <li>Implemented 3D CNN architectures (PyTorch) to classify brain states from MRI scans, achieving 89% accuracy in detecting early-stage neurological biomarkers.</li>
-
+                <li>Built executable EEG/MRI BIDS transformation pipelines in MATLAB, reducing manual structuring time from 5+ hours per dataset to single-click execution which enabled background preprocessing while researchers prioritized core research work.</li>
+                <li>Developed WSL-based Bash scripts integrating Windows/MATLAB workflows with Linux tools (FSL, AFNI), reducing preprocessing runtime by 40% and accelerating experiments turnaround through parallel job scheduling.</li>
+                <li>Led a year-long neuroimaging research study applying clustering algorithms across EEG datasets to identify and analyze Cortical Activity Patterns (CAPs), validating findings through statistical testing and co-authored a manuscript under review at Brain Topography.</li>
               </ul>
             </div>
           </div>
@@ -399,19 +421,17 @@
         <div class="timeline-item">
           <div class="timeline-content">
             <div class="timeline-date">February 2021 - July 2023</div>
-            <h3 class="timeline-title">Analyst</h3>
+            <h3 class="timeline-title">Software Engineer</h3>
             <p>Tata Consultancy Services, Pune, India</p>
             <button class="expand-btn">Responsibilities</button>
             <div class="timeline-description hidden">
               <ul>
-                <li>Built RPA solutions (Automation 360, VBA, SQL) to automate SAP/mainframe tasks, reducing manual effort by 80% (Awarded for excellence).</li>
-                <li>Collaborated with cross-functional teams in Agile sprints to gather requirements, define project scope, and deliver RPA/AI solutions aligned with business needs.</li>
-                <li>Developed demand forecasting models (Python, XGBoost), achieving 92% MAPE accuracy and reducing stockouts by 25%. </li>
-                <li>Designed and deployed ETL pipelines to aggregate data from multiple sources (SAP, mainframes) for forecasting models.</li>
-                <li>Diagnosed and resolved 15+ production incidents in live forecasting pipelines (Python, Airflow), implementing fixes that reduced error rates by 30% and improved system uptime significantly.</li>
-                <li>Containerized ML models (Docker) and exposed them as microservices via Flask, reducing prediction latency from 2s to 300ms while handling 1K+ requests per minute (RPM).</li>
-                <li>Conducted rigorous A/B testing on model iterations, demonstrating 15% lower RMSE and 20% better bias than legacy systems.</li>
-
+                <li>Developed 9 RPA bots using Automation 360, VBA, and SQL over 6 months, reducing manual workload by 20-25 hours weekly and driving $80K+ annual cost savings for enterprise clients through SAP and mainframe automation.</li>
+                <li>Designed and deployed ETL pipelines (Airflow) to aggregate data from multiple sources (SAP, mainframes) for forecasting models.</li>
+                <li>Diagnosed and resolved 30+ production incidents in live forecasting pipelines (Python, Airflow), implementing fixes that reduced error rates by 30% and improved system uptime significantly.</li>
+                <li>Built automated reporting solutions using Power Query, Excel automations, and multi-source connectors, eliminating 10+ manual hours weekly and enabling consistent daily-refresh data pipelines.</li>
+                <li>Developed and containerized ML models using Docker and exposed them through lightweight Flask APIs, reducing latency from 2s to 300ms while handling 1K+ RPM.</li>
+                <li>Collaborated with cross-functional teams in Agile sprints to gather requirements, define project scope, and deliver data solutions aligned with business needs.</li>
               </ul>
             </div>
           </div>
