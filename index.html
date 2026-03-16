@@ -1,439 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ8TKQYQFE"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
- 
-     gtag('config', 'G-PQ8TKQYQFE');
-   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ8TKQYQFE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PQ8TKQYQFE');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar Mhatre | Data Scientist</title>
-  <!-- FontAwesome (for icons) -->
+  <title>Tushar Mhatre | Data Scientist & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
-  
- 
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">TM</div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
 
-        
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#home" class="logo">TM</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="Resume SDE1.pdf" class="nav-cta" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Hero -->
   <section class="hero" id="home">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Hi, I'm <span>Tushar Mhatre</span></h1>
-        <h1><span>Welcome</span> to my PortFolio</h1>
-        <p>
-          A data enthusiast with a knack for machine learning and statistical modeling,
-          I’m dedicated to building intelligent solutions that make a real-world difference
-        </p>
-        <div>
-          <a href="#contact" class="btn">Contact Me</a>
-          <a href="Resume SDE1.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
+    <div class="hero-bg-grid"></div>
+    <div class="container hero-container">
+      <div class="hero-text reveal">
+        <span class="hero-greeting">Hi, I'm</span>
+        <h1 class="hero-name">Tushar Mhatre</h1>
+        <div class="hero-role">
+          <span class="role-prefix">A </span><span id="typewriter"></span><span class="cursor">|</span>
         </div>
-        <div class="social-icons">
-          <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-icon" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/TusharM24" class="social-icon" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="social-icon">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="tel:+14052238789" class="social-icon">
-            <i class="fas fa-phone"></i>
-          </a>
+        <p class="hero-bio">A data enthusiast with a knack for machine learning and statistical modeling, dedicated to building intelligent solutions that make a real-world difference.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-outline">View Work</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/TusharM24" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="social-link"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+14052238789" class="social-link"><i class="fas fa-phone"></i></a>
         </div>
       </div>
-      
-      <div class="profile-image">
-        
-        <img src="Profile.JPG" alt="Tushar Mhatre">
+      <div class="hero-image reveal reveal-delay-1">
+        <div class="image-glow"></div>
+        <div class="image-ring">
+          <img src="Profile.JPG" alt="Tushar Mhatre">
+        </div>
       </div>
-      
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
- <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <!-- Projects -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <div class="section-header reveal">
+        <span class="section-label">Portfolio</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="featured-project reveal">
+        <div class="featured-img">
+          <img src="eda_agent_placeholder.png" alt="Data Analysis Agent">
+          <div class="featured-overlay"><span class="featured-badge">Featured</span></div>
+        </div>
+        <div class="featured-content">
+          <span class="featured-label">Featured Project</span>
+          <h3>Data Analysis Agent</h3>
+          <p>An AI-powered Exploratory Data Analysis agent. Upload your dataset, ask questions in plain English, and get instant insights with auto-generated Python code and visualizations. Features LangGraph orchestration, secure sandbox execution, and rich visualizations.</p>
+          <div class="tag-group">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">Docker</span><span class="tag">Groq API</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/TusharM24/Data_Analysis-Agent" class="btn btn-sm btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://data-analysis-agent-frontend.onrender.com" class="btn btn-sm btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+
       <div class="projects-grid">
-        <!-- Project Card - Flappy Kiro Cloud Platform -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Flappy Kiro.png" alt="Flappy Kiro Cloud Gaming Platform">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Flappy Kiro: Cloud Gaming Platform</h3>
-            <p class="project-description">
-              An enterprise-grade cloud gaming platform demonstrating modern DevOps, Kubernetes orchestration, and comprehensive observability on AWS. Features 24+ pods across microservices, sub-100ms response times, 99.9% uptime, and a full monitoring stack with distributed tracing and real-time alerting.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Kubernetes</span>
-              <span class="project-tag">AWS (EKS, ECR, ALB)</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Python Flask</span>
-              <span class="project-tag">Nginx</span>
-              <span class="project-tag">OpenTelemetry</span>
-              <span class="project-tag">Infrastructure as Code</span>
-              <span class="project-tag">DevOps</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/flappy-kiro-cloud-platform" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal">
+          <div class="project-img"><img src="Flappy Kiro.png" alt="Flappy Kiro"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Flappy Kiro: Cloud Gaming Platform</h3>
+            <p>Enterprise-grade cloud gaming on AWS with Kubernetes, 24+ pods, sub-100ms response times, and full observability stack.</p>
+            <div class="tag-group"><span class="tag">Kubernetes</span><span class="tag">AWS EKS</span><span class="tag">Docker</span><span class="tag">Flask</span><span class="tag">OpenTelemetry</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/flappy-kiro-cloud-platform" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 1 - EDA Agent -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="eda_agent_placeholder.png" alt="EDA Agent - AI-Powered Data Analysis">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Data Analysis Agent</h3>
-            <p class="project-description">
-              An AI-powered Exploratory Data Analysis agent. Upload your dataset, ask questions in plain English, 
-              and get instant insights with auto-generated Python code and visualizations. Features LangGraph orchestration, 
-              secure sandbox execution, and rich visualizations using Matplotlib, Seaborn, and Plotly.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">LangGraph</span>
-              <span class="project-tag">LangChain</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Groq API</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Data_Analysis-Agent" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a class="project-link" href="https://data-analysis-agent-frontend.onrender.com" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img"><img src="chatbot.png" alt="AI Research Paper Assistant"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>AI Research Paper Assistant</h3>
+            <p>Offline-capable RAG-powered chatbot for secure summarization and Q&A on academic papers.</p>
+            <div class="tag-group"><span class="tag">LangChain</span><span class="tag">Streamlit</span><span class="tag">Ollama</span><span class="tag">FAISS</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/AI-Research-Paper-Assistant" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="chatbot.png" alt="Fake Job Detection">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">AI Research Paper Assistant</h3>
-            <p class="project-description">
-              An offline-capable RAG-powered chatbot for secure, efficient summarization and Q&A on academic papers.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Langchain</span>
-              <span class="project-tag">Streamlit</span>
-              <span class="project-tag">Large Language Models</span>
-              <span class="project-tag">Ollama API</span>
-              <span class="project-tag">FAISS</span>
-              <span class="project-tag">Sentence-Transformers (MiniLM)</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/AI-Research-Paper-Assistant" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="fake_job_detection.jpeg" alt="Fake Job Detection">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Fake Job Detection Portal</h3>
-            <p class="project-description">
-              Leveraged NLP and ML to detect fraudulent job postings, using classification models and 
-              a Flask-based web app for real-time predictions.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">Natural Language Processing</span>
-              <span class="project-tag">HTML/CSS</span>
-              <span class="project-tag">Statistical Analysis</span>
-              <span class="project-tag">Smote</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Fradulent-Job-Posting-Detection" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img"><img src="fake_job_detection.jpeg" alt="Fake Job Detection"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Fake Job Detection Portal</h3>
+            <p>NLP and ML to detect fraudulent job postings with a Flask web app for real-time predictions.</p>
+            <div class="tag-group"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">NLP</span><span class="tag">SMOTE</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Fradulent-Job-Posting-Detection" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="ML Wallpaper1.webp" alt="Customer Revenue Prediction">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Customer Revenue</h3>
-            <p class="project-description">
-              Implemented Linear Regression, Lasso, Ridge, and M.A.R.S. using R (caret) to forecast 
-              customer revenue, applying 10-fold cross-validation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R</span>
-              <span class="project-tag">Caret</span>
-              <span class="project-tag">Regression</span>
-              <span class="project-tag">Statistical Analysis</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Customer-Revenue-Prediction" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal">
+          <div class="project-img"><img src="ML Wallpaper1.webp" alt="Customer Revenue"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Predicting Customer Revenue</h3>
+            <p>Linear Regression, Lasso, Ridge, and M.A.R.S. in R to forecast customer revenue with 10-fold cross-validation.</p>
+            <div class="tag-group"><span class="tag">R</span><span class="tag">Caret</span><span class="tag">Regression</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Customer-Revenue-Prediction" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 3 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Hospital_Readmission.png" alt="Hospital Readmission">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Hospital Readmission Prediction</h3>
-            <p class="project-description">
-              Trained Logistic Regression, Random Forests, and XGBoost models to predict 
-              patient readmission likelihood based on medical histories.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R Programming</span>
-              <span class="project-tag">Caret</span>
-              <span class="project-tag">GGplot</span>
-              <span class="project-tag">Classification</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-Readmission" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img"><img src="Hospital_Readmission.png" alt="Hospital Readmission"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Hospital Readmission Prediction</h3>
+            <p>Logistic Regression, Random Forests, and XGBoost to predict patient readmission from medical histories.</p>
+            <div class="tag-group"><span class="tag">R</span><span class="tag">Caret</span><span class="tag">XGBoost</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Predicting-Hospital-Readmission" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 4 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="DBMS wallpaper.webp" alt="Database Design">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Database Design for PAN</h3>
-            <p class="project-description">
-              Built an Azure SQL database and Java/JDBC application for patient assistance,
-              including ER diagram, schema design, and indexing.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Azure SQL</span>
-              <span class="project-tag">Database Design</span>
-              <span class="project-tag">JDBC</span>
-              <span class="project-tag">Azure Data Studio</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Database-Design-for-Patient-Assistance-Network-PAN-" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img"><img src="DBMS wallpaper.webp" alt="Database Design"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Database Design for PAN</h3>
+            <p>Azure SQL database and Java/JDBC app for patient assistance with ER diagram, schema design, and indexing.</p>
+            <div class="tag-group"><span class="tag">Java</span><span class="tag">Azure SQL</span><span class="tag">JDBC</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Database-Design-for-Patient-Assistance-Network-PAN-" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 5 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="tableau_project.png" alt="Financial Analysis">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
-            <p class="project-description">
-              Created interactive Tableau dashboards to identify key products and demographics 
-              to optimize marketing and sales strategies.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Tableau</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://public.tableau.com/views/SalesDataAnalysisofaSuperMarketChain1/FinancialAnalysisofWearmartINC?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">
-                <i class="fas fa-chart-bar"></i> Tableau
-              </a>
-            </div>
+        <div class="project-card reveal">
+          <div class="project-img"><img src="tableau_project.png" alt="Financial Analysis"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Financial Analysis: Supermarket Chain</h3>
+            <p>Interactive Tableau dashboards identifying key products and demographics to optimize marketing and sales.</p>
+            <div class="tag-group"><span class="tag">Tableau</span><span class="tag">Data Visualization</span></div>
+            <div class="card-links"><a href="https://public.tableau.com/views/SalesDataAnalysisofaSuperMarketChain1/FinancialAnalysisofWearmartINC?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="icon-link" target="_blank"><i class="fas fa-chart-bar"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 6 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Predicting_Hospital_LOS.webp" alt="Predicting Hospital Length of Stay">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Hospital Length of Stay</h3>
-            <p class="project-description">
-              This project aims to analyze medical data to predict the length of stay (LOS) of patients in a hospital. Various machine learning models are trained and evaluated to predict the LOS based on demographic and medical information.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Seaborn</span>
-              <span class="project-tag">Matplotlib</span>
-              <span class="project-tag">Scikit-learn</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-length-of-Stay" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-img"><img src="Predicting_Hospital_LOS.webp" alt="Hospital LOS"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Predicting Hospital Length of Stay</h3>
+            <p>ML models to predict hospital LOS based on demographic and clinical information.</p>
+            <div class="tag-group"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Predicting-Hospital-length-of-Stay" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
 
-        <!-- Project Card 8 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="IDA_project.png" alt="Predicting Hospital Length of Stay">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Smoking & Drinking Habits with EHR Data</h3>
-            <p class="project-description">
-              An analytics pipeline developed in R that predicts individuals’ smoking and drinking behaviors using a suite of classification models
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R</span>
-              <span class="project-tag">Tidyverse</span>
-              <span class="project-tag">ggplot2</span>
-              <span class="project-tag">caret</span>
-              <span class="project-tag">stats</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Smoking-Drinking-Habits-with-Machine-Learning" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-img"><img src="IDA_project.png" alt="Smoking Drinking"><div class="project-img-overlay"></div></div>
+          <div class="project-body">
+            <h3>Predicting Smoking & Drinking Habits</h3>
+            <p>R pipeline predicting smoking and drinking behaviors using classification models on EHR data.</p>
+            <div class="tag-group"><span class="tag">R</span><span class="tag">Tidyverse</span><span class="tag">ggplot2</span><span class="tag">caret</span></div>
+            <div class="card-links"><a href="https://github.com/TusharM24/Predicting-Smoking-Drinking-Habits-with-Machine-Learning" class="icon-link" target="_blank"><i class="fab fa-github"></i></a></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience">
+  <!-- Experience -->
+  <section id="experience" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-header reveal">
+        <span class="section-label">Career</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
       <div class="timeline">
 
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">September 2025 - Present</div>
-            <h3 class="timeline-title">AI Engineering Intern</h3>
-            <p>The Aether Loop, Remote</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Architected and built an Agentic AI recommendation engine by leveraging CrewAI, LangChain, and structured clinical insight extraction with SMEs, achieving NDCG of 0.91.</li>
-                <li>Improved model performance from NDCG 0.60 to 0.91 through continuous feedback and human-in-the-loop validation, reducing SME review time from 4 to 1 hour weekly, leading to faster iteration cycles.</li>
-                <li>Engineered and maintained a containerized FastAPI backend for deployment cycles, sustaining 99% uptime with reliable monitoring and continuous model improvements, by deploying with Docker on GCP Cloud Run and automated CI/CD pipelines.</li>
-                <li>Researched and integrated open source tools and third-party APIs, eliminating the need to build several modules from scratch and reducing development time of our mobile app and platform services by ~40–50%.</li>
-              </ul>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div><h3 class="timeline-role">AI Engineering Intern</h3><p class="timeline-company">The Aether Loop &mdash; Remote</p></div>
+              <span class="timeline-date">Sep 2025 – Present</span>
             </div>
+            <button class="expand-btn" aria-expanded="false"><span>Responsibilities</span><i class="fas fa-chevron-down"></i></button>
+            <div class="timeline-details hidden"><ul>
+              <li>Architected and built an Agentic AI recommendation engine leveraging CrewAI, LangChain, and structured clinical insight extraction with SMEs, achieving NDCG of 0.91.</li>
+              <li>Improved model performance from NDCG 0.60 to 0.91 through continuous feedback and human-in-the-loop validation, reducing SME review time from 4 to 1 hour weekly.</li>
+              <li>Engineered and maintained a containerized FastAPI backend deployed with Docker on GCP Cloud Run with automated CI/CD pipelines, sustaining 99% uptime.</li>
+              <li>Researched and integrated open source tools and third-party APIs, reducing development time by ~40–50%.</li>
+            </ul></div>
           </div>
         </div>
 
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">July 2025 - September 2025</div>
-            <h3 class="timeline-title">Data Architect Intern</h3>
-            <p>Optimal Living Systems, Remote</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Designed and deployed the data ingestion and ETL pipelines in Airflow, OCR (Docling) and OpenAI API, to transform 1,000+ research PDFs into structured QnA datasets to kick off the organization's first LLM fine-tuning pilot.</li>
-                <li>Built reusable Python (BeautifulSoup, Requests) scraping scripts for the research team, reducing their manual sourcing by 3-4 hours daily, leading to completion of data targets two weeks ahead of deadline.</li>
-              </ul>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div><h3 class="timeline-role">Data Architect Intern</h3><p class="timeline-company">Optimal Living Systems &mdash; Remote</p></div>
+              <span class="timeline-date">Jul 2025 – Sep 2025</span>
             </div>
+            <button class="expand-btn" aria-expanded="false"><span>Responsibilities</span><i class="fas fa-chevron-down"></i></button>
+            <div class="timeline-details hidden"><ul>
+              <li>Designed and deployed data ingestion and ETL pipelines in Airflow, OCR (Docling) and OpenAI API, transforming 1,000+ research PDFs into structured QnA datasets for the organization's first LLM fine-tuning pilot.</li>
+              <li>Built reusable Python (BeautifulSoup, Requests) scraping scripts for the research team, reducing manual sourcing by 3–4 hours daily and completing data targets two weeks ahead of deadline.</li>
+            </ul></div>
           </div>
         </div>
 
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">February 2024 - May 2025</div>
-            <h3 class="timeline-title">Graduate Research Assistant</h3>
-            <p>University of Oklahoma</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Built executable EEG/MRI BIDS transformation pipelines in MATLAB, reducing manual structuring time from 5+ hours per dataset to single-click execution which enabled background preprocessing while researchers prioritized core research work.</li>
-                <li>Developed WSL-based Bash scripts integrating Windows/MATLAB workflows with Linux tools (FSL, AFNI), reducing preprocessing runtime by 40% and accelerating experiments turnaround through parallel job scheduling.</li>
-                <li>Led a year-long neuroimaging research study applying clustering algorithms across EEG datasets to identify and analyze Cortical Activity Patterns (CAPs), validating findings through statistical testing and co-authored a manuscript under review at Brain Topography.</li>
-              </ul>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div><h3 class="timeline-role">Graduate Research Assistant</h3><p class="timeline-company">University of Oklahoma &mdash; Oklahoma, USA</p></div>
+              <span class="timeline-date">Feb 2024 – May 2025</span>
             </div>
+            <button class="expand-btn" aria-expanded="false"><span>Responsibilities</span><i class="fas fa-chevron-down"></i></button>
+            <div class="timeline-details hidden"><ul>
+              <li>Built executable EEG/MRI BIDS transformation pipelines in MATLAB, reducing manual structuring time from 5+ hours to single-click execution.</li>
+              <li>Developed WSL-based Bash scripts integrating Windows/MATLAB workflows with Linux tools (FSL, AFNI), reducing preprocessing runtime by 40%.</li>
+              <li>Led a year-long neuroimaging study applying clustering algorithms across EEG datasets to identify Cortical Activity Patterns (CAPs), co-authoring a manuscript under review at Brain Topography.</li>
+            </ul></div>
           </div>
         </div>
 
-        <!-- Timeline Item 4 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">February 2021 - July 2023</div>
-            <h3 class="timeline-title">Software Engineer</h3>
-            <p>Tata Consultancy Services, Pune, India</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Developed 9 RPA bots using Automation 360, VBA, and SQL over 6 months, reducing manual workload by 20-25 hours weekly and driving $80K+ annual cost savings for enterprise clients through SAP and mainframe automation.</li>
-                <li>Designed and deployed ETL pipelines (Airflow) to aggregate data from multiple sources (SAP, mainframes) for forecasting models.</li>
-                <li>Diagnosed and resolved 30+ production incidents in live forecasting pipelines (Python, Airflow), implementing fixes that reduced error rates by 30% and improved system uptime significantly.</li>
-                <li>Built automated reporting solutions using Power Query, Excel automations, and multi-source connectors, eliminating 10+ manual hours weekly and enabling consistent daily-refresh data pipelines.</li>
-                <li>Developed and containerized ML models using Docker and exposed them through lightweight Flask APIs, reducing latency from 2s to 300ms while handling 1K+ RPM.</li>
-                <li>Collaborated with cross-functional teams in Agile sprints to gather requirements, define project scope, and deliver data solutions aligned with business needs.</li>
-              </ul>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div><h3 class="timeline-role">Software Engineer</h3><p class="timeline-company">Tata Consultancy Services &mdash; Pune, India</p></div>
+              <span class="timeline-date">Feb 2021 – Jul 2023</span>
             </div>
+            <button class="expand-btn" aria-expanded="false"><span>Responsibilities</span><i class="fas fa-chevron-down"></i></button>
+            <div class="timeline-details hidden"><ul>
+              <li>Developed 9 RPA bots using Automation 360, VBA, and SQL, reducing manual workload by 20–25 hours weekly and driving $80K+ annual cost savings through SAP and mainframe automation.</li>
+              <li>Designed and deployed ETL pipelines (Airflow) to aggregate data from multiple sources for forecasting models.</li>
+              <li>Diagnosed and resolved 30+ production incidents in live forecasting pipelines, reducing error rates by 30%.</li>
+              <li>Built automated reporting solutions using Power Query and Excel automations, eliminating 10+ manual hours weekly.</li>
+              <li>Containerized ML models using Docker and exposed them through Flask APIs, reducing latency from 2s to 300ms while handling 1K+ RPM.</li>
+              <li>Collaborated with cross-functional teams in Agile sprints to deliver data solutions aligned with business needs.</li>
+            </ul></div>
           </div>
         </div>
 
@@ -441,398 +281,205 @@
     </div>
   </section>
 
-  
-
-  <!-- Education Section -->
-<section id="education">
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-    <div class="education-cards">
-      <!-- Flip Card 1 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-         <div class="flip-card-front">
-          <div class="education-header">
-            <div class="education-degree">Master's</div>
-            <div class="education-date">August 2023 - May 2025</div>
-          </div>
-          <div class="education-body">
-            <div class="education-school">University of Oklahoma</div>
-            <div class="education-field">Data Science</div>
-            <div class="education-gpa">GPA: 3.97</div>
-            <div class="divider"></div>
-            <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More info</button>
-        </div>
-
-          <!-- Back side of Education Card (Master's) -->
-        <div class="flip-card-back">
-          <div class="back-section">
-            <h4 class="back-title">Relevant Courses</h4>
-            <ul class="bullet-list">
-              <li>Data Mining</li>
-              <li>Machine Learning Practice</li>
-              <li>Intelligent Data Analytics</li>
-              <li>Data Visualization</li>
-              <li>Statistics</li>
-            </ul>
-          </div>
-          <div class="back-section">
-            <h4 class="back-title">Achievements/Extra-Curriculars</h4>
-            <ul class="bullet-list">
-              <li>Managed to get Graduate Research Assistantship</li>
-              <li>Data Science Club - Member</li>
-              
-            </ul>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Go Back</button>
-        </div>
-
-        </div>
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Toolkit</span>
+        <h2 class="section-title">Skills</h2>
       </div>
-
-      <!-- Flip Card 2 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-          <div class="flip-card-front">
-            <div class="education-header">
-              <div class="education-degree">Bachelor's</div>
-              <div class="education-date">June 2016 - May 2020</div>
-            </div>
-            <div class="education-body">
-              <div class="education-school">Savitribai Phule Pune University</div>
-              <div class="education-field">Electronics & Telecommunication Engineering</div>
-              <div class="education-gpa">GPA: 7.6</div>
-              <div class="divider"></div>
-              <p>Gained a robust foundation in object oriented programming, data structures, mathematics and technical problem-solving.</p>
-            </div>
-            <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More Info</button>
-          </div>
-          <!-- Back side -->
-          <!-- Back side of Education Card (Master's) -->
-        <div class="flip-card-back">
-          <div class="back-section">
-            <h4 class="back-title">Relevant Courses</h4>
-            <ul class="bullet-list">
-              <li>Fundamentals of Programming-I and II</li>
-              <li>Data Structures and Algorithms</li>
-              <li>Object Oriented Programming</li>
-              <li>Engineering mathematics-I,II & III</li>
-            </ul>
-          </div>
-          <div class="back-section">
-            <h4 class="back-title">Achievements</h4>
-            <ul class="bullet-list">
-              <li>Telecom Engineer Student Assosciation - Treasurer(2019)</li>
-              <li>Telecom Engineer Student Assosciation - Assistant Designer(2017)</li>
-              <li>Rotaract Club of DPU - Assistant Marketing Head(2017)</li>
-            </ul>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Go Back</button>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Languages</h3>
+          <div class="tag-group"><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">MATLAB</span><span class="tag">Bash</span></div>
         </div>
-
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon"><i class="fas fa-brain"></i></div>
+          <h3>ML / AI</h3>
+          <div class="tag-group"><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">CrewAI</span><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">FAISS</span><span class="tag">Ollama</span></div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">Skills</h2>
-
-    <!-- Slider Container -->
-    <div class="skills-slider-container">
-      <div class="skills-slider" id="skillsSlider">
-        <!-- 1) Programming Languages -->
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">R</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">Bash</span>
-          </div>
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Data & Analytics</h3>
+          <div class="tag-group"><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Plotly</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Excel</span></div>
         </div>
-
-        <!-- 2) Tools & Technologies -->
-        <div class="skill-category">
-          <h3>Data Analysis Tools/Skills</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Power B.I.</span>
-            <span class="skill-tag">Microsoft Excel</span>
-            <span class="skill-tag">Vlookup</span>
-            <span class="skill-tag">Pivot Tables</span>
-          </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud & DevOps</h3>
+          <div class="tag-group"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GCP</span><span class="tag">AWS</span><span class="tag">Airflow</span><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">CI/CD</span></div>
         </div>
-
-        <!-- 3) Python Libraries -->
-        <div class="skill-category">
-          <h3>Python Libraries</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Seaborn</span>
-            <span class="skill-tag">nltk</span>
-            <span class="skill-tag">Plotly</span>
-          </div>
-        </div>
-
-        <!-- 4) R Packages -->
-        <div class="skill-category">
-          <h3>R Packages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Caret</span>
-            <span class="skill-tag">ggplot2</span>
-            <span class="skill-tag">dplyr</span>
-            <span class="skill-tag">tidyr</span>
-            <span class="skill-tag">H2O</span>
-            <span class="skill-tag">Shiny</span>
-            <span class="skill-tag">knitr</span>
-            <span class="skill-tag">tibble</span>
-            <span class="skill-tag">plotly</span>
-          </div>
-        </div>
-
-        <!-- 5) Databases -->
-        <div class="skill-category">
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
           <h3>Databases</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Chromadb</span>
-            <span class="skill-tag">BigQuery</span>
-            <span class="skill-tag">Microsoft Azure</span>
-            <span class="skill-tag">JDBC</span>
-          </div>
+          <div class="tag-group"><span class="tag">MongoDB</span><span class="tag">ChromaDB</span><span class="tag">BigQuery</span><span class="tag">Azure SQL</span><span class="tag">PostgreSQL</span></div>
         </div>
-      </div>
-
-      <!-- 6) Tools & Technologies 
-        <div class="skill-category">
-          <h3>Other Tools &amp; Technologies</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">LangChain</span>
-            <span class="skill-tag">Ollama</span>
-            <span class="skill-tag">Git/Github</span>
-            <span class="skill-tag">Apache Spark</span>
-            <span class="skill-tag">FAISS</span>
-            <span class="skill-tag">Linux</span>
-          </div>
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-icon"><i class="fab fa-r-project"></i></div>
+          <h3>R Ecosystem</h3>
+          <div class="tag-group"><span class="tag">Caret</span><span class="tag">ggplot2</span><span class="tag">dplyr</span><span class="tag">tidyr</span><span class="tag">H2O</span><span class="tag">Shiny</span><span class="tag">Plotly</span></div>
         </div>
-       -->
-      <!-- Slider Controls: Prev/Next -->
-      <button class="slider-btn" id="prevBtn">Prev</button>
-      <button class="slider-btn" id="nextBtn">Next</button>
-    </div>
-    <!--
-    
-    <div class="skill-radial-container">
-      
-      <div class="skill-radial" style="--progress: 85deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">85%</div>
-          <div class="skill-radial-name">Python</div>
-        </div>
-      </div>
-      
-      <div class="skill-radial" style="--progress: 80deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">80%</div>
-          <div class="skill-radial-name">R</div>
-        </div>
-      </div>
-      
-      <div class="skill-radial" style="--progress: 75deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">75%</div>
-          <div class="skill-radial-name">SQL</div>
-        </div>
-      </div>
-    </div>
-    -->
-  </div>
-</section>
-
-  
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="certifications">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="certification-cards">
-        <div class="certification-card">
-          <div class="certification-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="certification-info">
-            <div class="certification-name">Google Data Analytics Professional Certification</div>
-            <div class="certification-issuer">Google</div>
-          </div>
-          <a class="certification-link" href="https://www.coursera.org/account/accomplishments/specialization/4SCYMWK8CYP3" target="_blank" rel="noopener noreferrer">
-            View Certificate
-          </a>
-        </div>
-
-       
-        <!-- Certification Card 3 -->
-        <div class="certification-card">
-          <div class="certification-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="certification-info">
-            <div class="certification-name">Master C++ Programming </div>
-            <div class="certification-issuer">Udemy</div>
-          </div>
-          <a class="certification-link" href="https://www.udemy.com/certificate/UC-d5104c03-2eff-4c0d-a793-c1386242508f/" target="_blank" rel="noopener noreferrer">
-            View Certificate
-          </a>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- Education -->
+  <section id="education" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Let's work together!</h3>
-          <p>
-            Interested in collaborating or have any questions?  
-            Feel free to reach out via the form or the details below.
-          </p>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <h4>Phone</h4>
-              <p><a href="tel:+14052238789" style="color:inherit;text-decoration:none;">+1 (405) 223-8789</a></p>
+      <div class="section-header reveal">
+        <span class="section-label">Background</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="education-grid">
+        <div class="flip-card reveal">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="edu-badge">Master's</div>
+              <h3>University of Oklahoma</h3>
+              <p class="edu-field">Data Science</p>
+              <p class="edu-date">Aug 2023 – May 2025</p>
+              <p class="edu-gpa">GPA: 3.97 / 4.0</p>
+              <p class="edu-desc">Hands-on curriculum focusing on Data Analytics, Machine Learning, and Deep Learning.</p>
+              <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More Info <i class="fas fa-arrow-right"></i></button>
             </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:tushar.jayendra.mhatre-1@ou.edu" style="color:inherit;text-decoration:none;">tushar.jayendra.mhatre-1@ou.edu</a></p>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <div>
-              <h4>LinkedIn</h4>
-              <p>
-                <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="color:inherit;text-decoration:none;">
-                  linkedin.com/in/tushar-mhatre24
-                </a>
-              </p>
+            <div class="flip-card-back">
+              <h4>Relevant Courses</h4>
+              <ul><li>Data Mining</li><li>Machine Learning Practice</li><li>Intelligent Data Analytics</li><li>Data Visualization</li><li>Statistics</li></ul>
+              <h4>Highlights</h4>
+              <ul><li>Graduate Research Assistantship</li><li>Data Science Club — Member</li></ul>
+              <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')"><i class="fas fa-arrow-left"></i> Go Back</button>
             </div>
           </div>
         </div>
 
-        <!-- Contact form with Web3Forms integration -->
-        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms hidden fields -->
+        <div class="flip-card reveal reveal-delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="edu-badge">Bachelor's</div>
+              <h3>Savitribai Phule Pune University</h3>
+              <p class="edu-field">Electronics & Telecommunication Engineering</p>
+              <p class="edu-date">Jun 2016 – May 2020</p>
+              <p class="edu-gpa">GPA: 7.6 / 10</p>
+              <p class="edu-desc">Foundation in OOP, data structures, mathematics, and technical problem-solving.</p>
+              <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More Info <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="flip-card-back">
+              <h4>Relevant Courses</h4>
+              <ul><li>Data Structures & Algorithms</li><li>Object Oriented Programming</li><li>Engineering Mathematics I–III</li><li>Fundamentals of Programming</li></ul>
+              <h4>Achievements</h4>
+              <ul><li>TESA — Treasurer (2019)</li><li>TESA — Assistant Designer (2017)</li><li>Rotaract Club — Asst. Marketing Head</li></ul>
+              <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')"><i class="fas fa-arrow-left"></i> Go Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+      <div class="cert-grid">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/4SCYMWK8CYP3" target="_blank" rel="noopener noreferrer" class="cert-card reveal">
+          <div class="cert-icon"><i class="fab fa-google"></i></div>
+          <div class="cert-info"><h3>Google Data Analytics Professional</h3><p>Google — Coursera</p></div>
+          <i class="fas fa-external-link-alt cert-arrow"></i>
+        </a>
+        <a href="https://www.udemy.com/certificate/UC-d5104c03-2eff-4c0d-a793-c1386242508f/" target="_blank" rel="noopener noreferrer" class="cert-card reveal reveal-delay-1">
+          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+          <div class="cert-info"><h3>Master C++ Programming</h3><p>Udemy</p></div>
+          <i class="fas fa-external-link-alt cert-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Let's Talk</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">Interested in collaborating or have questions? Feel free to reach out — I'd love to connect.</p>
+          <div class="contact-items">
+            <a href="tel:+14052238789" class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+              <div><span class="contact-item-label">Phone</span><span class="contact-item-value">+1 (405) 223-8789</span></div>
+            </a>
+            <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="contact-item">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div><span class="contact-item-label">Email</span><span class="contact-item-value">tushar.jayendra.mhatre-1@ou.edu</span></div>
+            </a>
+            <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" class="contact-item">
+              <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div><span class="contact-item-label">LinkedIn</span><span class="contact-item-value">linkedin.com/in/tushar-mhatre24</span></div>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal-delay-1" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="a8f18135-e73c-4573-a135-477e5412a65e">
           <input type="hidden" name="subject" value="New Contact from Tushar Mhatre Portfolio">
           <input type="hidden" name="from_name" value="Tushar Mhatre Portfolio">
-          
-          <!-- Honeypot spam protection -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-          
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          <input type="checkbox" name="botcheck" style="display:none;">
+          <div class="form-field">
+            <input type="text" name="name" id="fname" placeholder=" " required>
+            <label for="fname">Your Name</label>
           </div>
-          <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+          <div class="form-field">
+            <input type="email" name="email" id="femail" placeholder=" " required>
+            <label for="femail">Your Email</label>
           </div>
-          <div class="form-group">
-            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
+          <div class="form-field">
+            <textarea name="message" id="fmessage" placeholder=" " required></textarea>
+            <label for="fmessage">Your Message</label>
           </div>
-          <button type="submit" class="btn btn-submit" id="submitBtn">
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
             <span class="btn-text">Send Message</span>
-            <span class="btn-loading" style="display: none;">
-              <i class="fas fa-spinner fa-spin"></i> Sending...
-            </span>
+            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
           </button>
-          <div class="form-message" id="formMessage" style="display: none;"></div>
+          <div class="form-message" id="formMessage" style="display:none;"></div>
         </form>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">TM</div>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="footer-social">
-        <a href="https://github.com/TusharM24" target="_blank" style="margin-right: 10px; color: white;">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="margin-right: 10px; color: white;">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+      <div class="footer-socials">
+        <a href="https://github.com/TusharM24" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      
-      <!-- Portfolio Analytics Counter -->
-      <div class="analytics-counter">
-        <div class="counter-item">
-          <i class="fas fa-eye"></i>
-          <span class="counter-number" id="totalViews">1,247</span>
-          <span class="counter-label">Total Views</span>
-        </div>
-        <div class="counter-item">
-          <i class="fas fa-fire"></i>
-          <span class="counter-number" id="todayViews">23</span>
-          <span class="counter-label">Today</span>
-        </div>
-        <div class="counter-item">
-          <i class="fas fa-mouse-pointer"></i>
-          <span class="counter-number" id="totalClicks">156</span>
-          <span class="counter-label">Clicks</span>
-        </div>
+      <div class="footer-analytics">
+        <div class="analytics-item"><i class="fas fa-eye"></i><span id="totalViews">1,247</span><span>Views</span></div>
+        <div class="analytics-item"><i class="fas fa-fire"></i><span id="todayViews">23</span><span>Today</span></div>
+        <div class="analytics-item"><i class="fas fa-mouse-pointer"></i><span id="totalClicks">156</span><span>Clicks</span></div>
       </div>
-      
-      <div class="copyright">
-        &copy; 2025 - Tushar Mhatre. All rights reserved.
-      </div>
+      <p class="footer-copy">&copy; 2025 Tushar Mhatre. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Back to top button -->
-  <div class="back-to-top" id="backToTop">
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-chevron-up"></i>
-  </div>
+  </button>
 
-  <!-- Custom JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>

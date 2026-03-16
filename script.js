@@ -1,354 +1,191 @@
-// Hamburger menu toggle
+// SCROLL PROGRESS
+const scrollProgress = document.getElementById('scrollProgress');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  scrollProgress.style.width = (pct * 100) + '%';
+});
+
+// HEADER SCROLL EFFECT
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// HAMBURGER / MOBILE MENU
 const hamburger = document.getElementById('hamburger');
+const mobileOverlay = document.getElementById('mobileOverlay');
 const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+function buildOverlay() {
+  mobileOverlay.innerHTML = '';
+  navLinks.querySelectorAll('li').forEach(li => {
+    const clone = li.cloneNode(true);
+    mobileOverlay.appendChild(clone);
+    clone.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  });
+}
 
-// Back to top button
-const backToTopBtn = document.getElementById('backToTop');
+function openMenu() {
+  buildOverlay();
+  mobileOverlay.classList.add('active');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  mobileOverlay.classList.remove('active');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', () => mobileOverlay.classList.contains('active') ? closeMenu() : openMenu());
+mobileOverlay.addEventListener('click', e => { if (e.target === mobileOverlay) closeMenu(); });
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopBtn.classList.add('visible');
-  } else {
-    backToTopBtn.classList.remove('visible');
-  }
-});
+// TYPEWRITER
+const roles = ['AI Engineer', 'Data Scientist', 'ML Engineer', 'Software Engineer'];
+const tw = document.getElementById('typewriter');
+let ri = 0, ci = 0, deleting = false;
 
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+function type() {
+  const word = roles[ri];
+  tw.textContent = deleting ? word.slice(0, ci - 1) : word.slice(0, ci + 1);
+  deleting ? ci-- : ci++;
+  if (!deleting && ci === word.length) { setTimeout(() => { deleting = true; type(); }, 2000); return; }
+  if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+  setTimeout(type, deleting ? 55 : 95);
+}
+type();
 
-document.addEventListener('DOMContentLoaded', () => {
-const expandButtons = document.querySelectorAll('.expand-btn');
-expandButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const details = button.nextElementSibling; // the .timeline-description
+// SCROLL REVEAL
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ACTIVE NAV
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-link');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navItems.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + e.target.id);
+      });
+    }
+  });
+}, { threshold: 0.35 });
+sections.forEach(s => sectionObserver.observe(s));
+
+// EXPERIENCE EXPAND
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.nextElementSibling;
+    const open = !details.classList.contains('hidden');
     details.classList.toggle('hidden');
-    button.textContent = details.classList.contains('hidden') 
-      ? 'Show More' 
-      : 'Show Less';
+    btn.setAttribute('aria-expanded', !open);
+    btn.querySelector('span').textContent = open ? 'Responsibilities' : 'Hide';
   });
 });
-  
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('skillsSlider');
-    const skillCards = slider.querySelectorAll('.skill-category');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-  
-    let currentIndex = 0;
-    const totalCards = skillCards.length;  // e.g. 5
-    const cardsPerView = 3;               // we want 3 visible at once on desktop
-    
-    // Max index is how many times we can shift before running out of cards
-    // e.g. if we have 5 cards and 3 per view, last index is 5 - 3 = 2
-    const maxIndex = totalCards - cardsPerView; // 2
-  
-    // We'll measure actual card width (including gap) to get precise slides:
-    function getCardWidth() {
-      // Because we have a gap of 20px in the CSS, add it.
-      // offsetWidth is the actual card width including padding/border.
-      const cardWidth = skillCards[0].offsetWidth + 20;
-      return cardWidth;
-    }
-  
-    function updateSlider() {
-      const cardWidth = getCardWidth();
-      // Slide track by currentIndex * cardWidth
-      const translateX = -(currentIndex * cardWidth);
-      slider.style.transform = `translateX(${translateX}px)`;
-    }
-  
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
-  
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-  
-    // Initialize
-    updateSlider();
-  });
+// BACK TO TOP
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Analytics Counter Functionality
-class PortfolioAnalytics {
-  constructor() {
-    this.totalViews = this.getStoredValue('totalViews', 1247);
-    this.todayViews = this.getStoredValue('todayViews', 23);
-    this.totalClicks = this.getStoredValue('totalClicks', 156);
-    this.lastVisitDate = this.getStoredValue('lastVisitDate', '');
-    
-    this.init();
-  }
-  
-  init() {
-    this.updateCounters();
-    this.trackPageView();
-    this.setupEventTracking();
-    this.animateCounters();
-  }
-  
-  getStoredValue(key, defaultValue) {
-    try {
-      const stored = localStorage.getItem(key);
-      return stored ? parseInt(stored) : defaultValue;
-    } catch (e) {
-      return defaultValue;
-    }
-  }
-  
-  setStoredValue(key, value) {
-    try {
-      localStorage.setItem(key, value.toString());
-    } catch (e) {
-      console.log('LocalStorage not available');
-    }
-  }
-  
-  updateCounters() {
-    const today = new Date().toDateString();
-    
-    // Check if this is a new day
-    if (this.lastVisitDate !== today) {
-      this.todayViews = 1;
-      this.lastVisitDate = today;
-    } else {
-      this.todayViews++;
-    }
-    
-    this.totalViews++;
-    
-    // Store updated values
-    this.setStoredValue('totalViews', this.totalViews);
-    this.setStoredValue('todayViews', this.todayViews);
-    this.setStoredValue('lastVisitDate', this.lastVisitDate);
-  }
-  
-  trackPageView() {
-    // Track page view with Google Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'page_view', {
-        page_title: document.title,
-        page_location: window.location.href
-      });
-    }
-  }
-  
-  trackClick(element, action) {
-    this.totalClicks++;
-    this.setStoredValue('totalClicks', this.totalClicks);
-    
-    // Update counter display
-    this.animateCounter('totalClicks', this.totalClicks);
-    
-    // Track with Google Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'click', {
-        event_category: 'engagement',
-        event_label: action,
-        value: this.totalClicks
-      });
-    }
-  }
-  
-  setupEventTracking() {
-    // Track project card clicks
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        this.trackClick(card, 'project_view');
-      });
-    });
-    
-    // Track button clicks
-    document.querySelectorAll('.btn, .expand-btn, .flip-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this.trackClick(btn, 'button_click');
-      });
-    });
-    
-    // Track social media clicks
-    document.querySelectorAll('.footer-social a').forEach(link => {
-      link.addEventListener('click', () => {
-        this.trackClick(link, 'social_click');
-      });
-    });
-    
-    // Track navigation clicks
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        this.trackClick(link, 'navigation_click');
-      });
-    });
-  }
-  
-  animateCounters() {
-    this.animateCounter('totalViews', this.totalViews);
-    this.animateCounter('todayViews', this.todayViews);
-    this.animateCounter('totalClicks', this.totalClicks);
-  }
-  
-  animateCounter(elementId, targetValue) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
-    
-    const startValue = parseInt(element.textContent.replace(/,/g, '')) || 0;
-    const duration = 1000; // 1 second
-    const startTime = performance.now();
-    
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Easing function for smooth animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentValue = Math.floor(startValue + (targetValue - startValue) * easeOutQuart);
-      
-      element.textContent = currentValue.toLocaleString();
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-    
-    requestAnimationFrame(animate);
-  }
-}
-
-// Flag to prevent double initialization
-let analyticsInitialized = false;
-
-// Wait for Google Analytics to load before initializing custom analytics
-function waitForGoogleAnalytics() {
-  if (typeof gtag !== 'undefined' && !analyticsInitialized) {
-    // Google Analytics is ready, initialize our custom analytics
-    window.portfolioAnalytics = new PortfolioAnalytics();
-    analyticsInitialized = true;
-  } else if (!analyticsInitialized) {
-    // Google Analytics not ready yet, wait a bit more
-    setTimeout(waitForGoogleAnalytics, 100);
-  }
-}
-
-// Fallback: Initialize analytics after 3 seconds even if Google Analytics isn't ready
-setTimeout(() => {
-  if (!analyticsInitialized) {
-    // Google Analytics still not ready, initialize anyway
-    window.portfolioAnalytics = new PortfolioAnalytics();
-    analyticsInitialized = true;
-  }
-}, 3000);
-
-// Initialize analytics when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Start checking for Google Analytics availability
-  waitForGoogleAnalytics();
-  
-  // Initialize Web3Forms contact form handler
-  initWeb3Forms();
-});
-
-// Web3Forms Integration
+// WEB3FORMS
 function initWeb3Forms() {
   const form = document.getElementById('contactForm');
   if (!form) return;
-  
   const submitBtn = document.getElementById('submitBtn');
   const btnText = submitBtn.querySelector('.btn-text');
   const btnLoading = submitBtn.querySelector('.btn-loading');
   const formMessage = document.getElementById('formMessage');
-  
-  form.addEventListener('submit', async function(e) {
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    
-    // Hide any previous messages
     formMessage.style.display = 'none';
-    formMessage.className = 'form-message';
-    
-    // Show loading state
     btnText.style.display = 'none';
     btnLoading.style.display = 'flex';
     submitBtn.disabled = true;
-    
-    // Get form data
+
     const formData = new FormData(form);
-    
-    // Add honeypot value (should be empty for real users)
-    const honeypot = formData.get('botcheck');
-    if (honeypot) {
-      // Bot detected
-      showMessage(formMessage, 'Spam detected. Please try again.', 'error');
-      resetButton(btnText, btnLoading, submitBtn);
-      return;
-    }
-    
+    if (formData.get('botcheck')) { showMsg(formMessage, 'Spam detected.', 'error'); resetBtn(btnText, btnLoading, submitBtn); return; }
+
     try {
-      // Submit to Web3Forms
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-      
-      const data = await response.json();
-      
-      if (response.ok && data.success) {
-        // Success!
-        showMessage(formMessage, 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.', 'success');
-        
-        // Reset form
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        showMsg(formMessage, "Thank you! Your message has been sent. I'll get back to you soon.", 'success');
         form.reset();
-        
-        // Track successful submission with Google Analytics
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'form_submission', {
-            event_category: 'contact',
-            event_label: 'contact_form',
-            value: 1
-          });
-        }
+        if (typeof gtag !== 'undefined') gtag('event', 'form_submission', { event_category: 'contact' });
       } else {
-        // Error from Web3Forms
-        showMessage(formMessage, data.message || 'Sorry, there was an error sending your message. Please try again later.', 'error');
+        showMsg(formMessage, data.message || 'Error sending. Please try again.', 'error');
       }
-    } catch (error) {
-      // Network or other error
-      console.error('Form submission error:', error);
-      showMessage(formMessage, 'Network error. Please check your connection and try again.', 'error');
-    } finally {
-      resetButton(btnText, btnLoading, submitBtn);
-    }
+    } catch { showMsg(formMessage, 'Network error. Check your connection.', 'error'); }
+    finally { resetBtn(btnText, btnLoading, submitBtn); }
   });
 }
 
-function showMessage(messageElement, text, type) {
-  messageElement.textContent = text;
-  messageElement.className = `form-message ${type}`;
-  messageElement.style.display = 'block';
-  
-  // Scroll to message
-  messageElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  
-  // Auto-hide success messages after 5 seconds
-  if (type === 'success') {
-    setTimeout(() => {
-      messageElement.style.display = 'none';
-    }, 5000);
+function showMsg(el, text, type) {
+  el.textContent = text; el.className = 'form-message ' + type; el.style.display = 'block';
+  if (type === 'success') setTimeout(() => { el.style.display = 'none'; }, 5000);
+}
+function resetBtn(t, l, b) { t.style.display = 'inline'; l.style.display = 'none'; b.disabled = false; }
+
+// ANALYTICS
+class PortfolioAnalytics {
+  constructor() {
+    this.views = this.get('totalViews', 1247);
+    this.today = this.get('todayViews', 23);
+    this.clicks = this.get('totalClicks', 156);
+    this.lastDate = localStorage.getItem('lastDate') || '';
+    this.init();
+  }
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? parseInt(v) : d; } catch { return d; } }
+  set(k, v) { try { localStorage.setItem(k, v.toString()); } catch {} }
+
+  init() {
+    const today = new Date().toDateString();
+    if (this.lastDate !== today) { this.today = 1; this.lastDate = today; } else { this.today++; }
+    this.views++;
+    this.set('totalViews', this.views); this.set('todayViews', this.today); this.set('lastDate', this.lastDate);
+    this.animate('totalViews', this.views);
+    this.animate('todayViews', this.today);
+    this.animate('totalClicks', this.clicks);
+    this.track();
+  }
+
+  animate(id, target) {
+    const el = document.getElementById(id); if (!el) return;
+    const start = parseInt(el.textContent.replace(/,/g, '')) || 0;
+    const t0 = performance.now();
+    const tick = t => {
+      const p = Math.min((t - t0) / 1000, 1);
+      el.textContent = Math.floor(start + (target - start) * (1 - Math.pow(1 - p, 4))).toLocaleString();
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  trackClick(action) {
+    this.clicks++; this.set('totalClicks', this.clicks);
+    this.animate('totalClicks', this.clicks);
+    if (typeof gtag !== 'undefined') gtag('event', 'click', { event_category: 'engagement', event_label: action });
+  }
+
+  track() {
+    document.querySelectorAll('.project-card, .featured-project').forEach(el => el.addEventListener('click', () => this.trackClick('project')));
+    document.querySelectorAll('.btn, .expand-btn, .flip-btn').forEach(el => el.addEventListener('click', () => this.trackClick('button')));
+    document.querySelectorAll('.footer-socials a, .hero-socials a').forEach(el => el.addEventListener('click', () => this.trackClick('social')));
+    document.querySelectorAll('.nav-link').forEach(el => el.addEventListener('click', () => this.trackClick('nav')));
   }
 }
 
-function resetButton(btnText, btnLoading, submitBtn) {
-  btnText.style.display = 'inline';
-  btnLoading.style.display = 'none';
-  submitBtn.disabled = false;
-}
+// INIT
+document.addEventListener('DOMContentLoaded', () => {
+  initWeb3Forms();
+  let done = false;
+  function startAnalytics() { if (!done) { window.portfolioAnalytics = new PortfolioAnalytics(); done = true; } }
+  function waitGA() { if (typeof gtag !== 'undefined') startAnalytics(); else if (!done) setTimeout(waitGA, 100); }
+  waitGA();
+  setTimeout(startAnalytics, 3000);
+  if (typeof gtag !== 'undefined') gtag('event', 'page_view', { page_title: document.title, page_location: window.location.href });
+});
