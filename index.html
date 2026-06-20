@@ -1,838 +1,1089 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ8TKQYQFE"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
- 
-     gtag('config', 'G-PQ8TKQYQFE');
-   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tushar Mhatre | Data Scientist</title>
-  <!-- FontAwesome (for icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
-  
- 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tushar Mhatre | AI &amp; ML Engineer</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ8TKQYQFE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PQ8TKQYQFE');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #F7F3EB; color: #221C15; -webkit-font-smoothing: antialiased; font-family: 'IBM Plex Sans', sans-serif; }
+  ::selection { background: #F0D7AE; color: #221C15; }
+  @keyframes eq { 0%,100% { transform: scaleY(0.26); } 50% { transform: scaleY(1); } }
+  @keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+  @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+</style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">TM</div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
 
-        
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Hi, I'm <span>Tushar Mhatre</span></h1>
-        <h1><span>Welcome</span> to my PortFolio</h1>
-        <p>
-          A data enthusiast with a knack for machine learning and statistical modeling,
-          I’m dedicated to building intelligent solutions that make a real-world difference
-        </p>
-        <div>
-          <a href="#contact" class="btn">Contact Me</a>
-          <a href="Tushar_Mhatre_Resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
-        </div>
-        <div class="social-icons">
-          <a href="https://linkedin.com/in/tushar-mhatre24/" class="social-icon" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/TusharM24" class="social-icon" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="mailto:tushar.jayendra.mhatre-1@ou.edu" class="social-icon">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="tel:+14052238789" class="social-icon">
-            <i class="fas fa-phone"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="profile-image">
-        
-        <img src="Profile.JPG" alt="Tushar Mhatre">
-      </div>
-      
-    </div>
-  </section>
-
- <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <!-- Project Card - Flappy Kiro Cloud Platform -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Flappy Kiro.png" alt="Flappy Kiro Cloud Gaming Platform">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Flappy Kiro: Cloud Gaming Platform</h3>
-            <p class="project-description">
-              An enterprise-grade cloud gaming platform demonstrating modern DevOps, Kubernetes orchestration, and comprehensive observability on AWS. Features 24+ pods across microservices, sub-100ms response times, 99.9% uptime, and a full monitoring stack with distributed tracing and real-time alerting.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Kubernetes</span>
-              <span class="project-tag">AWS (EKS, ECR, ALB)</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Python Flask</span>
-              <span class="project-tag">Nginx</span>
-              <span class="project-tag">OpenTelemetry</span>
-              <span class="project-tag">Infrastructure as Code</span>
-              <span class="project-tag">DevOps</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/flappy-kiro-cloud-platform" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 1 - EDA Agent -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="eda_agent_placeholder.png" alt="EDA Agent - AI-Powered Data Analysis">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Data Analysis Agent</h3>
-            <p class="project-description">
-              An AI-powered Exploratory Data Analysis agent. Upload your dataset, ask questions in plain English, 
-              and get instant insights with auto-generated Python code and visualizations. Features LangGraph orchestration, 
-              secure sandbox execution, and rich visualizations using Matplotlib, Seaborn, and Plotly.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">React</span>
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">LangGraph</span>
-              <span class="project-tag">LangChain</span>
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Groq API</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Data_Analysis-Agent" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a class="project-link" href="https://data-analysis-agent-frontend.onrender.com" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="chatbot.png" alt="Fake Job Detection">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">AI Research Paper Assistant</h3>
-            <p class="project-description">
-              An offline-capable RAG-powered chatbot for secure, efficient summarization and Q&A on academic papers.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Langchain</span>
-              <span class="project-tag">Streamlit</span>
-              <span class="project-tag">Large Language Models</span>
-              <span class="project-tag">Ollama API</span>
-              <span class="project-tag">FAISS</span>
-              <span class="project-tag">Sentence-Transformers (MiniLM)</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/AI-Research-Paper-Assistant" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="fake_job_detection.jpeg" alt="Fake Job Detection">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Fake Job Detection Portal</h3>
-            <p class="project-description">
-              Leveraged NLP and ML to detect fraudulent job postings, using classification models and 
-              a Flask-based web app for real-time predictions.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">Natural Language Processing</span>
-              <span class="project-tag">HTML/CSS</span>
-              <span class="project-tag">Statistical Analysis</span>
-              <span class="project-tag">Smote</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Fradulent-Job-Posting-Detection" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="ML Wallpaper1.webp" alt="Customer Revenue Prediction">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Customer Revenue</h3>
-            <p class="project-description">
-              Implemented Linear Regression, Lasso, Ridge, and M.A.R.S. using R (caret) to forecast 
-              customer revenue, applying 10-fold cross-validation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R</span>
-              <span class="project-tag">Caret</span>
-              <span class="project-tag">Regression</span>
-              <span class="project-tag">Statistical Analysis</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Customer-Revenue-Prediction" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Hospital_Readmission.png" alt="Hospital Readmission">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Hospital Readmission Prediction</h3>
-            <p class="project-description">
-              Trained Logistic Regression, Random Forests, and XGBoost models to predict 
-              patient readmission likelihood based on medical histories.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R Programming</span>
-              <span class="project-tag">Caret</span>
-              <span class="project-tag">GGplot</span>
-              <span class="project-tag">Classification</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-Readmission" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 4 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="DBMS wallpaper.webp" alt="Database Design">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Database Design for PAN</h3>
-            <p class="project-description">
-              Built an Azure SQL database and Java/JDBC application for patient assistance,
-              including ER diagram, schema design, and indexing.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Azure SQL</span>
-              <span class="project-tag">Database Design</span>
-              <span class="project-tag">JDBC</span>
-              <span class="project-tag">Azure Data Studio</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Database-Design-for-Patient-Assistance-Network-PAN-" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 5 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="tableau_project.png" alt="Financial Analysis">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Financial Analysis of a Supermarket Chain</h3>
-            <p class="project-description">
-              Created interactive Tableau dashboards to identify key products and demographics 
-              to optimize marketing and sales strategies.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Tableau</span>
-              <span class="project-tag">Data Visualization</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://public.tableau.com/views/SalesDataAnalysisofaSuperMarketChain1/FinancialAnalysisofWearmartINC?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank">
-                <i class="fas fa-chart-bar"></i> Tableau
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 6 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="Predicting_Hospital_LOS.webp" alt="Predicting Hospital Length of Stay">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Hospital Length of Stay</h3>
-            <p class="project-description">
-              This project aims to analyze medical data to predict the length of stay (LOS) of patients in a hospital. Various machine learning models are trained and evaluated to predict the LOS based on demographic and medical information.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">Seaborn</span>
-              <span class="project-tag">Matplotlib</span>
-              <span class="project-tag">Scikit-learn</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Hospital-length-of-Stay" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Card 8 -->
-        <div class="project-card">
-          <div class="project-img">
-            <img src="IDA_project.png" alt="Predicting Hospital Length of Stay">
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Predicting Smoking & Drinking Habits with EHR Data</h3>
-            <p class="project-description">
-              An analytics pipeline developed in R that predicts individuals’ smoking and drinking behaviors using a suite of classification models
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">R</span>
-              <span class="project-tag">Tidyverse</span>
-              <span class="project-tag">ggplot2</span>
-              <span class="project-tag">caret</span>
-              <span class="project-tag">stats</span>
-              
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="https://github.com/TusharM24/Predicting-Smoking-Drinking-Habits-with-Machine-Learning" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
+  <!-- ===================== NAV ===================== -->
+  <nav id="pf-nav" style="position: sticky; top: 0; z-index: 50; background: rgba(247,243,235,0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #E9E0D0; transition: box-shadow .3s, background .3s;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="#home" style="font-family: 'Instrument Serif', serif; font-size: 23px; color: #221C15; text-decoration: none; letter-spacing: 0.01em; white-space: nowrap;">Tushar Mhatre</a>
+      <div style="display: flex; align-items: center; gap: 28px;">
+        <a href="#work" style="font-family:'IBM Plex Sans',sans-serif; font-size: 14px; color: #5E5648; text-decoration: none;" style-hover="color: #221C15;">Work</a>
+        <a href="#experience" style="font-family:'IBM Plex Sans',sans-serif; font-size: 14px; color: #5E5648; text-decoration: none;" style-hover="color: #221C15;">Experience</a>
+        <a href="#skills" style="font-family:'IBM Plex Sans',sans-serif; font-size: 14px; color: #5E5648; text-decoration: none;" style-hover="color: #221C15;">Skills</a>
+        <a href="#about" style="font-family:'IBM Plex Sans',sans-serif; font-size: 14px; color: #5E5648; text-decoration: none;" style-hover="color: #221C15;">About</a>
+        <a href="#contact" style="font-family:'IBM Plex Sans',sans-serif; font-size: 14px; color: #5E5648; text-decoration: none;" style-hover="color: #221C15;">Contact</a>
+        <button id="pf-ask" style="cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size: 12px; font-weight: 500; color: #fff; background: #C2691E; border: none; padding: 9px 16px; border-radius: 999px; display: inline-flex; align-items: center; gap: 7px;" style-hover="background: #A8590F;">
+          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#fff;"></span>Ask my AI
+        </button>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="timeline">
-
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">September 2025 - Present</div>
-            <h3 class="timeline-title">AI Engineering Intern</h3>
-            <p>The Aether Loop, Remote</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Architected a multi-agent AI recommendation engine using CrewAI and LangChain, implementing agent orchestration, tool use, and structured clinical insight extraction from 40+ user biomarkers.</li>
-                <li>Conducted iterative model evaluations and human-in-the-loop validation cycles, improving model performance from an average Protocol score of 67% to 90%.</li>
-                <li>Engineered and maintained a scalable FastAPI backend deployed on GCP Cloud Run with Docker and CI/CD pipelines, sustaining 99% uptime with continuous model monitoring and improvement.</li>
-                <li>Built and enhanced complex React/TypeScript frontend features using Vite, including constructing a full admin portal derived from the main application to support internal user management and operational workflows.</li>
-                <li>Integrated Stripe into the platform to support multi-tier subscription billing, implementing webhook handling for payment events and building out subscription lifecycle management across multiple timeframes.</li>
-              </ul>
-            </div>
-          </div>
+  <!-- ===================== HERO ===================== -->
+  <section id="home" style="background: #F7F3EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 76px 32px 88px; display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center;">
+      <!-- left -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size: 12.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #B45309; margin-bottom: 26px; display:flex; align-items:center; gap:12px;">
+          <span style="width:26px; height:1px; background:#D9B98A;"></span>AI &amp; ML Engineer · United States
         </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">July 2025 - September 2025</div>
-            <h3 class="timeline-title">Data Architect Intern</h3>
-            <p>Optimal Living Systems, Norman, OK</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Designed and deployed the initial ETL infrastructure in Airflow, OCR (Docling) and OpenAI API, to transform 1,000+ PDFs into structured QnA datasets to kick off the organization's first LLM fine-tuning pilot.</li>
-                <li>Built reusable Python (BeautifulSoup, Requests) scraping scripts for the research team, reducing their manual sourcing by 3-4 hours daily, leading to completion of data targets two weeks ahead of deadline.</li>
-              </ul>
-            </div>
-          </div>
+        <h1 style="font-family:'Instrument Serif',serif; font-weight: 400; font-size: 70px; line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: #221C15;">Hi, I'm Tushar. I build <span style="font-style:italic; color:#C2691E;">AI&nbsp;&amp;&nbsp;ML</span> systems people actually trust.</h1>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size: 17.5px; line-height: 1.66; color: #5E5648; max-width: 500px; margin: 28px 0 34px;">I like building AI that makes it past the demo and into people's hands. These days that means multi-agent LLM systems, the models behind them, and the cloud plumbing that keeps it all running. Right now I'm an AI Engineering Intern at The Aether Loop.</p>
+        <div style="display:flex; gap: 13px; align-items:center; flex-wrap:wrap; margin-bottom: 34px;">
+          <a href="#work" style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size: 14.5px; background:#221C15; color:#F7F3EB; padding: 14px 26px; border-radius: 999px; text-decoration:none;" style-hover="background:#3a2f22;">View my work</a>
+          <a href="Tushar_Mhatre_Resume.pdf" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size: 14.5px; color:#221C15; padding: 14px 26px; border:1px solid #C9BFAD; border-radius: 999px; text-decoration:none;" style-hover="border-color:#221C15;">Download résumé</a>
         </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">February 2024 - May 2025</div>
-            <h3 class="timeline-title">Graduate Research Assistant</h3>
-            <p>University of Oklahoma</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Built executable EEG/MRI BIDS transformation pipelines in MATLAB, reducing manual structuring time from 5+ hours per dataset to single-click execution which enabled background preprocessing while researchers prioritized core research work.</li>
-                <li>Developed WSL-based Bash scripts integrating Windows/MATLAB workflows with Linux tools (FSL, AFNI), reducing preprocessing runtime by 40% and accelerating experiments turnaround through parallel job scheduling.</li>
-                <li>Led a year-long neuroimaging research study applying clustering algorithms across EEG datasets to identify and analyze Cortical Activity Patterns (CAPs), validating findings through statistical testing and co-authored a manuscript under review at Brain Topography.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Timeline Item 4 -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">February 2021 - July 2023</div>
-            <h3 class="timeline-title">Software Engineer</h3>
-            <p>Tata Consultancy Services, Pune, India</p>
-            <button class="expand-btn">Responsibilities</button>
-            <div class="timeline-description hidden">
-              <ul>
-                <li>Developed 9 RPA bots using Automation 360, VBA, and SQL over 6 months, reducing manual workload by 20-25 hours weekly and driving $100K+ annual cost savings for enterprise clients through SAP and mainframe automation.</li>
-                <li>Migrated 13 workflows from Automation Anywhere v11 to Automation 360 in 2 months, ensuring zero downtime and fewer deployment defects while transitioning the team to a more scalable and maintainable automation platform.</li>
-                <li>Created a Python REST API integrated with Automation Anywhere bots to retrieve product toxicity ratings from a third-party service, reducing data lookup time from minutes to seconds and accelerating workflow completion time.</li>
-                <li>Deployed a classification model via a Flask API integrated into an RPA workflow, which predicted invoice discrepancy risk across high-volume finance operations and processed 1K+ predictions daily to support faster, data-driven reconciliation decisions.</li>
-                <li>Built a Power Automate flow to auto-sync open issue statuses from SharePoint into Jira on a daily schedule, eliminating manual cross-platform updates for the support team and cutting ticket update lag from 24+ hours to near real-time, saving 5–6 hours weekly.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  
-
-  <!-- Education Section -->
-<section id="education">
-  <div class="container">
-    <h2 class="section-title">Education</h2>
-    <div class="education-cards">
-      <!-- Flip Card 1 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-         <div class="flip-card-front">
-          <div class="education-header">
-            <div class="education-degree">Master's</div>
-            <div class="education-date">August 2023 - May 2025</div>
-          </div>
-          <div class="education-body">
-            <div class="education-school">University of Oklahoma</div>
-            <div class="education-field">Data Science</div>
-            <div class="education-gpa">GPA: 3.97</div>
-            <div class="divider"></div>
-            <p>A hands-on Curriculum Focusing on underlying concepts of Data analytics, Machine learning and Deep Learning</p>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More info</button>
-        </div>
-
-          <!-- Back side of Education Card (Master's) -->
-        <div class="flip-card-back">
-          <div class="back-section">
-            <h4 class="back-title">Relevant Courses</h4>
-            <ul class="bullet-list">
-              <li>Data Mining</li>
-              <li>Machine Learning Practice</li>
-              <li>Intelligent Data Analytics</li>
-              <li>Data Visualization</li>
-              <li>Statistics</li>
-            </ul>
-          </div>
-          <div class="back-section">
-            <h4 class="back-title">Achievements/Extra-Curriculars</h4>
-            <ul class="bullet-list">
-              <li>Managed to get Graduate Research Assistantship</li>
-              <li>Data Science Club - Member</li>
-              
-            </ul>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Go Back</button>
-        </div>
-
+        <div style="display:flex; gap:12px; align-items:center;">
+          <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" aria-label="LinkedIn" style="width:42px; height:42px; border-radius:50%; border:1px solid #C9BFAD; display:flex; align-items:center; justify-content:center; color:#5E5648; text-decoration:none; transition:all .25s;" style-hover="border-color:#221C15; color:#221C15; background:#fff;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://github.com/TusharM24" target="_blank" aria-label="GitHub" style="width:42px; height:42px; border-radius:50%; border:1px solid #C9BFAD; display:flex; align-items:center; justify-content:center; color:#5E5648; text-decoration:none; transition:all .25s;" style-hover="border-color:#221C15; color:#221C15; background:#fff;"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a href="https://leetcode.com/u/TusharM10/" target="_blank" aria-label="LeetCode" style="width:42px; height:42px; border-radius:50%; border:1px solid #C9BFAD; display:flex; align-items:center; justify-content:center; color:#5E5648; text-decoration:none; transition:all .25s;" style-hover="border-color:#221C15; color:#221C15; background:#fff;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+          <a href="mailto:tusharmhatre2424@gmail.com" aria-label="Email" style="width:42px; height:42px; border-radius:50%; border:1px solid #C9BFAD; display:flex; align-items:center; justify-content:center; color:#5E5648; text-decoration:none; transition:all .25s;" style-hover="border-color:#221C15; color:#221C15; background:#fff;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg></a>
         </div>
       </div>
 
-      <!-- Flip Card 2 -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <!-- Front side -->
-          <div class="flip-card-front">
-            <div class="education-header">
-              <div class="education-degree">Bachelor's</div>
-              <div class="education-date">June 2016 - May 2020</div>
-            </div>
-            <div class="education-body">
-              <div class="education-school">Savitribai Phule Pune University</div>
-              <div class="education-field">Electronics & Telecommunication Engineering</div>
-              <div class="education-gpa">GPA: 7.6</div>
-              <div class="divider"></div>
-              <p>Gained a robust foundation in object oriented programming, data structures, mathematics and technical problem-solving.</p>
-            </div>
-            <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">More Info</button>
-          </div>
-          <!-- Back side -->
-          <!-- Back side of Education Card (Master's) -->
-        <div class="flip-card-back">
-          <div class="back-section">
-            <h4 class="back-title">Relevant Courses</h4>
-            <ul class="bullet-list">
-              <li>Fundamentals of Programming-I and II</li>
-              <li>Data Structures and Algorithms</li>
-              <li>Object Oriented Programming</li>
-              <li>Engineering mathematics-I,II & III</li>
-            </ul>
-          </div>
-          <div class="back-section">
-            <h4 class="back-title">Achievements</h4>
-            <ul class="bullet-list">
-              <li>Telecom Engineer Student Assosciation - Treasurer(2019)</li>
-              <li>Telecom Engineer Student Assosciation - Assistant Designer(2017)</li>
-              <li>Rotaract Club of DPU - Assistant Marketing Head(2017)</li>
-            </ul>
-          </div>
-          <button class="flip-btn" onclick="this.closest('.flip-card').querySelector('.flip-card-inner').classList.toggle('flipped')">Go Back</button>
-        </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Skills Section -->
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">Skills</h2>
-
-    <!-- Slider Container -->
-    <div class="skills-slider-container">
-      <div class="skills-slider" id="skillsSlider">
-        <!-- 1) Programming Languages -->
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">R</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">Bash</span>
-          </div>
-        </div>
-
-        <!-- 2) Tools & Technologies -->
-        <div class="skill-category">
-          <h3>Data Analysis Tools/Skills</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Power B.I.</span>
-            <span class="skill-tag">Microsoft Excel</span>
-            <span class="skill-tag">Vlookup</span>
-            <span class="skill-tag">Pivot Tables</span>
-          </div>
-        </div>
-
-        <!-- 3) Python Libraries -->
-        <div class="skill-category">
-          <h3>Python Libraries</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Seaborn</span>
-            <span class="skill-tag">nltk</span>
-            <span class="skill-tag">Plotly</span>
-          </div>
-        </div>
-
-        <!-- 4) R Packages -->
-        <div class="skill-category">
-          <h3>R Packages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Caret</span>
-            <span class="skill-tag">ggplot2</span>
-            <span class="skill-tag">dplyr</span>
-            <span class="skill-tag">tidyr</span>
-            <span class="skill-tag">H2O</span>
-            <span class="skill-tag">Shiny</span>
-            <span class="skill-tag">knitr</span>
-            <span class="skill-tag">tibble</span>
-            <span class="skill-tag">plotly</span>
-          </div>
-        </div>
-
-        <!-- 5) Databases -->
-        <div class="skill-category">
-          <h3>Databases</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Chromadb</span>
-            <span class="skill-tag">BigQuery</span>
-            <span class="skill-tag">Microsoft Azure</span>
-            <span class="skill-tag">JDBC</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6) Tools & Technologies 
-        <div class="skill-category">
-          <h3>Other Tools &amp; Technologies</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">LangChain</span>
-            <span class="skill-tag">Ollama</span>
-            <span class="skill-tag">Git/Github</span>
-            <span class="skill-tag">Apache Spark</span>
-            <span class="skill-tag">FAISS</span>
-            <span class="skill-tag">Linux</span>
-          </div>
-        </div>
-       -->
-      <!-- Slider Controls: Prev/Next -->
-      <button class="slider-btn" id="prevBtn">Prev</button>
-      <button class="slider-btn" id="nextBtn">Next</button>
-    </div>
-    <!--
-    
-    <div class="skill-radial-container">
-      
-      <div class="skill-radial" style="--progress: 85deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">85%</div>
-          <div class="skill-radial-name">Python</div>
-        </div>
-      </div>
-      
-      <div class="skill-radial" style="--progress: 80deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">80%</div>
-          <div class="skill-radial-name">R</div>
-        </div>
-      </div>
-      
-      <div class="skill-radial" style="--progress: 75deg;">
-        <div class="skill-radial-progress"></div>
-        <div class="skill-radial-content">
-          <div class="skill-radial-percentage">75%</div>
-          <div class="skill-radial-name">SQL</div>
-        </div>
-      </div>
-    </div>
-    -->
-  </div>
-</section>
-
-  
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="certifications">
-    <div class="container">
-      <h2 class="section-title">Certifications</h2>
-      <div class="certification-cards">
-        <div class="certification-card">
-          <div class="certification-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="certification-info">
-            <div class="certification-name">Google Data Analytics Professional Certification</div>
-            <div class="certification-issuer">Google</div>
-          </div>
-          <a class="certification-link" href="https://www.coursera.org/account/accomplishments/specialization/4SCYMWK8CYP3" target="_blank" rel="noopener noreferrer">
-            View Certificate
-          </a>
-        </div>
-
-       
-        <!-- Certification Card 3 -->
-        <div class="certification-card">
-          <div class="certification-logo">
-            <i class="fas fa-certificate"></i>
-          </div>
-          <div class="certification-info">
-            <div class="certification-name">Master C++ Programming </div>
-            <div class="certification-issuer">Udemy</div>
-          </div>
-          <a class="certification-link" href="https://www.udemy.com/certificate/UC-d5104c03-2eff-4c0d-a793-c1386242508f/" target="_blank" rel="noopener noreferrer">
-            View Certificate
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Let's work together!</h3>
-          <p>
-            Interested in collaborating or have any questions?  
-            Feel free to reach out via the form or the details below.
-          </p>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <h4>Phone</h4>
-              <p><a href="tel:+14052238789" style="color:inherit;text-decoration:none;">+1 (405) 223-8789</a></p>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:tushar.jayendra.mhatre-1@ou.edu" style="color:inherit;text-decoration:none;">tushar.jayendra.mhatre-1@ou.edu</a></p>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-            <div>
-              <h4>LinkedIn</h4>
-              <p>
-                <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="color:inherit;text-decoration:none;">
-                  linkedin.com/in/tushar-mhatre24
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact form with Web3Forms integration -->
-        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <!-- Web3Forms hidden fields -->
-          <input type="hidden" name="access_key" value="a8f18135-e73c-4573-a135-477e5412a65e">
-          <input type="hidden" name="subject" value="New Contact from Tushar Mhatre Portfolio">
-          <input type="hidden" name="from_name" value="Tushar Mhatre Portfolio">
-          
-          <!-- Honeypot spam protection -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-          
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-submit" id="submitBtn">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loading" style="display: none;">
-              <i class="fas fa-spinner fa-spin"></i> Sending...
+      <!-- right: console voice agent (Direction A) -->
+      <div id="pf-console" style="background:#1E1A14; border-radius:18px; padding:24px; box-shadow: 0 36px 60px -30px rgba(40,30,15,0.55); color:#EDE6D6; font-family:'IBM Plex Mono',monospace;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:18px;">
+          <span style="display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:0.1em; color:#B9AE98;">
+            <span style="display:flex; gap:5px;">
+              <span style="width:9px;height:9px;border-radius:50%;background:#E0A33B;"></span>
+              <span style="width:9px;height:9px;border-radius:50%;background:#5A5346;"></span>
+              <span style="width:9px;height:9px;border-radius:50%;background:#5A5346;"></span>
             </span>
-          </button>
-          <div class="form-message" id="formMessage" style="display: none;"></div>
+            ~/ask-tushar
+          </span>
+          <span style="display:flex; align-items:center; gap:7px; font-size:10.5px; color:#7C7461;"><span id="pf-dot" style="width:7px;height:7px;border-radius:50%;background:#5A5346;"></span><span id="pf-status">OFFLINE</span></span>
+        </div>
+
+        <div id="pf-console-body" style="font-size:13px; line-height:1.75; color:#CFC6B2; min-height:104px;">
+          <div><span style="color:#7FB07F;">visitor@site</span><span style="color:#7C7461;">:~$</span> talk to my AI twin</div>
+          <div style="margin-top:6px;color:#7C7461;">▸ tap to speak. it answers for me, any time</div>
+        </div>
+
+        <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:48px; margin:18px 0;">
+          <span style="width:5px; height:38px; background:#E0A33B; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0s infinite;"></span>
+          <span style="width:5px; height:38px; background:#C2691E; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.12s infinite;"></span>
+          <span style="width:5px; height:38px; background:#E0A33B; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.24s infinite;"></span>
+          <span style="width:5px; height:38px; background:#C2691E; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.36s infinite;"></span>
+          <span style="width:5px; height:38px; background:#E0A33B; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.48s infinite;"></span>
+          <span style="width:5px; height:38px; background:#C2691E; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.6s infinite;"></span>
+          <span style="width:5px; height:38px; background:#E0A33B; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.72s infinite;"></span>
+          <span style="width:5px; height:38px; background:#C2691E; border-radius:3px; transform-origin:bottom; animation: eq 0.9s ease-in-out 0.84s infinite;"></span>
+        </div>
+
+        <button id="pf-mic" style="width:100%; cursor:pointer; border:none; font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:500; padding:14px; border-radius:11px; background:#C2691E; color:#fff; display:flex; align-items:center; justify-content:center; gap:10px;" style-hover="background:#A8590F;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#fff;"></span><span id="pf-mic-label">Tap to talk</span>
+        </button>
+        <div style="text-align:center; font-size:10px; letter-spacing:0.08em; color:#6E6555; margin-top:13px;">VOICE BY ELEVENLABS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" style="background:#EFE8DB; border-top:1px solid #E5DBC9;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 32px;">
+      <div data-reveal="0" style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 40px;">01 / About</div>
+      <div style="display:grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items:start;">
+        <!-- left: monogram + facts -->
+        <div data-reveal="0">
+          <div style="width:120px; height:120px; border-radius:50%; background:#221C15; color:#F0D7AE; font-family:'Instrument Serif',serif; font-size:46px; display:flex; align-items:center; justify-content:center; margin-bottom:30px; animation: floaty 5s ease-in-out infinite;">TM</div>
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A89A80; margin-bottom:4px;">Based in</div><div style="font-size:15px; color:#332B20;">United States</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A89A80; margin-bottom:4px;">Currently</div><div style="font-size:15px; color:#332B20;">AI Engineering Intern · The Aether Loop</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A89A80; margin-bottom:4px;">Education</div><div style="font-size:15px; color:#332B20;">M.S. Data Science, University of Oklahoma · GPA 3.97</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#A89A80; margin-bottom:4px;">Focus</div><div style="font-size:15px; color:#332B20;">LLM agents · Machine learning · MLOps</div></div>
+          </div>
+        </div>
+        <!-- right: narrative -->
+        <div data-reveal="1">
+          <p style="font-family:'Instrument Serif',serif; font-size:32px; line-height:1.32; color:#221C15; margin:0 0 28px;">My path into AI wasn't exactly a straight line, and honestly that's the part I like most about it.</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; line-height:1.72; color:#5E5648; margin:0 0 20px;">I started out in Electronics &amp; Telecommunication Engineering, then spent a couple of years at TCS automating enterprise workflows before moving to the US for my Master's in Data Science at the University of Oklahoma. A year of neuroimaging research as a Research Assistant got me hooked on working with messy, real-world data, and as generative AI took off I found myself pulled toward building actual AI products. These days I'm an AI Engineering Intern at The Aether Loop, working on multi-agent systems, model evaluation, and the cloud infrastructure behind it all.</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; line-height:1.72; color:#5E5648; margin:0 0 20px;">I like working across the whole AI product stack: agent workflows with CrewAI and LangChain, FastAPI services on Google Cloud, model evaluation, and React frontends that make AI features feel approachable. What excites me most is watching an idea go from a whiteboard sketch to something real that people can actually <em style="font-style:italic; color:#221C15;">use</em>.</p>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16.5px; line-height:1.72; color:#5E5648; margin:0;">Outside of work I'm a big football fan (the European kind), usually buried in transfer rumors or a Champions League night. When I'm not, I'm gaming, watching movies and anime, reading, or planning my next trip. Same curiosity, different subject, I just like figuring out how things work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <section id="work" style="background:#F7F3EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 32px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom: 36px;">
+        <div data-reveal="0">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 16px;">02 / Selected work</div>
+          <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:46px; line-height:1.1; margin:0; color:#221C15;">Things I've built</h2>
+        </div>
+        <div data-reveal="1" style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button data-filter="all" style="cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:999px; border:1px solid #221C15; background:#221C15; color:#F7F3EB;">All</button>
+          <button data-filter="ai" style="cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:999px; border:1px solid #D9D0BF; background:transparent; color:#6B6153;">AI &amp; Agents</button>
+          <button data-filter="ml" style="cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:999px; border:1px solid #D9D0BF; background:transparent; color:#6B6153;">ML &amp; NLP</button>
+          <button data-filter="data" style="cursor:pointer; font-family:'IBM Plex Mono',monospace; font-size:12px; padding:8px 16px; border-radius:999px; border:1px solid #D9D0BF; background:transparent; color:#6B6153;">Data &amp; Cloud</button>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+        <!-- 1 Data Analysis Agent -->
+        <article data-cat="ai" data-reveal="0" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">AI · AGENTS</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2025</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Data Analysis Agent</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">Upload a dataset, ask questions in plain English, and get answers back with the Python and charts to back them up. Built on LangGraph with sandboxed code execution so it stays safe.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">LangGraph</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">FastAPI</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">React</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Groq</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Data_Analysis-Agent" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+            <a href="https://data-analysis-agent-frontend.onrender.com" target="_blank" style="color:#C2691E; text-decoration:none;" style-hover="color:#A8590F;">Live demo ↗</a>
+          </div>
+        </article>
+
+        <!-- 2 AI Research Paper Assistant -->
+        <article data-cat="ai" data-reveal="1" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">RAG · LLM</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2024</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">AI Research Paper Assistant</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">A RAG chatbot that summarizes and answers questions about academic papers. It runs locally with Ollama, so sensitive research never has to leave your machine.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">LangChain</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Ollama</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">FAISS</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Streamlit</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/AI-Research-Paper-Assistant" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 3 Flappy Kiro -->
+        <article data-cat="data" data-reveal="0" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">CLOUD · DEVOPS</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2025</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Flappy Kiro, a Cloud Gaming Platform</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">A cloud gaming platform on AWS, built like a real product: 24+ pods across microservices, sub-100ms responses, 99.9% uptime, and full observability with distributed tracing and live alerting.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Kubernetes</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">AWS EKS</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">OpenTelemetry</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Docker</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/flappy-kiro-cloud-platform" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 4 Fake Job Detection -->
+        <article data-cat="ml" data-reveal="1" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">ML · NLP</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2024</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Fake Job Detection Portal</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">An NLP model that flags fraudulent job postings, served through a small Flask app for real-time predictions. SMOTE handles the heavy class imbalance that makes this problem tricky.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Python</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">NLP</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Flask</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">SMOTE</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Fradulent-Job-Posting-Detection" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 5 Hospital Readmission -->
+        <article data-cat="ml" data-reveal="0" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">ML · CLASSIFICATION</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2024</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Hospital Readmission Prediction</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">Logistic Regression, Random Forests, and XGBoost trained to predict how likely a patient is to be readmitted, all built and compared in R.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">R</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">caret</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">XGBoost</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">ggplot2</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Predicting-Hospital-Readmission" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 6 Hospital LOS -->
+        <article data-cat="ml" data-reveal="1" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">ML · REGRESSION</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2024</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Predicting Hospital Length of Stay</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">Predicting how long a patient will stay from their demographic and medical data, training a handful of scikit-learn models and letting the best one win.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Python</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">scikit-learn</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Pandas</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Seaborn</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Predicting-Hospital-length-of-Stay" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 7 Customer Revenue -->
+        <article data-cat="ml" data-reveal="0" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">ML · REGRESSION</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2023</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Predicting Customer Revenue</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">Linear Regression, Lasso, Ridge, and M.A.R.S. in R (caret) to forecast customer revenue, with 10-fold cross-validation to keep the comparison honest.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">R</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">caret</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Lasso / Ridge</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Customer-Revenue-Prediction" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 8 Smoking & Drinking -->
+        <article data-cat="ml" data-reveal="1" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">ML · EHR</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2024</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Smoking &amp; Drinking Habits from EHR</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">An analytics pipeline in R predicting individuals' smoking and drinking behaviors from electronic health records using a suite of classification models.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">R</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">tidyverse</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">caret</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Predicting-Smoking-Drinking-Habits-with-Machine-Learning" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 9 Database Design PAN -->
+        <article data-cat="data" data-reveal="0" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">DATA · SQL</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2023</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Database Design for PAN</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">An Azure SQL database and Java/JDBC app for a Patient Assistance Network, with a full ER diagram, a normalized schema, and indexing tuned for performance.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Java</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Azure SQL</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">JDBC</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://github.com/TusharM24/Database-Design-for-Patient-Assistance-Network-PAN-" target="_blank" style="color:#221C15; text-decoration:none;" style-hover="color:#C2691E;">GitHub →</a>
+          </div>
+        </article>
+
+        <!-- 10 Financial Analysis -->
+        <article data-cat="data" data-reveal="1" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:28px; transition: transform .3s, box-shadow .3s, border-color .3s;" style-hover="transform: translateY(-4px); box-shadow: 0 26px 40px -26px rgba(60,45,20,0.45); border-color:#E0CFA8;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:#C2691E;">DATA · VIZ</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#B0A48E;">2023</span>
+          </div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; line-height:1.2; margin:0 0 10px; color:#221C15;">Financial Analysis of a Supermarket Chain</h3>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 18px;">Interactive Tableau dashboards surfacing the key products and demographics behind revenue, used to sharpen marketing and sales strategy.</p>
+          <div style="display:flex; gap:7px; flex-wrap:wrap; margin-bottom:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A7F6C;">
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Tableau</span>
+            <span style="border:1px solid #E4DAC8; border-radius:999px; padding:4px 10px; white-space:nowrap;">Data Viz</span>
+          </div>
+          <div style="display:flex; gap:18px; font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; font-weight:600;">
+            <a href="https://public.tableau.com/views/SalesDataAnalysisofaSuperMarketChain1/FinancialAnalysisofWearmartINC" target="_blank" style="color:#C2691E; text-decoration:none;" style-hover="color:#A8590F;">View on Tableau ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" style="background:#EFE8DB; border-top:1px solid #E5DBC9;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 32px;">
+      <div data-reveal="0" style="margin-bottom: 48px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 16px;">03 / Experience</div>
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:46px; line-height:1.1; margin:0; color:#221C15;">Where I've worked</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column;">
+
+        <!-- exp 1 -->
+        <div data-exp data-open="0" data-reveal="0" style="border-top:1px solid #DED3BF; padding: 28px 0;">
+          <div style="display:grid; grid-template-columns: 180px 1fr auto; gap:28px; align-items:baseline;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#8A7F6C;">Sep 2025 → Present</div>
+            <div>
+              <h3 style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:21px; margin:0 0 4px; color:#221C15;">AI Engineering Intern</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#6B6153;">The Aether Loop · Remote</div>
+            </div>
+            <button data-exp-toggle style="cursor:pointer; white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C2691E; background:transparent; border:1px solid #E2C9A4; padding:8px 14px; border-radius:999px;" style-hover="background:#C2691E; color:#fff; border-color:#C2691E;">Responsibilities +</button>
+          </div>
+          <div data-exp-body style="max-height:0; overflow:hidden; opacity:0; transition: max-height .45s ease, opacity .45s ease;">
+            <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; line-height:1.66; color:#564E3D; margin: 18px 0 4px; padding-left: 0; list-style:none; max-width:760px;">
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Architected a multi-agent AI recommendation engine with CrewAI and LangChain, handling agent orchestration, tool use, and pulling structured clinical insights from 40+ user biomarkers.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Ran iterative model evaluations and human-in-the-loop validation, improving average Protocol score from 67% to 90%.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Built and maintained a scalable FastAPI backend on GCP Cloud Run with Docker and CI/CD, holding 99% uptime with continuous monitoring.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Shipped React/TypeScript features in Vite, including a full admin portal for internal user management and operations.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:0;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Integrated Stripe for multi-tier subscription billing, including webhook handling and the full subscription lifecycle.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- exp 2 -->
+        <div data-exp data-open="0" data-reveal="1" style="border-top:1px solid #DED3BF; padding: 28px 0;">
+          <div style="display:grid; grid-template-columns: 180px 1fr auto; gap:28px; align-items:baseline;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#8A7F6C;">Jul 2025 → Sep 2025</div>
+            <div>
+              <h3 style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:21px; margin:0 0 4px; color:#221C15;">Data Architect Intern</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#6B6153;">Optimal Living Systems · Norman, OK</div>
+            </div>
+            <button data-exp-toggle style="cursor:pointer; white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C2691E; background:transparent; border:1px solid #E2C9A4; padding:8px 14px; border-radius:999px;" style-hover="background:#C2691E; color:#fff; border-color:#C2691E;">Responsibilities +</button>
+          </div>
+          <div data-exp-body style="max-height:0; overflow:hidden; opacity:0; transition: max-height .45s ease, opacity .45s ease;">
+            <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; line-height:1.66; color:#564E3D; margin: 18px 0 4px; padding-left: 0; list-style:none; max-width:760px;">
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Designed and deployed the initial ETL infrastructure in Airflow with OCR (Docling) and the OpenAI API, turning 1,000+ PDFs into structured QnA datasets for the org's first LLM fine-tuning pilot.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:0;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Built reusable Python (BeautifulSoup, Requests) scraping scripts that cut the research team's manual sourcing by 3 to 4 hours a day, hitting our data targets two weeks early.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- exp 3 -->
+        <div data-exp data-open="0" data-reveal="0" style="border-top:1px solid #DED3BF; padding: 28px 0;">
+          <div style="display:grid; grid-template-columns: 180px 1fr auto; gap:28px; align-items:baseline;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#8A7F6C;">Feb 2024 → May 2025</div>
+            <div>
+              <h3 style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:21px; margin:0 0 4px; color:#221C15;">Graduate Research Assistant</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#6B6153;">University of Oklahoma</div>
+            </div>
+            <button data-exp-toggle style="cursor:pointer; white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C2691E; background:transparent; border:1px solid #E2C9A4; padding:8px 14px; border-radius:999px;" style-hover="background:#C2691E; color:#fff; border-color:#C2691E;">Responsibilities +</button>
+          </div>
+          <div data-exp-body style="max-height:0; overflow:hidden; opacity:0; transition: max-height .45s ease, opacity .45s ease;">
+            <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; line-height:1.66; color:#564E3D; margin: 18px 0 4px; padding-left: 0; list-style:none; max-width:760px;">
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Built executable EEG/MRI BIDS transformation pipelines in MATLAB, cutting manual structuring from 5+ hours per dataset to one-click execution.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Developed WSL-based Bash scripts bridging Windows/MATLAB with Linux tools (FSL, AFNI), reducing preprocessing runtime by 40% via parallel job scheduling.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:0;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Led a year-long neuroimaging study applying clustering to EEG datasets to identify Cortical Activity Patterns, and co-authored a manuscript now under review at <em>Brain Topography</em>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- exp 4 -->
+        <div data-exp data-open="0" data-reveal="1" style="border-top:1px solid #DED3BF; border-bottom:1px solid #DED3BF; padding: 28px 0;">
+          <div style="display:grid; grid-template-columns: 180px 1fr auto; gap:28px; align-items:baseline;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#8A7F6C;">Feb 2021 → Jul 2023</div>
+            <div>
+              <h3 style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:21px; margin:0 0 4px; color:#221C15;">Software Engineer</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:#6B6153;">Tata Consultancy Services · Pune, India</div>
+            </div>
+            <button data-exp-toggle style="cursor:pointer; white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C2691E; background:transparent; border:1px solid #E2C9A4; padding:8px 14px; border-radius:999px;" style-hover="background:#C2691E; color:#fff; border-color:#C2691E;">Responsibilities +</button>
+          </div>
+          <div data-exp-body style="max-height:0; overflow:hidden; opacity:0; transition: max-height .45s ease, opacity .45s ease;">
+            <ul style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; line-height:1.66; color:#564E3D; margin: 18px 0 4px; padding-left: 0; list-style:none; max-width:760px;">
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Built 9 RPA bots with Automation 360, VBA, and SQL that cut 20 to 25 hours of manual work every week and drove $100K+ in annual savings across SAP and mainframe automation.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Migrated 13 workflows from Automation Anywhere v11 to Automation 360 in 2 months with zero downtime.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Created a Python REST API integrated with bots to pull product toxicity ratings, cutting lookup time from minutes to seconds.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:12px;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Deployed a Flask-served classification model inside an RPA workflow to flag invoice discrepancy risk, running 1K+ predictions a day.</li>
+              <li style="position:relative; padding-left:20px; margin-bottom:0;"><span style="position:absolute; left:0; color:#C2691E;">▹</span>Built a Power Automate flow syncing SharePoint issues into Jira daily, cutting update lag from 24+ hours to near real-time.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS (dark band) ===================== -->
+  <section id="skills" style="background:#1E1A14; color:#EDE6D6;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 88px 32px;">
+      <div data-reveal="0" style="margin-bottom: 42px; max-width:660px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#E0A33B; margin-bottom: 16px;">04 / Skills</div>
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:46px; line-height:1.1; margin:0 0 16px; color:#F5EFE2;">The toolkit</h2>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.6; color:#A99F8C; margin:0;">The stuff I reach for most, grouped by where it shows up in my work. Hover anything you want a closer look at.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 40px 56px;">
+        <div data-reveal="0">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">AI &amp; ML</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">LangChain</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">LangGraph</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">CrewAI</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">PyTorch</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">TensorFlow</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">scikit-learn</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Ollama</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">FAISS</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">nltk</span>
+          </div>
+        </div>
+        <div data-reveal="1">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">Languages</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Python</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">R</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">SQL</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Java</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">C / C++</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">MATLAB</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Bash</span>
+          </div>
+        </div>
+        <div data-reveal="2">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">Data &amp; viz</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Pandas</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">NumPy</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Matplotlib</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Seaborn</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Plotly</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Tableau</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Power BI</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Excel</span>
+          </div>
+        </div>
+        <div data-reveal="0">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">R packages</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">caret</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">tidyverse</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">ggplot2</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">dplyr</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">H2O</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Shiny</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">knitr</span>
+          </div>
+        </div>
+        <div data-reveal="1">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">Cloud &amp; infra</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Docker</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Kubernetes</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">AWS</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">GCP</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">FastAPI</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Airflow</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Git</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Linux</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Apache Spark</span>
+          </div>
+        </div>
+        <div data-reveal="2">
+          <h4 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 16px;">Databases</h4>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#CFC6B2;">
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">MongoDB</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">ChromaDB</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">BigQuery</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">Azure SQL</span>
+            <span style="border:1px solid #3A332A; border-radius:7px; padding:6px 11px; white-space:nowrap;">JDBC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" style="background:#F7F3EB;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 32px;">
+      <div data-reveal="0" style="margin-bottom: 44px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 16px;">05 / Education</div>
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:46px; line-height:1.1; margin:0; color:#221C15;">Academics</h2>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+
+        <!-- edu card 1 (flip) -->
+        <div data-flip data-reveal="0" style="perspective: 1600px; min-height: 280px;">
+          <div data-flip-inner data-flipped="0" style="position:relative; width:100%; min-height:280px; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.7,.2,1);">
+            <!-- front -->
+            <div data-flip-front style="position:relative; min-height:280px; box-sizing:border-box; background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:30px; display:flex; flex-direction:column; backface-visibility:hidden; -webkit-backface-visibility:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#C2691E;">Master's</span>
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#B0A48E;">Aug 2023 → May 2025</span>
+              </div>
+              <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; line-height:1.2; margin:0 0 6px; color:#221C15;">University of Oklahoma</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#6B6153; margin-bottom:4px;">M.S. Data Science</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2691E; margin-bottom:16px;">GPA 3.97</div>
+              <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 auto;">A hands-on curriculum grounded in the fundamentals of data analytics, machine learning, and deep learning.</p>
+              <button data-flip-btn style="cursor:pointer; align-self:flex-start; margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#221C15; background:transparent; border:1px solid #D9D0BF; padding:8px 14px; border-radius:999px;" style-hover="border-color:#221C15;">More info ⤿</button>
+            </div>
+            <!-- back -->
+            <div data-flip-back style="position:absolute; top:0; left:0; width:100%; height:100%; box-sizing:border-box; background:#221C15; color:#EDE6D6; border-radius:18px; padding:30px; display:flex; flex-direction:column; gap:18px; transform:rotateY(180deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; pointer-events:none;">
+              <div>
+                <h4 style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 10px;">Relevant courses</h4>
+                <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; line-height:1.7; color:#CFC6B2;">Data Mining · Machine Learning Practice · Intelligent Data Analytics · Data Visualization · Statistics</div>
+              </div>
+              <div>
+                <h4 style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 10px;">Highlights</h4>
+                <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; line-height:1.7; color:#CFC6B2;">Earned a Graduate Research Assistantship · Data Science Club member</div>
+              </div>
+              <button data-flip-btn style="cursor:pointer; align-self:flex-start; margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#EDE6D6; background:transparent; border:1px solid #3A332A; padding:8px 14px; border-radius:999px;" style-hover="border-color:#E0A33B;">⤺ Back</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- edu card 2 (flip) -->
+        <div data-flip data-reveal="1" style="perspective: 1600px; min-height: 280px;">
+          <div data-flip-inner data-flipped="0" style="position:relative; width:100%; min-height:280px; transform-style:preserve-3d; -webkit-transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.7,.2,1);">
+            <div data-flip-front style="position:relative; min-height:280px; box-sizing:border-box; background:#FFFDF8; border:1px solid #ECE3D2; border-radius:18px; padding:30px; display:flex; flex-direction:column; backface-visibility:hidden; -webkit-backface-visibility:hidden;">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#C2691E;">Bachelor's</span>
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#B0A48E;">Jun 2016 → May 2020</span>
+              </div>
+              <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:28px; line-height:1.2; margin:0 0 6px; color:#221C15;">Savitribai Phule Pune University</h3>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#6B6153; margin-bottom:4px;">B.E. Electronics &amp; Telecommunication</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2691E; margin-bottom:16px;">GPA 7.6</div>
+              <p style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; line-height:1.6; color:#766B5A; margin:0 0 auto;">A robust foundation in OOP, data structures, mathematics, and technical problem-solving.</p>
+              <button data-flip-btn style="cursor:pointer; align-self:flex-start; margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#221C15; background:transparent; border:1px solid #D9D0BF; padding:8px 14px; border-radius:999px;" style-hover="border-color:#221C15;">More info ⤿</button>
+            </div>
+            <div data-flip-back style="position:absolute; top:0; left:0; width:100%; height:100%; box-sizing:border-box; background:#221C15; color:#EDE6D6; border-radius:18px; padding:30px; display:flex; flex-direction:column; gap:18px; transform:rotateY(180deg); backface-visibility:hidden; -webkit-backface-visibility:hidden; pointer-events:none;">
+              <div>
+                <h4 style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 10px;">Relevant courses</h4>
+                <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; line-height:1.7; color:#CFC6B2;">Programming Fundamentals I &amp; II · Data Structures &amp; Algorithms · Object-Oriented Programming · Engineering Mathematics I to III</div>
+              </div>
+              <div>
+                <h4 style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#E0A33B; margin:0 0 10px;">Highlights</h4>
+                <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13.5px; line-height:1.7; color:#CFC6B2;">TESA Treasurer (2019) &amp; Assistant Designer (2017) · Rotaract Club DPU, Asst. Marketing Head (2017)</div>
+              </div>
+              <button data-flip-btn style="cursor:pointer; align-self:flex-start; margin-top:auto; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#EDE6D6; background:transparent; border:1px solid #3A332A; padding:8px 14px; border-radius:999px;" style-hover="border-color:#E0A33B;">⤺ Back</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- certifications inline -->
+      <div data-reveal="0" style="margin-top: 56px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 24px;">06 / Certifications</div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+          <a href="https://www.coursera.org/account/accomplishments/specialization/4SCYMWK8CYP3" target="_blank" style="text-decoration:none; display:flex; align-items:center; justify-content:space-between; gap:18px; background:#FFFDF8; border:1px solid #ECE3D2; border-radius:14px; padding:22px 24px; transition: border-color .3s, transform .3s;" style-hover="border-color:#E0CFA8; transform: translateY(-4px); box-shadow: 0 20px 32px -22px rgba(60,45,20,0.45);">
+            <div>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:16px; color:#221C15; margin-bottom:3px;">Google Data Analytics Professional</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8A7F6C;">Google · Coursera</div>
+            </div>
+            <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; color:#C2691E; white-space:nowrap;">View ↗</span>
+          </a>
+          <a href="https://www.udemy.com/certificate/UC-d5104c03-2eff-4c0d-a793-c1386242508f/" target="_blank" style="text-decoration:none; display:flex; align-items:center; justify-content:space-between; gap:18px; background:#FFFDF8; border:1px solid #ECE3D2; border-radius:14px; padding:22px 24px; transition: border-color .3s, transform .3s;" style-hover="border-color:#E0CFA8; transform: translateY(-4px); box-shadow: 0 20px 32px -22px rgba(60,45,20,0.45);">
+            <div>
+              <div style="font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:16px; color:#221C15; margin-bottom:3px;">Master C++ Programming</div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8A7F6C;">Udemy</div>
+            </div>
+            <span style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; color:#C2691E; white-space:nowrap;">View ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" style="background:#EFE8DB; border-top:1px solid #E5DBC9;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 32px;">
+      <div style="display:grid; grid-template-columns: 0.95fr 1.05fr; gap: 64px; align-items:start;">
+        <div data-reveal="0">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#B45309; margin-bottom: 16px;">07 / Contact</div>
+          <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:52px; line-height:1.1; margin:0 0 20px; color:#221C15;">Let's work together.</h2>
+          <p style="font-family:'IBM Plex Sans',sans-serif; font-size:16px; line-height:1.66; color:#5E5648; margin:0 0 32px; max-width:420px;">Have a role, a project, or a question? Send a note, or just <button id="pf-ask2" style="cursor:pointer; background:none; border:none; padding:0; font:inherit; color:#C2691E; font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap;">ask my AI</button> up top.</p>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <a href="mailto:tusharmhatre2424@gmail.com" style="text-decoration:none; display:flex; align-items:center; gap:16px; color:inherit;" style-hover="color:#C2691E;">
+              <span style="flex:none; width:44px; height:44px; border-radius:12px; border:1px solid #E0D5C2; background:#FBF7EF; display:flex; align-items:center; justify-content:center; color:#C2691E;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg></span>
+              <span style="display:flex; flex-direction:column; gap:2px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80;">Email</span>
+                <span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#332B20;">tusharmhatre2424@gmail.com</span>
+              </span>
+            </a>
+            <a href="tel:+14052238789" style="text-decoration:none; display:flex; align-items:center; gap:16px; color:inherit;" style-hover="color:#C2691E;">
+              <span style="flex:none; width:44px; height:44px; border-radius:12px; border:1px solid #E0D5C2; background:#FBF7EF; display:flex; align-items:center; justify-content:center; color:#C2691E;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span style="display:flex; flex-direction:column; gap:2px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80;">Phone</span>
+                <span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#332B20;">+1 (405) 223-8789</span>
+              </span>
+            </a>
+            <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="text-decoration:none; display:flex; align-items:center; gap:16px; color:inherit;" style-hover="color:#C2691E;">
+              <span style="flex:none; width:44px; height:44px; border-radius:12px; border:1px solid #E0D5C2; background:#FBF7EF; display:flex; align-items:center; justify-content:center; color:#C2691E;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></span>
+              <span style="display:flex; flex-direction:column; gap:2px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80;">LinkedIn</span>
+                <span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#332B20;">in/tushar-mhatre24</span>
+              </span>
+            </a>
+            <a href="https://github.com/TusharM24" target="_blank" style="text-decoration:none; display:flex; align-items:center; gap:16px; color:inherit;" style-hover="color:#C2691E;">
+              <span style="flex:none; width:44px; height:44px; border-radius:12px; border:1px solid #E0D5C2; background:#FBF7EF; display:flex; align-items:center; justify-content:center; color:#C2691E;"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span>
+              <span style="display:flex; flex-direction:column; gap:2px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80;">GitHub</span>
+                <span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#332B20;">github.com/TusharM24</span>
+              </span>
+            </a>
+            <a href="https://leetcode.com/u/TusharM10/" target="_blank" style="text-decoration:none; display:flex; align-items:center; gap:16px; color:inherit;" style-hover="color:#C2691E;"><span style="flex:none; width:44px; height:44px; border-radius:12px; border:1px solid #E0D5C2; background:#FBF7EF; display:flex; align-items:center; justify-content:center; color:#C2691E;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></span>
+              <span style="display:flex; flex-direction:column; gap:2px;">
+                <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80;">LeetCode</span>
+                <span style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#332B20;">leetcode.com/u/TusharM10</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <form id="pf-form" data-reveal="1" action="https://api.web3forms.com/submit" method="POST" style="background:#FFFDF8; border:1px solid #ECE3D2; border-radius:20px; padding:32px;">
+          <input type="hidden" name="access_key" value="a8f18135-e73c-4573-a135-477e5412a65e">
+          <input type="hidden" name="subject" value="New message from your portfolio">
+          <input type="hidden" name="from_name" value="Tushar Mhatre Portfolio">
+          <input type="checkbox" name="botcheck" style="display:none;">
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div>
+              <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80; display:block; margin-bottom:8px;">Name</label>
+              <input type="text" name="name" required placeholder="Your name" style="width:100%; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#221C15; background:#FBF7EF; border:1px solid #E4DAC8; border-radius:10px; padding:13px 15px; outline:none;" style-focus="border-color:#C2691E;">
+            </div>
+            <div>
+              <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80; display:block; margin-bottom:8px;">Email</label>
+              <input type="email" name="email" required placeholder="you@email.com" style="width:100%; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#221C15; background:#FBF7EF; border:1px solid #E4DAC8; border-radius:10px; padding:13px 15px; outline:none;" style-focus="border-color:#C2691E;">
+            </div>
+            <div>
+              <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A89A80; display:block; margin-bottom:8px;">Message</label>
+              <textarea name="message" required rows="4" placeholder="What's on your mind?" style="width:100%; resize:vertical; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#221C15; background:#FBF7EF; border:1px solid #E4DAC8; border-radius:10px; padding:13px 15px; outline:none;" style-focus="border-color:#C2691E;"></textarea>
+            </div>
+            <button type="submit" id="pf-submit" style="cursor:pointer; font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:15px; color:#fff; background:#221C15; border:none; padding:15px; border-radius:11px; margin-top:4px;" style-hover="background:#3a2f22;">Send message</button>
+            <div id="pf-form-msg" style="display:none; font-family:'IBM Plex Sans',sans-serif; font-size:14px; text-align:center;"></div>
+          </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="footer-social">
-        <a href="https://github.com/TusharM24" target="_blank" style="margin-right: 10px; color: white;">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="margin-right: 10px; color: white;">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background:#1E1A14; color:#9A8F7C;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'Instrument Serif',serif; font-size:24px; color:#F5EFE2; margin-bottom:6px;">Tushar Mhatre</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#6E6555;">AI &amp; ML Engineer · United States</div>
       </div>
-      
-      <!-- Portfolio Analytics Counter -->
-      <div class="analytics-counter">
-        <div class="counter-item">
-          <i class="fas fa-eye"></i>
-          <span class="counter-number" id="totalViews">1,247</span>
-          <span class="counter-label">Total Views</span>
-        </div>
-        <div class="counter-item">
-          <i class="fas fa-fire"></i>
-          <span class="counter-number" id="todayViews">23</span>
-          <span class="counter-label">Today</span>
-        </div>
-        <div class="counter-item">
-          <i class="fas fa-mouse-pointer"></i>
-          <span class="counter-number" id="totalClicks">156</span>
-          <span class="counter-label">Clicks</span>
-        </div>
+      <div style="display:flex; gap:24px; font-family:'IBM Plex Mono',monospace; font-size:12.5px;">
+        <a href="https://github.com/TusharM24" target="_blank" style="display:inline-flex; align-items:center; gap:8px; color:#9A8F7C; text-decoration:none;" style-hover="color:#E0A33B;"><svg viewBox="0 0 16 16" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+        <a href="https://linkedin.com/in/tushar-mhatre24" target="_blank" style="display:inline-flex; align-items:center; gap:8px; color:#9A8F7C; text-decoration:none;" style-hover="color:#E0A33B;"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <a href="https://leetcode.com/u/TusharM10/" target="_blank" style="display:inline-flex; align-items:center; gap:8px; color:#9A8F7C; text-decoration:none;" style-hover="color:#E0A33B;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>LeetCode</a>
+        <a href="mailto:tusharmhatre2424@gmail.com" style="display:inline-flex; align-items:center; gap:8px; color:#9A8F7C; text-decoration:none;" style-hover="color:#E0A33B;"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 6 9-6"/></svg>Email</a>
       </div>
-      
-      <div class="copyright">
-        &copy; 2025 - Tushar Mhatre. All rights reserved.
-      </div>
+    </div>
+    <div style="border-top:1px solid #322B22;">
+      <div style="max-width:1180px; margin:0 auto; padding:18px 32px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C5446;">© 2025 Tushar Mhatre. Built and maintained by me.</div>
     </div>
   </footer>
 
-  <!-- Back to top button -->
-  <div class="back-to-top" id="backToTop">
-    <i class="fas fa-chevron-up"></i>
-  </div>
+<script>
+(function () {
+  // ---- style-hover / style-focus -> real pseudo-class CSS rules ----------
+  // Mirrors the Claude Design pseudo-sheet; declarations get !important so they
+  // win over the element's inline base style.
+  (function applyPseudoStyles() {
+    var sheet = document.createElement('style');
+    document.head.appendChild(sheet);
+    var n = 0;
+    function importantify(css) {
+      return css.split(';').map(function (decl) {
+        var i = decl.indexOf(':');
+        if (i < 0) return '';
+        var prop = decl.slice(0, i).trim();
+        var val = decl.slice(i + 1).trim();
+        if (!prop || !val) return '';
+        return prop + ':' + val + ' !important';
+      }).filter(Boolean).join(';');
+    }
+    ['hover', 'focus'].forEach(function (pseudo) {
+      document.querySelectorAll('[style-' + pseudo + ']').forEach(function (el) {
+        var css = importantify(el.getAttribute('style-' + pseudo) || '');
+        if (!css) return;
+        var cls = 'scp' + (n++).toString(36);
+        sheet.sheet.insertRule('.' + cls + ':' + pseudo + '{' + css + '}', sheet.sheet.cssRules.length);
+        el.classList.add(cls);
+      });
+    });
+  })();
 
-  <!-- Custom JavaScript -->
-  <script src="script.js"></script>
+  // ---- console voice agent (ElevenLabs-ready demo widget) ----------------
+  function wireConsole() {
+    var btn = document.getElementById('pf-mic');
+    if (!btn) return;
+    var statusEl = document.getElementById('pf-status');
+    var dotEl = document.getElementById('pf-dot');
+    var bodyEl = document.getElementById('pf-console-body');
+    var labelEl = document.getElementById('pf-mic-label');
+    var AGENT_ID = 'agent_0901kvhxmrh8fv39qn8ccnwjedwt';
+    var state = 'idle';      // idle | connecting | live
+    var mode = 'listening';  // listening | speaking (when live)
+    var conversation = null;
+    var Conversation = null;
+
+    function render(extra) {
+      var map = {
+        idle: { s: 'OFFLINE', c: '#7C7461', dc: '#5A5346', anim: 'none', label: 'Tap to talk' },
+        connecting: { s: 'CONNECTING', c: '#E0A33B', dc: '#E0A33B', anim: 'blink 0.8s step-end infinite', label: 'Connecting…' },
+        live: { s: 'LIVE', c: '#E0A33B', dc: '#E0A33B', anim: 'blink 1s step-end infinite', label: (mode === 'speaking' ? 'Speaking… tap to end' : 'Listening… tap to end') }
+      };
+      var m = map[state];
+      statusEl.textContent = m.s;
+      statusEl.style.color = m.c;
+      dotEl.style.background = m.dc;
+      dotEl.style.animation = m.anim;
+      labelEl.textContent = m.label;
+      var html = '<div><span style="color:#7FB07F;">visitor@site</span><span style="color:#7C7461;">:~$</span> talk to my AI twin</div>';
+      if (state === 'live') {
+        html += '<div style="margin-top:6px;color:#E0A33B;">&#9656; connected to Tushar’s AI twin</div>';
+        html += '<div style="margin-top:6px;color:#EDE6D6;">' + (mode === 'speaking' ? 'Speaking…' : 'Listening… ask me anything about Tushar.') + '</div>';
+      } else if (state === 'connecting') {
+        html += '<div style="margin-top:6px;color:#B9AE98;">&#9656; connecting… allow mic access if prompted</div>';
+      } else if (extra) {
+        html += '<div style="margin-top:6px;color:#D98C5F;">&#9656; ' + extra + '</div>';
+      } else {
+        html += '<div style="margin-top:6px;color:#7C7461;">&#9656; tap to speak. it answers for me, any time</div>';
+      }
+      bodyEl.innerHTML = html;
+    }
+
+    function loadSDK() {
+      if (Conversation) return Promise.resolve(Conversation);
+      return import('https://cdn.jsdelivr.net/npm/@elevenlabs/client/+esm').then(function (mod) {
+        Conversation = mod.Conversation;
+        return Conversation;
+      });
+    }
+
+    function start() {
+      state = 'connecting'; render();
+      // Request mic in the user-gesture context, then open the session.
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(loadSDK)
+        .then(function (Conv) {
+          return Conv.startSession({
+            agentId: AGENT_ID,
+            onConnect: function () { state = 'live'; mode = 'listening'; render(); },
+            onDisconnect: function () { state = 'idle'; conversation = null; render(); },
+            onModeChange: function (mm) { mode = (mm && mm.mode === 'speaking') ? 'speaking' : 'listening'; if (state === 'live') render(); },
+            onError: function (e) { console.error('[convai]', e); state = 'idle'; conversation = null; render('connection error, tap to retry.'); }
+          });
+        })
+        .then(function (conv) { conversation = conv; })
+        .catch(function (err) {
+          console.error('[convai] start failed', err);
+          state = 'idle'; conversation = null;
+          render(err && err.name === 'NotAllowedError' ? 'mic blocked, enable it to talk.' : 'could not connect, tap to retry.');
+        });
+    }
+
+    function stop() {
+      var c = conversation;
+      conversation = null; state = 'idle'; render();
+      if (c) { try { c.endSession(); } catch (e) {} }
+    }
+
+    btn.addEventListener('click', function () {
+      if (state === 'idle') start();
+      else if (state === 'live') stop();
+      // ignore taps while connecting
+    });
+    render();
+  }
+
+  // ---- project category filter -------------------------------------------
+  function wireFilter() {
+    var btns = [].slice.call(document.querySelectorAll('[data-filter]'));
+    if (!btns.length) return;
+    var cards = [].slice.call(document.querySelectorAll('[data-cat]'));
+    function apply(cat) {
+      cards.forEach(function (el) {
+        var cats = (el.getAttribute('data-cat') || '').split(' ');
+        var show = cat === 'all' || cats.indexOf(cat) !== -1;
+        el.style.display = show ? '' : 'none';
+      });
+      btns.forEach(function (b) {
+        var active = b.getAttribute('data-filter') === cat;
+        b.style.background = active ? '#221C15' : 'transparent';
+        b.style.color = active ? '#F7F3EB' : '#6B6153';
+        b.style.borderColor = active ? '#221C15' : '#D9D0BF';
+      });
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-filter')); }); });
+    apply('all');
+  }
+
+  // ---- experience accordion ----------------------------------------------
+  function wireAccordion() {
+    document.querySelectorAll('[data-exp-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('[data-exp]');
+        var body = card.querySelector('[data-exp-body]');
+        var open = card.getAttribute('data-open') === '1';
+        if (open) {
+          body.style.maxHeight = '0px';
+          body.style.opacity = '0';
+          card.setAttribute('data-open', '0');
+          btn.textContent = 'Responsibilities +';
+        } else {
+          body.style.maxHeight = (body.scrollHeight + 40) + 'px';
+          body.style.opacity = '1';
+          card.setAttribute('data-open', '1');
+          btn.textContent = 'Hide −';
+        }
+      });
+    });
+  }
+
+  // ---- education flip cards (display-swap) --------------------------------
+  function wireFlip() {
+    document.querySelectorAll('[data-flip-btn]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('[data-flip]');
+        var inner = card.querySelector('[data-flip-inner]');
+        var front = card.querySelector('[data-flip-front]');
+        var back = card.querySelector('[data-flip-back]');
+        var toBack = inner.getAttribute('data-flipped') !== '1';
+        inner.setAttribute('data-flipped', toBack ? '1' : '0');
+        inner.style.transform = toBack ? 'rotateY(180deg)' : 'none';
+        // only the visible face should catch clicks
+        front.style.pointerEvents = toBack ? 'none' : 'auto';
+        back.style.pointerEvents = toBack ? 'auto' : 'none';
+      });
+    });
+  }
+
+  // ---- contact form (Web3Forms) ------------------------------------------
+  function wireForm() {
+    var form = document.getElementById('pf-form');
+    if (!form) return;
+    var msg = document.getElementById('pf-form-msg');
+    var btn = document.getElementById('pf-submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      btn.textContent = 'Sending…';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            form.reset();
+            msg.style.display = 'block';
+            msg.style.color = '#3F7A3F';
+            msg.textContent = 'Thanks, your message is on its way. I’ll get back to you soon.';
+          } else { throw new Error('fail'); }
+        })
+        .catch(function () {
+          msg.style.display = 'block';
+          msg.style.color = '#C2410C';
+          msg.textContent = 'Something went wrong. Please email me directly.';
+        })
+        .then(function () { btn.textContent = 'Send message'; });
+    });
+  }
+
+  // ---- sticky nav shadow + "Ask my AI" flash -----------------------------
+  function wireNav() {
+    var nav = document.getElementById('pf-nav');
+    if (nav) {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 20) {
+          nav.style.boxShadow = '0 8px 30px -18px rgba(40,30,15,0.35)';
+          nav.style.background = 'rgba(247,243,235,0.92)';
+        } else {
+          nav.style.boxShadow = 'none';
+          nav.style.background = 'rgba(247,243,235,0.82)';
+        }
+      }, { passive: true });
+    }
+    function flash() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Actually start the voice conversation if it isn't already running.
+      // Done synchronously inside the click so the mic permission keeps its user gesture.
+      var mic = document.getElementById('pf-mic');
+      var status = document.getElementById('pf-status');
+      if (mic && status && status.textContent === 'OFFLINE') mic.click();
+      var panel = document.getElementById('pf-console');
+      if (panel && panel.animate) {
+        setTimeout(function () {
+          panel.animate(
+            [{ boxShadow: '0 36px 60px -30px rgba(40,30,15,0.55), 0 0 0 0 rgba(224,163,59,0.7)' },
+             { boxShadow: '0 36px 60px -30px rgba(40,30,15,0.55), 0 0 0 14px rgba(224,163,59,0)' }],
+            { duration: 1100, iterations: 2 }
+          );
+        }, 520);
+      }
+    }
+    var a1 = document.getElementById('pf-ask');
+    var a2 = document.getElementById('pf-ask2');
+    if (a1) a1.addEventListener('click', flash);
+    if (a2) a2.addEventListener('click', flash);
+  }
+
+  // ---- skill pills: staggered reveal + amber hover -----------------------
+  function wireSkills() {
+    var section = document.getElementById('skills');
+    if (!section) return;
+    var pills = [].slice.call(section.querySelectorAll('span')).filter(function (s) {
+      var cs = getComputedStyle(s);
+      return s.children.length === 0 && cs.borderTopStyle === 'solid' && parseFloat(cs.borderTopLeftRadius) >= 5;
+    });
+    if (!pills.length) return;
+    function reset(p) {
+      p.style.background = '#231E18';
+      p.style.color = '#CFC6B2';
+      p.style.borderColor = '#3A332A';
+      p.style.transform = 'none';
+      p.style.boxShadow = 'none';
+    }
+    pills.forEach(function (p) {
+      p.style.background = '#231E18';
+      p.style.cursor = 'default';
+      p.style.transition = 'transform .22s cubic-bezier(.2,.7,.2,1), background .22s, color .22s, border-color .22s, box-shadow .22s';
+      p.style.opacity = '0';
+      p.style.transform = 'translateY(10px)';
+      p.addEventListener('mouseenter', function () {
+        p.style.background = 'linear-gradient(135deg,#E8A94B,#C2691E)';
+        p.style.color = '#1E1A14';
+        p.style.borderColor = 'transparent';
+        p.style.transform = 'translateY(-4px) scale(1.06)';
+        p.style.boxShadow = '0 12px 22px -10px rgba(224,163,59,0.75)';
+      });
+      p.addEventListener('mouseleave', function () { reset(p); });
+    });
+    function reveal() {
+      pills.forEach(function (p, i) {
+        setTimeout(function () { p.style.opacity = '1'; p.style.transform = 'none'; }, i * 26);
+      });
+    }
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) { if (e.isIntersecting) { reveal(); obs.disconnect(); } });
+    }, { threshold: 0.12 });
+    io.observe(section);
+    setTimeout(function () { pills.forEach(function (p) { if (getComputedStyle(p).opacity === '0') { p.style.opacity = '1'; p.style.transform = 'none'; } }); }, 3000);
+  }
+
+  // ---- extra hover motion (cards, certs, flip buttons) -------------------
+  function wireHovers() {
+    document.querySelectorAll('#work article').forEach(function (card) {
+      var title = card.querySelector('h3');
+      var links = [].slice.call(card.querySelectorAll('a'));
+      if (title) title.style.transition = 'color .25s ease, -webkit-text-fill-color .25s ease, transform .25s ease';
+      links.forEach(function (a) { a.style.transition = 'transform .25s cubic-bezier(.2,.7,.2,1), color .2s ease'; a.style.display = 'inline-flex'; });
+      function setTitle(c) { if (!title) return; title.style.setProperty('color', c, 'important'); title.style.setProperty('-webkit-text-fill-color', c, 'important'); }
+      card.addEventListener('mouseenter', function () {
+        setTitle('#C2691E');
+        if (title) title.style.transform = 'translateX(3px)';
+        links.forEach(function (a) { a.style.transform = 'translateX(4px)'; });
+      });
+      card.addEventListener('mouseleave', function () {
+        setTitle('#221C15');
+        if (title) title.style.transform = 'none';
+        links.forEach(function (a) { a.style.transform = 'none'; });
+      });
+    });
+
+    document.querySelectorAll('#education a').forEach(function (card) {
+      var arrow = card.querySelector('span:last-child');
+      if (arrow) arrow.style.transition = 'transform .25s cubic-bezier(.2,.7,.2,1)';
+      card.addEventListener('mouseenter', function () { if (arrow) arrow.style.transform = 'translate(3px,-3px)'; });
+      card.addEventListener('mouseleave', function () { if (arrow) arrow.style.transform = 'none'; });
+    });
+
+    document.querySelectorAll('[data-flip-btn]').forEach(function (btn) {
+      btn.style.transition = 'background .22s ease, border-color .22s ease, color .22s ease, transform .22s ease';
+      var isBack = /back/i.test(btn.textContent);
+      function paint(c) { btn.style.setProperty('color', c, 'important'); btn.style.setProperty('-webkit-text-fill-color', c, 'important'); }
+      btn.addEventListener('mouseenter', function () {
+        btn.style.transform = 'translateY(-2px)';
+        if (isBack) { btn.style.background = '#E0A33B'; btn.style.borderColor = '#E0A33B'; paint('#1E1A14'); }
+        else { btn.style.background = '#221C15'; btn.style.borderColor = '#221C15'; paint('#F7F3EB'); }
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.background = 'transparent';
+        btn.style.transform = 'none';
+        if (isBack) { btn.style.borderColor = '#3A332A'; paint('#EDE6D6'); }
+        else { btn.style.borderColor = '#D9D0BF'; paint('#221C15'); }
+      });
+    });
+  }
+
+  // ---- scroll reveal ------------------------------------------------------
+  function wireReveal() {
+    var els = [].slice.call(document.querySelectorAll('[data-reveal]'));
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) return;
+    els.forEach(function (el) {
+      var d = parseInt(el.getAttribute('data-reveal'), 10) || 0;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+      el.style.transitionDelay = (d * 80) + 'ms';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+    setTimeout(function () {
+      els.forEach(function (el) {
+        if (getComputedStyle(el).opacity === '0') { el.style.opacity = '1'; el.style.transform = 'none'; }
+      });
+    }, 2600);
+  }
+
+  function init() {
+    wireConsole();
+    wireFilter();
+    wireAccordion();
+    wireFlip();
+    wireForm();
+    wireNav();
+    wireReveal();
+    wireSkills();
+    wireHovers();
+  }
+
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
 </body>
 </html>
